@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_REPO = 'veeradockerhub/darzon-dotnet'
+        DOCKER_HUB_REPO = 'veeradockerhub/darzon'
         IMAGE_TAG = 'latest'
         CONTAINER_NAME = 'darzon-app'
     }
@@ -12,24 +12,6 @@ pipeline {
         stage('Clone Code') {
             steps {
                 git branch: 'main', url: 'https://github.com/veeraprasadkoduri-cmd/DarZon.git'
-            }
-        }
-
-        stage('Restore Packages') {
-            steps {
-                sh 'dotnet restore'
-            }
-        }
-
-        stage('Build Project') {
-            steps {
-                sh 'dotnet build --configuration Release'
-            }
-        }
-
-        stage('Publish Project') {
-            steps {
-                sh 'dotnet publish -c Release -o publish'
             }
         }
 
