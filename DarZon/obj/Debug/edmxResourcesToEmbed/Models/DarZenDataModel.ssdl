@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VEGAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'VEGA.dbo.Tbl_Usermaster' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_Usermaster">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Roles" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="VEGAModelStoreContainer">
+    <EntitySet Name="Tbl_Usermaster" EntityType="Self.Tbl_Usermaster" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Tbl_Usermaster].[UserId] AS [UserId], 
+    [Tbl_Usermaster].[UserName] AS [UserName], 
+    [Tbl_Usermaster].[Password] AS [Password], 
+    [Tbl_Usermaster].[Roles] AS [Roles]
+    FROM [dbo].[Tbl_Usermaster] AS [Tbl_Usermaster]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

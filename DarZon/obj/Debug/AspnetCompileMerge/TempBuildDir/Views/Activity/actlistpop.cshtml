@@ -1,0 +1,61 @@
+﻿
+@model IEnumerable<DarZon.Models.Activity>
+@{
+    Layout = null;
+}
+
+
+<div class="table-responsive tableFixHead">
+    <table class="table table-bordered table-sm table-hover list-table" id="ActivityList">
+        <thead class="thead-light">
+            <tr>
+                <th>S.No</th>
+                <th>Acyivity No</th>
+                <th>Customer&nbsp;Code</th>
+                <th>Customer&nbsp;Name</th>
+                <th>DocNo</th>
+                <th>SaleorderNo</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (Model.Count() > 0)
+            {
+                foreach (var item in Model)
+                {
+            <tr>
+                <td></td>
+                <td>
+                    @item.Actvityno
+                </td>
+                <td>@Html.ActionLink("select", "Find", new { custcode = item.Actvityno }, new { @class = "btn btn-secondary btn-sm add-btn" }) @item.Customercode</td>
+
+
+                <td class="CustomerName">
+                    @item.Customername
+
+                </td>
+
+                <td class="saleorder">
+                    @item.saleorder
+
+
+                </td>
+
+                <td class="websaleorder">
+                    @item.websaleorder
+
+
+                </td>
+
+            </tr>
+                }
+
+            }
+        </tbody>
+    </table>
+</div>
+
+
+

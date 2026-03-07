@@ -1,0 +1,66 @@
+﻿
+@model DarZon.Models.SaleorderwithMeasurement
+
+<tr>
+
+    @using (Html.BeginCollectionItem("objlistsalDetails"))
+    {
+        <td>@Model.serialno </td>
+        <td class="p-0">
+            @Html.TextBoxFor(a => a.CategoryDetails, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+        </td>
+        <td>
+            @Html.HiddenFor(a => a.category, new { @class = "category" })
+            @Html.HiddenFor(a => a.quantity)
+            @Html.HiddenFor(a => a.ItemCode, new { @class = "ItemCode" })
+            @Html.HiddenFor(a => a.taxCode)
+            @Html.HiddenFor(a => a.Id, new { @class = "ID" })
+            @Html.HiddenFor(a => a.noofdays, new { @class = "noofdays" })
+           
+            @Html.TextBoxFor(a => a.ItemDescription, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+        </td>
+        <td>
+            @Html.TextBoxFor(a => a.NoFabraic, new { @class = "NoFabraic form-control form-control-sm item-sel", @readonly = "readonly" })
+            </td>
+        <td class="text-right">
+            @Html.TextBoxFor(a => a.UnitPrice, new { @class = "unitprice form-control form-control-sm item-sel", @readonly = "readonly" })
+        </td>
+
+
+        <td class="text-right">@Html.TextBoxFor(a => (a.TotalAmount), new { @class = "totalamount form-control form-control-sm item-sel", @readonly = "readonly" })</td>
+        <td>
+            <div class="jquery-datepicker">
+                @Html.TextBoxFor(a => a.Deliverydate, new { @class = "deliverydate form-control form-control-sm item-sel", @onmousedown = "deldatepicker(this)", required = "required", @onchange = "getpercentage(this)" })
+                @Html.HiddenFor(a => a.Intdeldate, new { @class = "intdeldate" })
+                @Html.HiddenFor(a => a.curstatus, new { @class= "curstatus" })
+            </div>
+        </td>
+        <td>@Html.TextBoxFor(a => a.Remarks, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })</td>
+
+        <td>
+
+            <button class="btn btn-sm btn-outline-danger del-btn" onmousedown="deleterow(this)" type="button">
+                <i class="delete fa fa-trash"
+                   aria-hidden="true"></i>
+            </button>
+        </td>
+        if (Model.curstatus == "C")
+        {
+            <td>
+                <span class="btn btn-sm btn-outline-info del-btn" onmousedown="Measurement(this)" type="button"><i class="fas fa-ruler-combined"></i></span>
+            </td>
+
+        }
+        else
+        {
+            <td>
+                <button class="btn btn-sm btn-outline-info del-btn" onmousedown="Measurement(this)" type="button"><i class="fas fa-ruler-combined"></i></button>
+            </td>
+
+        }
+    }
+</tr>
+
+
+
+

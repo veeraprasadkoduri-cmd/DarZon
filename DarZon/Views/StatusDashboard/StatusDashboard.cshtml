@@ -1,0 +1,229 @@
+﻿
+@model DarZon.Models.Statusdabrdmain
+
+@{
+    ViewBag.Title = "StatusDashboard";
+}
+@using (Html.BeginForm())
+{
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 ml-auto overflow-hidden">
+                    <div class="row">
+                        <div class="col mt-2">
+                            <div class="card">
+                                <div class="card-header">
+                                    Document Status Dashboard
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">From&nbsp;Date</label>
+                                                    <div class="jquery-datepicker col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(item => item.Objdate.fromdate
+, new { @class = "jquery-datepicker__input form-control form-control-sm", @id = "fromdate", @placeholder = "From Date.", onmousedown = "datepicker(this)" })
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">To&nbsp;Date</label>
+                                                    <div class="jquery-datepicker col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(item => item.Objdate.todate
+, new { @class = "jquery-datepicker__input form-control form-control-sm", @id = "todate", @placeholder = "To Date.", @onmousedown = "datepicker(this)" })
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <button type="button" id="allocation" class="btn btn-secondary btn-sm m-1" onclick="searchdata()">Get Info</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    @if (Model.objchilddata != null)
+                                    {
+
+                                        <div class="row mt-2">
+                                            <div class="col">
+                                                <div class="table-responsive newtableFixHead tableFixHead" id="status">
+                                                    <table class="table table-bordered table-sm table-hover list-table" style="font-size: 12px;">
+                                                        <thead class="thead-light">
+                                                            <tr>
+
+                                                                <th scope="col">S&nbsp;No.</th>
+                                                                @*<th scope="col">Doc&nbsp;No.</th>*@
+                                                                <th>saleorderNo</th>
+                                                                @*<th scope="col">Line&nbsp;No.</th>*@
+                                                                <th scope="col">Label&nbsp;No.</th>
+                                                                <th scope="col">Material&nbsp;Description</th>
+                                                                <th scope="col">Trial&nbsp;Status</th>
+                                                                <th scope="col">&nbsp;Status</th>
+                                                                <th>SaleorderDate  </th>
+                                                                <th scope="col">Internal&nbsp;Delivery&nbsp;Date</th>
+                                                                <th scope="col">Customer&nbsp;Delivery&nbsp;Date</th>
+                                                                <th scope="col">Deviation&nbsp;Days</th>
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody>
+                                                            @for (int i = 0; i < Model.objchilddata.Count(); i++)
+                                                            {
+                                                                using (Html.BeginCollectionItem("objchilddata"))
+                                                                {
+                                                            <tr>
+                                                                <td></td>
+                                                                @*<td>
+            @Model.objchilddata.ElementAt(i).saleorderNo
+
+        </td>*@
+                                                                <td>
+                                                                    @Model.objchilddata.ElementAt(i).websaleorder
+
+                                                                </td>
+                                                                @*<td>@Model.objchilddata.ElementAt(i).LineNo</td>*@
+                                                                <td>@Model.objchilddata.ElementAt(i).LabelNo</td>
+                                                                <td>@Model.objchilddata.ElementAt(i).MaterialDescription</td>
+                                                                @if (Model.objchilddata.ElementAt(i).TrailStatus == null || Model.objchilddata.ElementAt(i).TrailStatus == "No")
+                                                                {
+                                                                    <td>
+                                                                        No
+                                                                    </td>
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    <td>
+                                                                        Yes
+                                                                    </td>
+
+                                                                }
+
+
+                                                                @if (Model.objchilddata.ElementAt(i).counttrans >= 2)
+                                                                {
+                                                                    if (Model.objchilddata.ElementAt(i).deiverystatus == "Yes")
+                                                                    {
+                                                                        <td>
+                                                                            Delivered
+                                                                        </td>
+                                                                    }
+
+
+                                                                    else if (Model.objchilddata.ElementAt(i).Tstatus == "No")
+                                                                    {
+                                                                        <td>
+                                                                            Intransit from Work Shop
+                                                                        </td>
+                                                                    }
+                                                                    else if (Model.objchilddata.ElementAt(i).Tstatus == "Yes")
+                                                                    {
+                                                                        <td>
+                                                                            At Store For Delivery
+                                                                        </td>
+
+
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <td>
+                                                                            At Work Shop
+                                                                        </td>
+                                                                    }
+
+                                                                }
+                                                                else if (Model.objchilddata.ElementAt(i).counttrans == 1)
+                                                                {
+                                                                    if (Model.objchilddata.ElementAt(i).status == "Open")
+                                                                    {
+                                                                        <td>
+                                                                            Intransit To Work Shop
+                                                                        </td>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <td>
+                                                                            At Work Shop
+                                                                        </td>
+
+
+                                                                    }
+                                                                }
+                                                                else
+                                                                {
+                                                                    <td>
+                                                                        Order processing
+
+                                                                    </td>
+
+                                                                }
+                                                                @{
+                                                                    DateTime intdate = DateTime.ParseExact(Model.objchilddata.ElementAt(i).CustomerDeliveryDate, "dd/MM/yyyy", null);
+                                                                    Model.objchilddata.ElementAt(i).InternalDeliveryDate = intdate.AddDays(-1).ToString("dd/MM/yyyy");
+                                                                }
+                                                                <td>@Model.objchilddata.ElementAt(i).saleorderdate</td>
+                                                                <td>@Model.objchilddata.ElementAt(i).InternalDeliveryDate</td>
+
+
+                                                                <td>@Model.objchilddata.ElementAt(i).CustomerDeliveryDate</td>
+                                                                <td>@Model.objchilddata.ElementAt(i).DeviationDays</td>
+
+
+
+                                                            </tr>
+
+                                                                }
+
+                                                            }
+                                                        </tbody>
+
+
+
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <br>
+                                        </div>
+
+
+                                    }
+
+                                    <hr>
+                                    <div class="row">
+                                        <div class="mx-auto">
+
+                                            &nbsp;&nbsp;
+                                            <button type="button" class="btn btn-secondary btn-sm float-right">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="priceTable" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content" id="mdlitemlist">
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+}
+
+<script src="~/js/StatusDashboard.js"></script>

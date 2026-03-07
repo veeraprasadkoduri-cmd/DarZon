@@ -1,0 +1,74 @@
+﻿@model IEnumerable<DarZon.Models.DeliveryHead>
+@{
+    Layout = null;
+}
+
+
+<div class="table-responsive tableFixHead">
+    <table class="table table-bordered table-sm table-hover tblsrial" id="orderlist">
+        <thead class="thead-light">
+            <tr>
+                <th>
+                    S.No
+                </th>
+                <th>Order&nbsp;No.</th>
+                <th>Document&nbsp;Date</th>
+                <th>Customer&nbsp;Name</th>
+                <th>Phone&nbsp;No.</th>
+                <th>Alt Phone&nbsp;No.</th>
+                <th>Doctotal</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="SaleOrderNo">@item.SaleOrderNo</span>
+                            <span class="CustomerNo" style="display:none"> @item.CustomerNo</span>
+                            <span class="DelDate" style="display:none"> @item.DelDate</span>
+                            <span class="AltDetails" style="display:none"> @item.AltDetails</span>
+                            <span class="TotalBefDis" style="display:none"> @item.TotalBefDis</span>
+                            <span class="DiscountP" style="display:none">@item.DiscountP</span>
+                            <span class="Tax" style="display:none"> @item.Tax</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-info btn-sm add-btn" data-dismiss="modal"
+                                    aria-label="Add" id="btnaddOrder">
+                                Select
+                            </button>
+                        </td>
+                        <td class="saleorderdate">
+                            @item.saleorderdate
+                        </td>
+                        <td class="CustomerName">
+                            @item.CustomerName
+
+                        </td>
+                        <td class="PhoneNo">
+                            @item.PhoneNo
+                        </td>
+                        <td class="AltPhoneNo">
+                            @item.AltPhoneNo
+                        </td>
+
+                        <td class="DocTotal">
+                            @item.DocTotal
+
+
+                        </td>
+
+
+
+                    </tr>
+                }
+
+            }
+        </tbody>
+    </table>
+</div>
+
+

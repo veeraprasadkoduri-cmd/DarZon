@@ -1,0 +1,346 @@
+﻿@model DarZon.Models.Invoicemodel
+@{
+    ViewBag.Title = "Invoice";
+
+}
+@using (Html.BeginForm("Invoice", "Invoice", FormMethod.Post))
+{
+   
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 ml-auto overflow-hidden">
+                    <div class="row">
+                        <div class="col mt-2">
+                            <div class="card">
+                                <h5 class="card-header">Invoice / Receipt&nbsp;&nbsp;<button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#divInvList">Find Invoice Details</button></h5>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div>
+                                                <div class=my-form>
+                                                    <div class="form-group row">
+                                                        <label for="DeliveryNo" class="col-lg-4 col-md-12 col-sm-12">Sale Order No.</label>
+                                                        <div class="col-lg-8 col-md-12 col-sm-12">
+                                                            @Html.TextBoxFor(item => item.invhead.websaleorder, new { @class = "form-control form-control-sm", @id = "WebSaleNo", @placeholder = "Sale Order No.", data_toggle = "modal", data_target = "#OrderList", @readonly = "readonly" })
+
+                                                            @Html.HiddenFor(item => item.invhead.DeliveryNo, new { @class = "form-control form-control-sm", @id = "DelNo", })
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="DeliveryDate" class="col-lg-4 col-md-12 col-sm-12">Invoice No.</label>
+                                                        <div class="col-lg-8 col-md-12 col-sm-12">
+
+
+                                                            @Html.TextBoxFor(item => item.invhead.InvoiceNo, new { @class = " form-control form-control-sm", @id = "InvNo", @placeholder = "Invoice No", @readonly = true })
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="AltrationDate" class="col-lg-4 col-md-12 col-sm-12">Invoice Date</label>
+                                                        <div class="jquery-datepicker col-lg-8 col-md-12 col-sm-12">
+
+
+                                                            @Html.TextBoxFor(item => item.invhead.DeliveryDate, new { @class = "jquery-datepicker__input form-control form-control-sm", @id = "altdate", @placeholder = "Invoice date", @onmousedown = "datepicker(this)", @readonly = true })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label for="UserID" class="col-lg-4 col-md-12 col-sm-12">User ID</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextBoxFor(item => item.invhead.UserId, new { @class = "form-control form-control-sm", @Readonly = true, @id = "userid", @placeholder = "User ID" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="CustomerNo" class="col-lg-4 col-md-12 col-sm-12">Customer No.</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextBoxFor(item => item.invhead.CustomerNo, new { @Readonly = true, @class = "form-control form-control-sm", @id = "cno", @placeholder = "Customer No." })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="CustomerName" class="col-lg-4 col-md-12 col-sm-12">Customer Name</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextBoxFor(item => item.invhead.CustomerName, new { @Readonly = true, @class = "form-control form-control-sm", @id = "CustomerName", @placeholder = "Customer Name" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="Invoicedate" class="col-lg-4 col-md-12 col-sm-12">Sale Order Date</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextBoxFor(item => item.invhead.Invoicedate, new { @Readonly = true, @class = "form-control form-control-sm", @id = "InvoiceDate", @placeholder = "Saleorder Date" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col" id="divsaleorderdetails">
+                                            <div class="table-responsive tableFixHead">
+                                                <table class="table list-table table-bordered table-sm table-hover">
+                                                    <thead class="thead-light">
+                                                        <tr>
+                                                            <th>S.No</th>
+                                                            <th scope="col">Item&nbsp;Code</th>
+                                                            <th scope="col">Description</th>
+                                                            <th scope="col">Qty</th>
+                                                            <th scope="col">Rate</th>
+                                                            <th scope="col">Tax</th>
+                                                            <th scope="col">Total</th>
+
+                                                            <th scope="col">Remarks</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <hr>
+
+                                    <div class="row flex-column-reverse flex-lg-row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class="my-form">
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Cash</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                                @Html.TextBoxFor(model => model.invhead.cash, new { @class = "form-control form-control-sm", @id = "CashAmount", @onkeyup = "sumofadvance()", @type = "number", @step = ".01", @min = "1", onkeypress = "return isNumber(event)" })
+
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Card</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 5px">
+                                                                @Html.TextBoxFor(model => model.invhead.card, new { @class = "form-control form-control-sm", @id = "CardAmount", @onkeyup = "sumofadvance()", @type = "number", @step = ".01", @min = "1", onkeypress = "return isNumber(event)" })
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 5px">
+                                                                @Html.TextBoxFor(model => model.invhead.carddetails, new { @class = "form-control form-control-sm", @id = "CardDetails" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Other Payment</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 5px">
+                                                                @Html.TextBoxFor(model => model.invhead.OtherPayments, new { @class = "form-control form-control-sm", @id = "OtherPaymentAmount", @onkeyup = "sumofadvance()", @type = "number", @step = ".01", @min = "1", onkeypress = "return isNumber(event)" })
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6" style="padding-top: 5px">
+                                                                @Html.TextBoxFor(model => model.invhead.OthpayDetails, new { @class = "form-control form-control-sm", @id = "OtherPaymentDetails" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row mt-3">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12 col-form-label">Remarks</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextAreaFor(model => model.invhead.AltDetails, new { @rows = "2", @cols = "50", @class = "form-control", @id = "AltDetails" })
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class="row float-md-right">
+                                                <div class="col">
+                                                    <div class="my-form">
+                                                        <table class="table table-sm border">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                        <label class="col-form-label">Total Amount(Before Discount)</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.TextBoxFor(model => model.invhead.totalBeorerDiscount, new { @rows = "2", @cols = "50", @class = "form-control form-control-sm font-weight-bold text-right", @id = "TxtTotalBefDis", @readonly = true })
+
+
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                                <tr>
+                                                                    <th class="bg-light">
+                                                                        <label class="col-form-label">Discount</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.TextBoxFor(model => model.invhead.discount, new { @rows = "2", @cols = "50", @class = "form-control form-control-sm font-weight-bold text-right", @id = "Txtdiscount", @onchange = "checkdiscount()" })
+                                                                    </th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="bg-light">
+                                                                        <label class="col-form-label">Total After Discount</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.TextBoxFor(model => model.invhead.totalAfterDiscount, new { @rows = "2", @cols = "50", @class = "form-control form-control-sm font-weight-bold text-right", @id = "Txtamount", @readonly = true })
+                                                                    </th>
+                                                                </tr>
+
+
+                                                                <tr>
+                                                                    <th>
+                                                                        <label class="col-form-label">Advance</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.TextBoxFor(model => model.invhead.Advance, new { @rows = "2", @cols = "50", @class = "form-control form-control-sm font-weight-bold text-right", @id = "TxtAdvance", @readonly = true })
+                                                                    </th>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <th>
+                                                                        <label class="col-form-label">Balance Payable</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.TextBoxFor(model => model.invhead.CurrentAdvance, new { @rows = "2", @cols = "50", @class = "form-control form-control-sm font-weight-bold text-right", @id = "TxtCurAdvance", @readonly = "readonly" })
+
+                                                                    </th>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <th>
+                                                                        <label class="col-form-label">Balance</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.TextBoxFor(model => model.invhead.BalanceAmount, new { @rows = "2", @cols = "50", @class = "form-control form-control-sm font-weight-bold text-right", @id = "TxtBalance", @readonly = "readonly" })
+
+                                                                    </th>
+                                                                </tr>
+
+
+                                                                <tr style="display:none">
+                                                                    <th>
+                                                                        <label class="col-form-label">Discount(In %)&nbsp;</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.TextBoxFor(model => model.invhead.discount, new { @rows = "2", @cols = "50", @class = "form-control form-control-sm font-weight-bold text-right", @onchange = "checkdiscount()", @id = "Txtdiscount", @readonly = "readonly" })
+
+
+                                                                    </th>
+                                                                </tr>
+
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <hr>
+                                    <div class="row">
+                                        <div class="mx-auto">
+
+                                            <div id="Invoicedivsave">
+                                                <input type="submit" name="Save" id="btnsave" value="Save" class="btn btn-secondary btn-sm" onclick="return checkbalance();" />
+
+                                                &nbsp; &nbsp;
+                                                <button type="button" class="btn btn-secondary btn-sm float-right">Close</button>
+                                                &nbsp; &nbsp;
+                                            </div>
+                                            <div id="Invoicedivprint">
+                                                <input type="submit" name="Print" id="Print" value="Print" formtarget="_blank" class="btn btn-secondary btn-sm" style="visibility:hidden" />
+                                                <input type="submit" name="FSoftcopy" value="Send EMail" class="btn btn-secondary btn-sm" />
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Modal-logout -->
+        <div class="modal fade" id="OrderList" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Invoice</h5>
+                        <div class="form-inline">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <input type="text" id="ItemInput" onkeyup="filtertable(this, 'orderlist')" class="form-control form-control-sm" placeholder="Search here">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        @{Html.RenderAction("Deliverylist", "Invoice"); }
+                    </div>
+                    <div class="modal-footer">  <button type="button" id="close" class="btn btn-dark btn-sm" data-dismiss="modal" aria-label="Close">Close</button></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="printdocument" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">Print Document</h5>
+                        <div class="form-inline">
+                            <div class="form-group mx-sm-3 mb-2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <center>
+                            <input type="submit" name="Print" value="Print" class="btn btn-secondary btn-sm" formtarget="_blank" />
+                            <input type="submit" name="Softcopy" value="Send EMail" class="btn btn-secondary btn-sm" />
+                        </center>
+                    </div>
+                    <div class="modal-footer">  <button type="button" id="closeprint" onclick="refreshpage()" class="btn btn-dark btn-sm" data-dismiss="modal" aria-label="Close">Close</button></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="divInvList" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Invoice</h5>
+                    <div class="form-inline">
+                        <div class="form-group mx-sm-3 mb-2">
+                            <input type="text" id="ItemInput" onkeyup="filtertable(this, 'InvoiceList')" class="form-control form-control-sm" placeholder="Search here">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    @{Html.RenderAction("Invoicelist", "Invoice"); }
+                </div>
+                <div class="modal-footer">  <button type="button" class="btn btn-dark btn-sm" data-dismiss="modal" aria-label="Close">Close</button></div>
+            </div>
+        </div>
+    </div>
+}
+
+<script src="~/js/Invoice.js"></script>
+

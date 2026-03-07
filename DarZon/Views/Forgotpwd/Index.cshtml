@@ -1,0 +1,114 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<html lang="en">
+
+<head>
+    <title>Darzan Tailor</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="icon" type="../image/png" sizes="32x32" href="../img/favicon.png">
+
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+
+
+    <script>
+
+        function checkEmail(id) {
+
+            var inputvalue = $("#" + id).val();
+            var re = /^[_a-z0-9-A-Z-]+(\.[_a-z0-9-A-Z-]+)*@@[a-z0-9-A-Z-]+(\.[a-z0-9-A-Z-]+)*(\.[a-z]{2,4})$/;
+            if (re.test(inputvalue)) {
+                $("#" + id).css('background-color', 'white');
+                return true;
+            }
+            else {
+                //  $("#EmailPara").fadeIn('slow');
+                // $("#EmailPara").empty();
+
+                $("#EmailPara").empty();
+                $("#EmailPara").append("Enter valid Email Id.");
+                $("#" + id).css('background-color', "#FFCECE");
+                $("#" + id).val('');
+            }
+        }
+
+        function CheckValidation() {
+
+            var emailId = $("#EmailId").val();
+
+            if (!emailId) {
+                $("#EmailPara").fadeIn(300);
+                $("#EmailPara").empty();
+                $("#EmailPara").append("Please Enter Email Id");
+                $("#EmailId").css({ "background": "#FFCECE" });
+                // $('#Redio_OTP').prop('checked', false);
+                return false;
+            }
+            else {
+                $("#EmailPara").fadeOut(2000);
+                $("#OTPPara").fadeIn(300);
+                $("#OTPPara").empty();
+                return true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Forgot Pasword -->
+    <section class="login-sec">
+        <div class="container h-100">
+            <div class="d-flex justify-content-center h-100">
+                <div class="d-flex justify-content-center form_container">
+                    <form class="form-signin">
+                        <div class="text-center">
+                            <img class="mb-4" src="~/img/logo_darzan-d.svg" alt="logo">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="EmailId" class="form-control" placeholder="Email address" autocomplete="off" onchange="return checkEmail1(id)">
+
+                        </div>
+                        <p id="EmailPara" style="color:red"></p>
+
+
+                        <button type="button" name="button" class="btn btn-light btn-block font-weight-bold" id="btnLogin" onclick="clickforgot(this)">Reset Password</button>
+
+                        <div class="mt-4">
+                            <div class="d-flex justify-content-center links">
+                                <a href="../Login/Login" class="clr-hovr font-weight-bold">Login</a>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End of Forgot Password -->
+
+
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="../js/Login.js"></script>
+    <script src="../js/Validation.js"></script>
+    <script src="../js/custom.js"></script>
+    <script src="~/js/Forgot.js"></script>
+</body>
+
+</html>

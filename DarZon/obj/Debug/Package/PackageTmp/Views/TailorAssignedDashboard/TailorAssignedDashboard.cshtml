@@ -1,0 +1,164 @@
+﻿@model DarZon.Models.Tailorassignment
+
+
+@{
+    ViewBag.Title = "TailorassignmentDashboard";
+
+}
+@using (Html.BeginForm())
+{
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 ml-auto overflow-hidden">
+                    <div class="row">
+                        <div class="col mt-2">
+                            <div class="card">
+                                <h5 class="card-header">Tailor Assigned Dashboard</h5>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">From&nbsp;Date</label>
+                                                    <div class="jquery-datepicker col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(item => item.Objdate.fromdate
+, new { @class = "jquery-datepicker__input form-control form-control-sm", @id = "fromdate", @placeholder = "From Date.", onmousedown = "datepicker(this)" })
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">To&nbsp;Date</label>
+                                                    <div class="jquery-datepicker col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(item => item.Objdate.todate
+, new { @class = "jquery-datepicker__input form-control form-control-sm", @id = "todate", @placeholder = "To Date.", @onmousedown = "datepicker(this)" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label for="UserID" class="col-lg-4 col-md-12 col-sm-12">User ID</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @*<input type="text" class="form-control form-control-sm" id="UserID" placeholder="User ID">*@
+
+                                                        @Html.TextBox("FirstName", (string)ViewBag.uname, new { @class = "form-control form-control-sm", @readonly = true })
+                                                        @*ViewBag.userid*@
+                                                    </div>
+                                                </div>
+                                                <button type="button" id="refresh" class="btn btn-secondary btn-sm float-left" onclick="searchdata(this)">Refresh</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <div class="table-responsive  newtableFixHead tableFixHead">
+                                                <table class="table table-bordered table-sm table-hover list-table">
+                                                    <thead class="thead-light">
+                                                        <tr>
+                                                            <th>View</th>
+                                                            <th scope="col">Doc&nbsp;No.</th>
+                                                            <th scope="col">SaleorderNo</th>
+                                                            <th scope="col">Line&nbsp;No.</th>
+                                                            <th scope="col">Label&nbsp;No.</th>
+
+                                                            <th scope="col">Item&nbsp;Code</th>
+                                                            <th scope="col">Description</th>
+                                                            <th scope="col">Saleorder&nbsp;Date</th>
+                                                            <th scope="col">Master&nbsp;Tailor</th>
+                                                            <th scope="col">Trial&nbsp;Status</th>
+                                                            @*<th scope="col">Production Designer</th>*@
+                                                            @*<th scope="col">Internal&nbsp;Delivery&nbsp;Date</th>*@
+                                                            <th scope="col">Status</th>
+                                                            @*<th scope="col">TrailStatus</th>*@
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                        @if (Model.objchilddata != null)
+                                                        {
+                                                            using (Html.BeginCollectionItem("objchilddata"))
+                                                            {
+                                                                for (int i = 0; i < Model.objchilddata.Count(); i++)
+                                                                {
+                                                        <tr>
+                                                            <td><a href="../Measurmentdetails/viewmeasurement?parentId=@Model.objchilddata.ElementAt(i).MPI">View</a></td>
+                                                            <td> @Model.objchilddata.ElementAt(i).saleorder</td>
+
+                                                            <td>@Model.objchilddata.ElementAt(i).websaleoredr</td>
+                                                            <td>@Model.objchilddata.ElementAt(i).lineno</td>
+                                                            <td>@Model.objchilddata.ElementAt(i).LabelNo</td>
+
+
+
+                                                            <td> @Model.objchilddata.ElementAt(i).itemcode</td>
+                                                            <td>
+                                                                @Model.objchilddata.ElementAt(i).Description
+
+                                                            </td>
+
+                                                            <td>
+                                                                @Model.objchilddata.ElementAt(i).schedulefordelivey
+
+                                                            </td>
+                                                            <td>
+                                                                @Model.objchilddata.ElementAt(i).mastertailor
+                                                                @Html.HiddenFor(item => Model.objchilddata.ElementAt(i).prdesigner)
+                                                                @Html.HiddenFor(a => Model.objchilddata.ElementAt(i).internaldeliveydate)
+                                                                @Html.HiddenFor(a => Model.objchilddata.ElementAt(i).Trailstatus)
+                                                            </td>
+                                                            @if (Model.objchilddata.ElementAt(i).Trailstatus == "Yes" )
+                                                            {
+                                                            <td>
+                                                                Trial done
+                                                            </td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td>
+                                                                    NotReady
+                                                                </td>
+                                                            }
+
+                                                            <td>@Model.objchilddata.ElementAt(i).status</td>
+                                                            @*<td>@Html.DropDownListFor(a => Model.ElementAt(i).status, new SelectList(ViewBag.userlist, "Value", "Text"), "Please select", new { @id = "ddlactivitytype", @class = "form-control form control-sm" })</td>*@
+
+
+
+
+                                                        </tr>
+                                                                }
+
+                                                            }
+                                                        }
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+
+                                    <hr>
+                                    <!-- <div class="row">
+                                      <div class="mx-auto">
+                                        <button type="button" class="btn btn-secondary btn-sm float-left">Save</button>
+                                        &nbsp;&nbsp;
+                                        <button type="button" class="btn btn-dark btn-sm float-right">Close</button>
+                                      </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+}
+    <script src="~/js/Tailorassignmentdashboard.js"></script>

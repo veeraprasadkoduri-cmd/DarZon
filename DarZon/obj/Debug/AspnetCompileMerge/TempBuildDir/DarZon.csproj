@@ -1,0 +1,925 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B86F0968-B45D-4ACE-AF6A-95C0B894CE66}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DarZon</RootNamespace>
+    <AssemblyName>DarZon</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BeginCollectionItem, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BeginCollectionItem.1.2.1.0\lib\net35\BeginCollectionItem.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.VS2010.10.0.40219.1\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cquential.Microsoft.ReportViewer.ProcessingObjectModel.10.0.40219.1\lib\net35\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WebForms.VS2010.10.0.40219.1\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.VS2010.10.0.40219.1\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="RDLCReportRunner, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RDLCReportRunner.1.0.0\lib\RDLCReportRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WinSCPnet, Version=1.6.3.9407, Culture=neutral, PublicKeyToken=2271ec4a3c56d0bf, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinSCP.5.15.1\lib\net\WinSCPnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\BeginCollectionItem.dll" />
+    <Content Include="bin\DarZon.dll" />
+    <Content Include="bin\DarZon.pdb" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Interop.SAPbobsCOM.dll" />
+    <Content Include="bin\Interop.SAPbouiCOM.dll" />
+    <Content Include="bin\Interop.SBODI_Server.dll" />
+    <Content Include="bin\itextsharp.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.ProcessingObjectModel.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.WebForms.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.WinForms.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\RDLCReportRunner.dll" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Security.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.Security.Claims.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Security.Principal.Windows.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Webpages.Deployment.dll" />
+    <Content Include="bin\System.Web.Webpages.dll" />
+    <Content Include="bin\System.Web.Webpages.Razor.dll" />
+    <Content Include="bin\WinSCP.exe" />
+    <Content Include="bin\WinSCPnet.dll" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="img\loader.gif" />
+    <Content Include="img\loader2.gif" />
+    <Content Include="img\loader3.gif" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\logo_darzan-d.svg" />
+    <Content Include="img\logo_login.jpg" />
+    <Content Include="img\logo_text1.png" />
+    <Content Include="img\logo_w.svg" />
+    <Content Include="img\tape.png" />
+    <Content Include="js\Activity.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\CustomerMaster.js" />
+    <Content Include="js\Delivery.js" />
+    <Content Include="js\Forgot.js" />
+    <Content Include="js\Invoice.js" />
+    <Content Include="js\jquery-datepicker.js" />
+    <Content Include="js\jquery.timepicker.min.css" />
+    <Content Include="js\jquery.timepicker.min.js" />
+    <Content Include="js\jquery.webcam.js" />
+    <Content Include="js\jquery.webcam.min.js" />
+    <Content Include="js\jscam.swf" />
+    <Content Include="js\jscam_canvas_only.swf" />
+    <Content Include="js\Login.js" />
+    <Content Include="js\Measurmentdetails.js" />
+    <Content Include="js\show_ads.js" />
+    <Content Include="js\Reset.js" />
+    <Content Include="js\saleorder.js" />
+    <Content Include="js\Signup.js" />
+    <Content Include="js\StatusDashboard.js" />
+    <Content Include="js\Tailorassignment.js" />
+    <Content Include="js\Tailorassignmentdashboard.js" />
+    <Content Include="js\Trail.js" />
+    <Content Include="js\Index.js" />
+    <Content Include="js\Validation.js" />
+    <Content Include="Models\bootstrap.js" />
+    <Content Include="DarzanReport\Invoice.rdlc" />
+    <Content Include="DarzanReport\Sale.rdlc">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DarzanReport\SaleOrder.rdlc" />
+    <Content Include="Models\DarzanEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DarzanEntities.edmx</DependentUpon>
+      <LastGenOutput>DarzanEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DarzanEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DarzanEntities.edmx</DependentUpon>
+      <LastGenOutput>DarzanEntities.cs</LastGenOutput>
+    </Content>
+    <Content Include="Sale.xss" />
+    <Content Include="Saleordr1.xsc">
+      <DependentUpon>Saleordr1.xsd</DependentUpon>
+    </Content>
+    <Content Include="DarzanSaleorder.xsc">
+      <DependentUpon>DarzanSaleorder.xsd</DependentUpon>
+    </Content>
+    <Content Include="bin\DarZon.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="CRD1dataset.xsc">
+      <DependentUpon>CRD1dataset.xsd</DependentUpon>
+    </Content>
+    <None Include="CRD1dataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CRD1dataset.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="CRD1dataset.xss">
+      <DependentUpon>CRD1dataset.xsd</DependentUpon>
+    </Content>
+    <Content Include="DARZANDataSet.xsc">
+      <DependentUpon>DARZANDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="DARZANDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DARZANDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DARZANDataSet.xss">
+      <DependentUpon>DARZANDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="DARZANDataSet22.xsc">
+      <DependentUpon>DARZANDataSet22.xsd</DependentUpon>
+    </Content>
+    <None Include="DARZANDataSet22.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DARZANDataSet22.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DARZANDataSet22.xss">
+      <DependentUpon>DARZANDataSet22.xsd</DependentUpon>
+    </Content>
+    <Content Include="DARZANDataSet222.xsc">
+      <DependentUpon>DARZANDataSet222.xsd</DependentUpon>
+    </Content>
+    <None Include="DARZANDataSet222.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DARZANDataSet222.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DARZANDataSet222.xss">
+      <DependentUpon>DARZANDataSet222.xsd</DependentUpon>
+    </Content>
+    <Content Include="DARZANDataSetfdfff.xsc">
+      <DependentUpon>DARZANDataSetfdfff.xsd</DependentUpon>
+    </Content>
+    <Content Include="DARZANDataSet54564.xsc">
+      <DependentUpon>DARZANDataSet54564.xsd</DependentUpon>
+    </Content>
+    <None Include="DARZANDataSet54564.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DARZANDataSet54564.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DARZANDataSet54564.xss">
+      <DependentUpon>DARZANDataSet54564.xsd</DependentUpon>
+    </Content>
+    <None Include="DARZANDataSetfdfff.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DARZANDataSetfdfff.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DARZANDataSetfdfff.xss">
+      <DependentUpon>DARZANDataSetfdfff.xsd</DependentUpon>
+    </Content>
+    <Content Include="DARZANDataSetvvfsvvvvv.xsc">
+      <DependentUpon>DARZANDataSetvvfsvvvvv.xsd</DependentUpon>
+    </Content>
+    <Content Include="DARZANDataSetOITB.xsc">
+      <DependentUpon>DARZANDataSetOITB.xsd</DependentUpon>
+    </Content>
+    <None Include="DARZANDataSetOITB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DARZANDataSetOITB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DARZANDataSetOITB.xss">
+      <DependentUpon>DARZANDataSetOITB.xsd</DependentUpon>
+    </Content>
+    <None Include="DARZANDataSetvvfsvvvvv.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DARZANDataSetvvfsvvvvv.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DARZANDataSetvvfsvvvvv.xss">
+      <DependentUpon>DARZANDataSetvvfsvvvvv.xsd</DependentUpon>
+    </Content>
+    <None Include="DarzanSaleorder.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DarzanSaleorder.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DarzanSaleorder.xss">
+      <DependentUpon>DarzanSaleorder.xsd</DependentUpon>
+    </Content>
+    <Content Include="js\README.md" />
+    <Content Include="DARZANTESTDataSet1.xsc">
+      <DependentUpon>DARZANTESTDataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="DARZANTESTDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DARZANTESTDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DARZANTESTDataSet1.xss">
+      <DependentUpon>DARZANTESTDataSet1.xsd</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\DarzanEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DarzanEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DarzanEntities.edmx.diagram">
+      <DependentUpon>DarzanEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="DARZAN_TEST_LIVEDataSet.xsc">
+      <DependentUpon>DARZAN_TEST_LIVEDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="DARZAN_TEST_LIVE.xsc">
+      <DependentUpon>DARZAN_TEST_LIVE.xsd</DependentUpon>
+    </Content>
+    <None Include="DARZAN_TEST_LIVE.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DARZAN_TEST_LIVE.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DARZAN_TEST_LIVE.xss">
+      <DependentUpon>DARZAN_TEST_LIVE.xsd</DependentUpon>
+    </Content>
+    <None Include="DARZAN_TEST_LIVEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DARZAN_TEST_LIVEDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DARZAN_TEST_LIVEDataSet.xss">
+      <DependentUpon>DARZAN_TEST_LIVEDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="DARZAN_TEST_LIVEDataSet11.xsc">
+      <DependentUpon>DARZAN_TEST_LIVEDataSet11.xsd</DependentUpon>
+    </Content>
+    <None Include="DARZAN_TEST_LIVEDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DARZAN_TEST_LIVEDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DARZAN_TEST_LIVEDataSet11.xss">
+      <DependentUpon>DARZAN_TEST_LIVEDataSet11.xsd</DependentUpon>
+    </Content>
+    <Content Include="Label.xsc">
+      <DependentUpon>Label.xsd</DependentUpon>
+    </Content>
+    <Content Include="Documents\Invoice.pdf" />
+    <Content Include="DARZdataseoitb.xsc">
+      <DependentUpon>DARZdataseoitb.xsd</DependentUpon>
+    </Content>
+    <None Include="DARZdataseoitb.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DARZdataseoitb.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DARZdataseoitb.xss">
+      <DependentUpon>DARZdataseoitb.xsd</DependentUpon>
+    </Content>
+    <None Include="Label.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Label.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Label.xss">
+      <DependentUpon>Label.xsd</DependentUpon>
+    </Content>
+    <Content Include="LabelDetails.xsc">
+      <DependentUpon>LabelDetails.xsd</DependentUpon>
+    </Content>
+    <None Include="LabelDetails.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LabelDetails.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="LabelDetails.xss">
+      <DependentUpon>LabelDetails.xsd</DependentUpon>
+    </Content>
+    <Content Include="OCRD.xsc">
+      <DependentUpon>OCRD.xsd</DependentUpon>
+    </Content>
+    <None Include="OCRD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OCRD.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="OCRD.xss">
+      <DependentUpon>OCRD.xsd</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Saleordr1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Saleordr11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Saleordr1.xss">
+      <DependentUpon>Saleordr1.xsd</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="css\style.css" />
+    <Content Include="Global.asax" />
+    <Content Include="img\favicon.png" />
+    <Content Include="img\login-bg.jpg" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ActivityController.cs" />
+    <Compile Include="Controllers\APIorderdetailsController.cs" />
+    <Compile Include="Controllers\CameraController.cs" />
+    <Compile Include="Controllers\DeliveryController.cs" />
+    <Compile Include="Controllers\ForgotpwdController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomemenuController.cs" />
+    <Compile Include="Controllers\InvoiceController.cs" />
+    <Compile Include="Controllers\MeasurmentdetailsController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\MultipleButtons.cs" />
+    <Compile Include="Controllers\CustomeDetailsrController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OrderDetailsController.cs" />
+    <Compile Include="Controllers\OTPCreationController.cs" />
+    <Compile Include="Controllers\PhotoController.cs" />
+    <Compile Include="Controllers\ResetpasswordController.cs" />
+    <Compile Include="Controllers\SaleOrderController.cs" />
+    <Compile Include="Controllers\SAP\Logger.cs" />
+    <Compile Include="Controllers\SAP\SAPIntegration.cs" />
+    <Compile Include="Controllers\SignupController.cs" />
+    <Compile Include="Controllers\SMSCAPI.cs" />
+    <Compile Include="Controllers\StatusDashboardController.cs" />
+    <Compile Include="Controllers\TailorAssignedDashboardController.cs" />
+    <Compile Include="Controllers\TailorassignmentSaveController.cs" />
+    <Compile Include="Controllers\TrailController.cs" />
+    <Compile Include="Controllers\TransportationController.cs" />
+    <Compile Include="Controllers\UserAuthenticationFilters.cs" />
+    <Compile Include="CRD1dataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRD1dataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Repository.cs" />
+    <Compile Include="DARZANDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DARZANDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DARZANDataSet22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DARZANDataSet22.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DARZANDataSet222.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DARZANDataSet222.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DARZANDataSet54564.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DARZANDataSet54564.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DARZANDataSetfdfff.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DARZANDataSetfdfff.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DARZANDataSetOITB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DARZANDataSetOITB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DARZANDataSetvvfsvvvvv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DARZANDataSetvvfsvvvvv.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DarzanSaleorder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DarzanSaleorder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DARZANTESTDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DARZANTESTDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DARZAN_TEST_LIVE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DARZAN_TEST_LIVE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DARZAN_TEST_LIVEDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DARZAN_TEST_LIVEDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DARZAN_TEST_LIVEDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DARZAN_TEST_LIVEDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DARZdataseoitb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DARZdataseoitb.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Label.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Label.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LabelDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LabelDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\ActivityModel.cs" />
+    <Compile Include="Models\CRD1.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerMaster.cs" />
+    <Compile Include="Models\C_ADDONGROUP.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C_DAYS_TARIFF.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C_ITEMMESURMENT.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C_ITEMMESURMENTDET1.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C_MEASUREMENTS.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C_USER_MASTER.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DarzanEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DarzanEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DarzanEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DarzanEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DarzanEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\deliveryModel.cs" />
+    <Compile Include="Models\DeliveryDetails.cs" />
+    <Compile Include="Models\DeliveryHead.cs" />
+    <Compile Include="Models\deliverysearch.cs" />
+    <Compile Include="Models\DLN1.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INV1.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invoicechild.cs" />
+    <Compile Include="Models\InvoiceHead.cs" />
+    <Compile Include="Models\InvoiceLIne.cs" />
+    <Compile Include="Models\Invoicemodel.cs" />
+    <Compile Include="Models\ItemMaster.cs" />
+    <Compile Include="Models\ITM1.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LabelDetail.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Logisticprint.cs" />
+    <Compile Include="Models\LogisticPrintHead.cs" />
+    <Compile Include="Models\Mesurement.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OCLG.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OCRD.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OCST.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ODLN.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OHEM.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OHP.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OINV.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OITB.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OITM.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORCT.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Orderheader.cs" />
+    <Compile Include="Models\Orderlistchild.cs" />
+    <Compile Include="Models\Orderlistmaster.cs" />
+    <Compile Include="Models\Ordermaster.cs" />
+    <Compile Include="Models\ORDR.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OSTC.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OTPEntity.cs" />
+    <Compile Include="Models\OWH.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RDR1.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RDRheader.cs" />
+    <Compile Include="Models\SaleDetails.cs" />
+    <Compile Include="Models\saleorder.cs" />
+    <Compile Include="Models\SaleOrderDetail.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SaleOrderDetails.cs" />
+    <Compile Include="Models\SaleOrderHeader.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Saleorderreportchild.cs" />
+    <Compile Include="Models\SaleorderreportHead.cs" />
+    <Compile Include="Models\SaleorderwithMeasurement.cs" />
+    <Compile Include="Models\SapSaleorder.cs" />
+    <Compile Include="Models\Signup.cs" />
+    <Compile Include="Models\Statusdabrdmain.cs" />
+    <Compile Include="Models\StatusDashboard.cs" />
+    <Compile Include="Models\statusfrmtodate.cs" />
+    <Compile Include="Models\Tailorassignment.cs" />
+    <Compile Include="Models\Tailorassignmentdates.cs" />
+    <Compile Include="Models\Tailorchilddata.cs" />
+    <Compile Include="Models\Tbl_NumberSeries.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Transportaionchild.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Transportaionhead.cs">
+      <DependentUpon>DarzanEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OCRD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OCRD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Saleordr11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Saleordr1.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Views\Activity\Activity.cshtml" />
+    <Content Include="Views\Activity\Orderlist.cshtml" />
+    <Content Include="Views\CustomeDetailsr\customerlist .Fullview.cshtml" />
+    <Content Include="Views\CustomeDetailsr\customerlist.cshtml" />
+    <Content Include="Views\CustomeDetailsr\CustomerMaster.cshtml" />
+    <Content Include="Views\CustomeDetailsr\ItemList.cshtml" />
+    <Content Include="Views\Delivery\Delivery.cshtml" />
+    <Content Include="Views\Delivery\orderdetails.cshtml" />
+    <Content Include="Views\Delivery\Orderlist.cshtml" />
+    <Content Include="Views\Forgotpwd\Index.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Invoice\Deliverylist.cshtml" />
+    <Content Include="Views\Invoice\invdetails.cshtml" />
+    <Content Include="Views\Invoice\Invoice.cshtml" />
+    <Content Include="Views\Invoice\invoicedetails.cshtml" />
+    <Content Include="Views\Invoice\Invoicelist.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Measurmentdetails\Measurmentdetails.cshtml" />
+    <Content Include="Views\OrderDetails\Orederlist.cshtml" />
+    <Content Include="Views\Resetpassword\Index.cshtml" />
+    <Content Include="Views\SaleOrder\AddItem.cshtml" />
+    <Content Include="Views\SaleOrder\SaleOrder.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Collection.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Signup\Signup.cshtml" />
+    <Content Include="Views\StatusDashboard\orderstatusdetails.cshtml" />
+    <Content Include="Views\StatusDashboard\Orderstatuslist.cshtml" />
+    <Content Include="Views\StatusDashboard\Orderstatuslistfrmdatetodate.cshtml" />
+    <Content Include="Views\StatusDashboard\Orderstatuslistfromto.cshtml" />
+    <Content Include="Views\StatusDashboard\StatusDashboard.cshtml" />
+    <Content Include="Views\TailorAssignedDashboard\TailorAssignedDashboard.cshtml" />
+    <Content Include="Views\TailorAssignedDashboard\TrailDashboardadditem.cshtml" />
+    <Content Include="Views\TailorAssignedDashboard\TrailDashboardList.cshtml" />
+    <Content Include="Views\TailorassignmentSave\AllocationList.cshtml" />
+    <Content Include="Views\TailorassignmentSave\ReallAddItem.cshtml" />
+    <Content Include="Views\TailorassignmentSave\ReAllocationList.cshtml" />
+    <Content Include="Views\TailorassignmentSave\tailorAddItem.cshtml" />
+    <Content Include="Views\TailorassignmentSave\Tailorassignment.cshtml" />
+    <Content Include="Views\Trail\Trail.cshtml" />
+    <Content Include="Views\Trail\Trailadditem.cshtml" />
+    <Content Include="Views\Trail\TrailList.cshtml" />
+    <Content Include="Views\Transportation\AddItem.cshtml" />
+    <Content Include="Views\Transportation\Index.cshtml" />
+    <Content Include="Views\Transportation\Transportation.cshtml" />
+    <Content Include="Views\web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Activity\actlistpop.cshtml" />
+    <Content Include="Views\StatusDashboard\Orderstatusladditem.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Views\Menu\menu.cshtml" />
+    <Content Include="Views\Homemenu\Homemenu.cshtml" />
+    <Content Include="Views\Measurmentdetails\AddAddonItem.cshtml" />
+    <Content Include="Views\Photo\Index.cshtml" />
+    <Content Include="Views\Camera\Index.cshtml" />
+    <Content Include="Views\OTPCreation\OTP.cshtml" />
+    <Content Include="Views\Measurmentdetails\Measurmentdetails.mobile.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bin\x86\" />
+    <Folder Include="Views\APIorderdetails\" />
+    <Folder Include="Views\CustomerMaster\" />
+    <Folder Include="Views\ItemMaster\" />
+    <Folder Include="WebImages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DarzanReport\InvoiceHardcopy.rdlc" />
+    <EmbeddedResource Include="DarzanReport\Saleordersoft.rdlc" />
+    <EmbeddedResource Include="DarzanReport\Tran.rdlc" />
+    <EmbeddedResource Include="DarzanReport\Transheadtostore.rdlc" />
+    <EmbeddedResource Include="DarzanReport\Transpotation.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30090}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SBODI_Server">
+      <Guid>{D68328C8-4EDA-4427-8E76-5CE3ED1063C0}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53637</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1145/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\WinSCP.5.15.1\build\WinSCP.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\WinSCP.5.15.1\build\WinSCP.targets'))" />
+  </Target>
+  <Import Project="..\packages\WinSCP.5.15.1\build\WinSCP.targets" Condition="Exists('..\packages\WinSCP.5.15.1\build\WinSCP.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

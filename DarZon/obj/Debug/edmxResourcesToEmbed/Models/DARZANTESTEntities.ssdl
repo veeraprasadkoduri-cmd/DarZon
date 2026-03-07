@@ -1,0 +1,1642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DARZANTESTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="@ITEMADDONS">
+    <Key>
+      <PropertyRef Name="DocEntry" />
+      <PropertyRef Name="LineId" />
+    </Key>
+    <Property Name="DocEntry" Type="int" Nullable="false" />
+    <Property Name="LineId" Type="int" Nullable="false" />
+    <Property Name="VisOrder" Type="int" />
+    <Property Name="Object" Type="nvarchar" MaxLength="20" />
+    <Property Name="LogInst" Type="int" />
+    <Property Name="U_Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="U_Remarks" Type="nvarchar" MaxLength="200" />
+    <Property Name="U_ItemCode" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="@ITEMADDONS1">
+    <Key>
+      <PropertyRef Name="DocEntry" />
+      <PropertyRef Name="LineId" />
+    </Key>
+    <Property Name="DocEntry" Type="int" Nullable="false" />
+    <Property Name="LineId" Type="int" Nullable="false" />
+    <Property Name="VisOrder" Type="int" />
+    <Property Name="Object" Type="nvarchar" MaxLength="20" />
+    <Property Name="LogInst" Type="int" />
+    <Property Name="U_Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="U_Remarks" Type="nvarchar" MaxLength="200" />
+    <Property Name="U_ItemCode" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="@ITEMMESURMENT">
+    <Key>
+      <PropertyRef Name="DocEntry" />
+    </Key>
+    <Property Name="DocEntry" Type="int" Nullable="false" />
+    <Property Name="DocNum" Type="int" />
+    <Property Name="Period" Type="int" />
+    <Property Name="Instance" Type="smallint" />
+    <Property Name="Series" Type="int" />
+    <Property Name="Handwrtten" Type="char" MaxLength="1" />
+    <Property Name="Canceled" Type="char" MaxLength="1" />
+    <Property Name="Object" Type="nvarchar" MaxLength="20" />
+    <Property Name="LogInst" Type="int" />
+    <Property Name="UserSign" Type="int" />
+    <Property Name="Transfered" Type="char" MaxLength="1" />
+    <Property Name="Status" Type="char" MaxLength="1" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateTime" Type="smallint" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UpdateTime" Type="smallint" />
+    <Property Name="DataSource" Type="char" MaxLength="1" />
+    <Property Name="RequestStatus" Type="char" MaxLength="1" />
+    <Property Name="Creator" Type="nvarchar" MaxLength="8" />
+    <Property Name="Remark" Type="ntext" />
+    <Property Name="U_ItemCategory" Type="nvarchar" MaxLength="100" />
+    <Property Name="U_ItemCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="U_ItemDesc" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="@ITEMMESURMENTDET1">
+    <Key>
+      <PropertyRef Name="DocEntry" />
+      <PropertyRef Name="LineId" />
+    </Key>
+    <Property Name="DocEntry" Type="int" Nullable="false" />
+    <Property Name="LineId" Type="int" Nullable="false" />
+    <Property Name="VisOrder" Type="int" />
+    <Property Name="Object" Type="nvarchar" MaxLength="20" />
+    <Property Name="LogInst" Type="int" />
+    <Property Name="U_Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="U_Remarks" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="@MEASUREMENTS">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="U_Type" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="CRD1">
+    <Key>
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="CardCode" />
+      <PropertyRef Name="AdresType" />
+    </Key>
+    <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CardCode" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Street" Type="nvarchar" MaxLength="100" />
+    <Property Name="Block" Type="nvarchar" MaxLength="100" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="County" Type="nvarchar" MaxLength="100" />
+    <Property Name="Country" Type="nvarchar" MaxLength="3" />
+    <Property Name="State" Type="nvarchar" MaxLength="3" />
+    <Property Name="UserSign" Type="smallint" />
+    <Property Name="LogInstanc" Type="int" />
+    <Property Name="ObjType" Type="nvarchar" MaxLength="20" />
+    <Property Name="LicTradNum" Type="nvarchar" MaxLength="32" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="TaxCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="Building" Type="ntext" />
+    <Property Name="AdresType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address3" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddrType" Type="nvarchar" MaxLength="100" />
+    <Property Name="StreetNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="AltCrdName" Type="nvarchar" MaxLength="100" />
+    <Property Name="AltTaxId" Type="nvarchar" MaxLength="32" />
+    <Property Name="TaxOffice" Type="nvarchar" MaxLength="50" />
+    <Property Name="GlblLocNum" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ntnlty" Type="nvarchar" MaxLength="100" />
+    <Property Name="DIOTNat" Type="nvarchar" MaxLength="3" />
+    <Property Name="GSTRegnNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="GSTType" Type="int" />
+    <Property Name="TaaSEnbl" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="OCRD">
+    <Key>
+      <PropertyRef Name="CardCode" />
+    </Key>
+    <Property Name="CardCode" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="CardName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CardType" Type="char" MaxLength="1" />
+    <Property Name="GroupCode" Type="smallint" />
+    <Property Name="CmpPrivate" Type="char" MaxLength="1" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="MailAddres" Type="nvarchar" MaxLength="100" />
+    <Property Name="MailZipCod" Type="nvarchar" MaxLength="20" />
+    <Property Name="Phone1" Type="nvarchar" MaxLength="20" />
+    <Property Name="Phone2" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+    <Property Name="CntctPrsn" Type="nvarchar" MaxLength="90" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="100" />
+    <Property Name="Balance" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ChecksBal" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DNotesBal" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="OrdersBal" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="GroupNum" Type="smallint" />
+    <Property Name="CreditLine" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DebtLine" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Discount" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatStatus" Type="char" MaxLength="1" />
+    <Property Name="LicTradNum" Type="nvarchar" MaxLength="32" />
+    <Property Name="DdctStatus" Type="char" MaxLength="1" />
+    <Property Name="DdctPrcnt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ValidUntil" Type="datetime" />
+    <Property Name="Chrctrstcs" Type="int" />
+    <Property Name="ExMatchNum" Type="int" />
+    <Property Name="InMatchNum" Type="int" />
+    <Property Name="ListNum" Type="smallint" />
+    <Property Name="DNoteBalFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="OrderBalFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DNoteBalSy" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="OrderBalSy" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Transfered" Type="char" MaxLength="1" />
+    <Property Name="BalTrnsfrd" Type="char" MaxLength="1" />
+    <Property Name="IntrstRate" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Commission" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CommGrCode" Type="smallint" />
+    <Property Name="Free_Text" Type="ntext" />
+    <Property Name="SlpCode" Type="int" />
+    <Property Name="PrevYearAc" Type="char" MaxLength="1" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="3" />
+    <Property Name="RateDifAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="BalanceSys" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BalanceFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Protected" Type="char" MaxLength="1" />
+    <Property Name="Cellular" Type="nvarchar" MaxLength="50" />
+    <Property Name="AvrageLate" Type="smallint" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="County" Type="nvarchar" MaxLength="100" />
+    <Property Name="Country" Type="nvarchar" MaxLength="3" />
+    <Property Name="MailCity" Type="nvarchar" MaxLength="100" />
+    <Property Name="MailCounty" Type="nvarchar" MaxLength="100" />
+    <Property Name="MailCountr" Type="nvarchar" MaxLength="3" />
+    <Property Name="E_Mail" Type="nvarchar" MaxLength="100" />
+    <Property Name="Picture" Type="nvarchar" MaxLength="200" />
+    <Property Name="DflAccount" Type="nvarchar" MaxLength="50" />
+    <Property Name="DflBranch" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankCode" Type="nvarchar" MaxLength="30" />
+    <Property Name="AddID" Type="nvarchar" MaxLength="64" />
+    <Property Name="Pager" Type="nvarchar" MaxLength="30" />
+    <Property Name="FatherCard" Type="nvarchar" MaxLength="15" />
+    <Property Name="CardFName" Type="nvarchar" MaxLength="100" />
+    <Property Name="FatherType" Type="char" MaxLength="1" />
+    <Property Name="QryGroup1" Type="char" MaxLength="1" />
+    <Property Name="QryGroup2" Type="char" MaxLength="1" />
+    <Property Name="QryGroup3" Type="char" MaxLength="1" />
+    <Property Name="QryGroup4" Type="char" MaxLength="1" />
+    <Property Name="QryGroup5" Type="char" MaxLength="1" />
+    <Property Name="QryGroup6" Type="char" MaxLength="1" />
+    <Property Name="QryGroup7" Type="char" MaxLength="1" />
+    <Property Name="QryGroup8" Type="char" MaxLength="1" />
+    <Property Name="QryGroup9" Type="char" MaxLength="1" />
+    <Property Name="QryGroup10" Type="char" MaxLength="1" />
+    <Property Name="QryGroup11" Type="char" MaxLength="1" />
+    <Property Name="QryGroup12" Type="char" MaxLength="1" />
+    <Property Name="QryGroup13" Type="char" MaxLength="1" />
+    <Property Name="QryGroup14" Type="char" MaxLength="1" />
+    <Property Name="QryGroup15" Type="char" MaxLength="1" />
+    <Property Name="QryGroup16" Type="char" MaxLength="1" />
+    <Property Name="QryGroup17" Type="char" MaxLength="1" />
+    <Property Name="QryGroup18" Type="char" MaxLength="1" />
+    <Property Name="QryGroup19" Type="char" MaxLength="1" />
+    <Property Name="QryGroup20" Type="char" MaxLength="1" />
+    <Property Name="QryGroup21" Type="char" MaxLength="1" />
+    <Property Name="QryGroup22" Type="char" MaxLength="1" />
+    <Property Name="QryGroup23" Type="char" MaxLength="1" />
+    <Property Name="QryGroup24" Type="char" MaxLength="1" />
+    <Property Name="QryGroup25" Type="char" MaxLength="1" />
+    <Property Name="QryGroup26" Type="char" MaxLength="1" />
+    <Property Name="QryGroup27" Type="char" MaxLength="1" />
+    <Property Name="QryGroup28" Type="char" MaxLength="1" />
+    <Property Name="QryGroup29" Type="char" MaxLength="1" />
+    <Property Name="QryGroup30" Type="char" MaxLength="1" />
+    <Property Name="QryGroup31" Type="char" MaxLength="1" />
+    <Property Name="QryGroup32" Type="char" MaxLength="1" />
+    <Property Name="QryGroup33" Type="char" MaxLength="1" />
+    <Property Name="QryGroup34" Type="char" MaxLength="1" />
+    <Property Name="QryGroup35" Type="char" MaxLength="1" />
+    <Property Name="QryGroup36" Type="char" MaxLength="1" />
+    <Property Name="QryGroup37" Type="char" MaxLength="1" />
+    <Property Name="QryGroup38" Type="char" MaxLength="1" />
+    <Property Name="QryGroup39" Type="char" MaxLength="1" />
+    <Property Name="QryGroup40" Type="char" MaxLength="1" />
+    <Property Name="QryGroup41" Type="char" MaxLength="1" />
+    <Property Name="QryGroup42" Type="char" MaxLength="1" />
+    <Property Name="QryGroup43" Type="char" MaxLength="1" />
+    <Property Name="QryGroup44" Type="char" MaxLength="1" />
+    <Property Name="QryGroup45" Type="char" MaxLength="1" />
+    <Property Name="QryGroup46" Type="char" MaxLength="1" />
+    <Property Name="QryGroup47" Type="char" MaxLength="1" />
+    <Property Name="QryGroup48" Type="char" MaxLength="1" />
+    <Property Name="QryGroup49" Type="char" MaxLength="1" />
+    <Property Name="QryGroup50" Type="char" MaxLength="1" />
+    <Property Name="QryGroup51" Type="char" MaxLength="1" />
+    <Property Name="QryGroup52" Type="char" MaxLength="1" />
+    <Property Name="QryGroup53" Type="char" MaxLength="1" />
+    <Property Name="QryGroup54" Type="char" MaxLength="1" />
+    <Property Name="QryGroup55" Type="char" MaxLength="1" />
+    <Property Name="QryGroup56" Type="char" MaxLength="1" />
+    <Property Name="QryGroup57" Type="char" MaxLength="1" />
+    <Property Name="QryGroup58" Type="char" MaxLength="1" />
+    <Property Name="QryGroup59" Type="char" MaxLength="1" />
+    <Property Name="QryGroup60" Type="char" MaxLength="1" />
+    <Property Name="QryGroup61" Type="char" MaxLength="1" />
+    <Property Name="QryGroup62" Type="char" MaxLength="1" />
+    <Property Name="QryGroup63" Type="char" MaxLength="1" />
+    <Property Name="QryGroup64" Type="char" MaxLength="1" />
+    <Property Name="DdctOffice" Type="nvarchar" MaxLength="10" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="ExportCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="DscntObjct" Type="smallint" />
+    <Property Name="DscntRel" Type="char" MaxLength="1" />
+    <Property Name="SPGCounter" Type="smallint" />
+    <Property Name="SPPCounter" Type="int" />
+    <Property Name="DdctFileNo" Type="nvarchar" MaxLength="9" />
+    <Property Name="SCNCounter" Type="smallint" />
+    <Property Name="MinIntrst" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DataSource" Type="char" MaxLength="1" />
+    <Property Name="OprCount" Type="int" />
+    <Property Name="ExemptNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="CreditCard" Type="smallint" />
+    <Property Name="CrCardNum" Type="nvarchar" MaxLength="64" />
+    <Property Name="CardValid" Type="datetime" />
+    <Property Name="UserSign" Type="smallint" />
+    <Property Name="LocMth" Type="char" MaxLength="1" />
+    <Property Name="validFor" Type="char" MaxLength="1" />
+    <Property Name="validFrom" Type="datetime" />
+    <Property Name="validTo" Type="datetime" />
+    <Property Name="frozenFor" Type="char" MaxLength="1" />
+    <Property Name="frozenFrom" Type="datetime" />
+    <Property Name="frozenTo" Type="datetime" />
+    <Property Name="sEmployed" Type="char" MaxLength="1" />
+    <Property Name="MTHCounter" Type="int" />
+    <Property Name="BNKCounter" Type="int" />
+    <Property Name="DdgKey" Type="int" />
+    <Property Name="DdtKey" Type="int" />
+    <Property Name="ValidComm" Type="nvarchar" MaxLength="30" />
+    <Property Name="FrozenComm" Type="nvarchar" MaxLength="30" />
+    <Property Name="chainStore" Type="char" MaxLength="1" />
+    <Property Name="DiscInRet" Type="char" MaxLength="1" />
+    <Property Name="State1" Type="nvarchar" MaxLength="3" />
+    <Property Name="State2" Type="nvarchar" MaxLength="3" />
+    <Property Name="VatGroup" Type="nvarchar" MaxLength="8" />
+    <Property Name="LogInstanc" Type="int" />
+    <Property Name="ObjType" Type="nvarchar" MaxLength="20" />
+    <Property Name="Indicator" Type="nvarchar" MaxLength="2" />
+    <Property Name="ShipType" Type="smallint" />
+    <Property Name="DebPayAcct" Type="nvarchar" MaxLength="15" />
+    <Property Name="ShipToDef" Type="nvarchar" MaxLength="50" />
+    <Property Name="Block" Type="nvarchar" MaxLength="100" />
+    <Property Name="MailBlock" Type="nvarchar" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" MaxLength="32" />
+    <Property Name="ECVatGroup" Type="nvarchar" MaxLength="8" />
+    <Property Name="Deleted" Type="char" MaxLength="1" />
+    <Property Name="IBAN" Type="nvarchar" MaxLength="50" />
+    <Property Name="DocEntry" Type="int" Nullable="false" />
+    <Property Name="FormCode" Type="int" />
+    <Property Name="Box1099" Type="nvarchar" MaxLength="20" />
+    <Property Name="PymCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="BackOrder" Type="char" MaxLength="1" />
+    <Property Name="PartDelivr" Type="char" MaxLength="1" />
+    <Property Name="DunnLevel" Type="int" />
+    <Property Name="DunnDate" Type="datetime" />
+    <Property Name="BlockDunn" Type="char" MaxLength="1" />
+    <Property Name="BankCountr" Type="nvarchar" MaxLength="3" />
+    <Property Name="CollecAuth" Type="char" MaxLength="1" />
+    <Property Name="DME" Type="nvarchar" MaxLength="5" />
+    <Property Name="InstrucKey" Type="nvarchar" MaxLength="30" />
+    <Property Name="SinglePaym" Type="char" MaxLength="1" />
+    <Property Name="ISRBillId" Type="nvarchar" MaxLength="9" />
+    <Property Name="PaymBlock" Type="char" MaxLength="1" />
+    <Property Name="RefDetails" Type="nvarchar" MaxLength="20" />
+    <Property Name="HouseBank" Type="nvarchar" MaxLength="30" />
+    <Property Name="OwnerIdNum" Type="nvarchar" MaxLength="15" />
+    <Property Name="PyBlckDesc" Type="int" />
+    <Property Name="HousBnkCry" Type="nvarchar" MaxLength="3" />
+    <Property Name="HousBnkAct" Type="nvarchar" MaxLength="50" />
+    <Property Name="HousBnkBrn" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectCod" Type="nvarchar" MaxLength="20" />
+    <Property Name="SysMatchNo" Type="int" />
+    <Property Name="VatIdUnCmp" Type="nvarchar" MaxLength="32" />
+    <Property Name="AgentCode" Type="nvarchar" MaxLength="32" />
+    <Property Name="TolrncDays" Type="smallint" />
+    <Property Name="SelfInvoic" Type="char" MaxLength="1" />
+    <Property Name="DeferrTax" Type="char" MaxLength="1" />
+    <Property Name="LetterNum" Type="nvarchar" MaxLength="20" />
+    <Property Name="MaxAmount" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="FromDate" Type="datetime" />
+    <Property Name="ToDate" Type="datetime" />
+    <Property Name="WTLiable" Type="char" MaxLength="1" />
+    <Property Name="CrtfcateNO" Type="nvarchar" MaxLength="20" />
+    <Property Name="ExpireDate" Type="datetime" />
+    <Property Name="NINum" Type="nvarchar" MaxLength="20" />
+    <Property Name="AccCritria" Type="char" MaxLength="1" />
+    <Property Name="WTCode" Type="nvarchar" MaxLength="4" />
+    <Property Name="Equ" Type="char" MaxLength="1" />
+    <Property Name="HldCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="ConnBP" Type="nvarchar" MaxLength="15" />
+    <Property Name="MltMthNum" Type="int" />
+    <Property Name="TypWTReprt" Type="char" MaxLength="1" />
+    <Property Name="VATRegNum" Type="nvarchar" MaxLength="32" />
+    <Property Name="RepName" Type="nvarchar" MaxLength="15" />
+    <Property Name="Industry" Type="ntext" />
+    <Property Name="Business" Type="ntext" />
+    <Property Name="WTTaxCat" Type="ntext" />
+    <Property Name="IsDomestic" Type="char" MaxLength="1" />
+    <Property Name="IsResident" Type="char" MaxLength="1" />
+    <Property Name="AutoCalBCG" Type="char" MaxLength="1" />
+    <Property Name="OtrCtlAcct" Type="nvarchar" MaxLength="15" />
+    <Property Name="AliasName" Type="ntext" />
+    <Property Name="Building" Type="ntext" />
+    <Property Name="MailBuildi" Type="ntext" />
+    <Property Name="BoEPrsnt" Type="nvarchar" MaxLength="15" />
+    <Property Name="BoEDiscnt" Type="nvarchar" MaxLength="15" />
+    <Property Name="BoEOnClct" Type="nvarchar" MaxLength="15" />
+    <Property Name="UnpaidBoE" Type="nvarchar" MaxLength="15" />
+    <Property Name="ITWTCode" Type="nvarchar" MaxLength="4" />
+    <Property Name="DunTerm" Type="nvarchar" MaxLength="25" />
+    <Property Name="ChannlBP" Type="nvarchar" MaxLength="15" />
+    <Property Name="DfTcnician" Type="int" />
+    <Property Name="Territory" Type="int" />
+    <Property Name="BillToDef" Type="nvarchar" MaxLength="50" />
+    <Property Name="DpmClear" Type="nvarchar" MaxLength="15" />
+    <Property Name="IntrntSite" Type="nvarchar" MaxLength="100" />
+    <Property Name="LangCode" Type="int" />
+    <Property Name="HousActKey" Type="int" />
+    <Property Name="Profession" Type="nvarchar" MaxLength="50" />
+    <Property Name="CDPNum" Type="smallint" />
+    <Property Name="DflBankKey" Type="int" />
+    <Property Name="BCACode" Type="nvarchar" MaxLength="3" />
+    <Property Name="UseShpdGd" Type="char" MaxLength="1" />
+    <Property Name="RegNum" Type="nvarchar" MaxLength="32" />
+    <Property Name="VerifNum" Type="nvarchar" MaxLength="32" />
+    <Property Name="BankCtlKey" Type="nvarchar" MaxLength="2" />
+    <Property Name="HousCtlKey" Type="nvarchar" MaxLength="2" />
+    <Property Name="AddrType" Type="nvarchar" MaxLength="100" />
+    <Property Name="InsurOp347" Type="char" MaxLength="1" />
+    <Property Name="MailAddrTy" Type="nvarchar" MaxLength="100" />
+    <Property Name="StreetNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="MailStrNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="TaxRndRule" Type="char" MaxLength="1" />
+    <Property Name="VendTID" Type="int" />
+    <Property Name="ThreshOver" Type="char" MaxLength="1" />
+    <Property Name="SurOver" Type="char" MaxLength="1" />
+    <Property Name="VendorOcup" Type="nvarchar" MaxLength="15" />
+    <Property Name="OpCode347" Type="char" MaxLength="1" />
+    <Property Name="DpmIntAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="ResidenNum" Type="char" MaxLength="1" />
+    <Property Name="UserSign2" Type="smallint" />
+    <Property Name="PlngGroup" Type="nvarchar" MaxLength="10" />
+    <Property Name="VatIDNum" Type="nvarchar" MaxLength="32" />
+    <Property Name="Affiliate" Type="char" MaxLength="1" />
+    <Property Name="MivzExpSts" Type="char" MaxLength="1" />
+    <Property Name="HierchDdct" Type="char" MaxLength="1" />
+    <Property Name="CertWHT" Type="char" MaxLength="1" />
+    <Property Name="CertBKeep" Type="char" MaxLength="1" />
+    <Property Name="WHShaamGrp" Type="char" MaxLength="1" />
+    <Property Name="IndustryC" Type="int" />
+    <Property Name="DatevAcct" Type="int" />
+    <Property Name="DatevFirst" Type="char" MaxLength="1" />
+    <Property Name="GTSRegNum" Type="nvarchar" MaxLength="20" />
+    <Property Name="GTSBankAct" Type="nvarchar" MaxLength="80" />
+    <Property Name="GTSBilAddr" Type="nvarchar" MaxLength="80" />
+    <Property Name="HsBnkSwift" Type="nvarchar" MaxLength="50" />
+    <Property Name="HsBnkIBAN" Type="nvarchar" MaxLength="50" />
+    <Property Name="DflSwift" Type="nvarchar" MaxLength="50" />
+    <Property Name="AutoPost" Type="char" MaxLength="1" />
+    <Property Name="IntrAcc" Type="nvarchar" MaxLength="15" />
+    <Property Name="FeeAcc" Type="nvarchar" MaxLength="15" />
+    <Property Name="CpnNo" Type="int" />
+    <Property Name="NTSWebSite" Type="smallint" />
+    <Property Name="DflIBAN" Type="nvarchar" MaxLength="50" />
+    <Property Name="Series" Type="smallint" />
+    <Property Name="Number" Type="int" />
+    <Property Name="EDocExpFrm" Type="int" />
+    <Property Name="TaxIdIdent" Type="char" MaxLength="1" />
+    <Property Name="Attachment" Type="ntext" />
+    <Property Name="AtcEntry" Type="int" />
+    <Property Name="DiscRel" Type="char" MaxLength="1" />
+    <Property Name="NoDiscount" Type="char" MaxLength="1" />
+    <Property Name="SCAdjust" Type="char" MaxLength="1" />
+    <Property Name="DflAgrmnt" Type="int" />
+    <Property Name="GlblLocNum" Type="nvarchar" MaxLength="50" />
+    <Property Name="SenderID" Type="nvarchar" MaxLength="50" />
+    <Property Name="RcpntID" Type="nvarchar" MaxLength="50" />
+    <Property Name="MainUsage" Type="int" />
+    <Property Name="SefazCheck" Type="char" MaxLength="1" />
+    <Property Name="free312" Type="char" MaxLength="1" />
+    <Property Name="free313" Type="char" MaxLength="1" />
+    <Property Name="DateFrom" Type="datetime" />
+    <Property Name="DateTill" Type="datetime" />
+    <Property Name="RelCode" Type="nvarchar" MaxLength="2" />
+    <Property Name="OKATO" Type="nvarchar" MaxLength="11" />
+    <Property Name="OKTMO" Type="nvarchar" MaxLength="12" />
+    <Property Name="KBKCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="TypeOfOp" Type="char" MaxLength="1" />
+    <Property Name="OwnerCode" Type="int" />
+    <Property Name="MandateID" Type="nvarchar" MaxLength="35" />
+    <Property Name="SignDate" Type="datetime" />
+    <Property Name="Remark1" Type="int" />
+    <Property Name="ConCerti" Type="nvarchar" MaxLength="20" />
+    <Property Name="TpCusPres" Type="int" />
+    <Property Name="RoleTypCod" Type="nvarchar" MaxLength="2" />
+    <Property Name="BlockComm" Type="char" MaxLength="1" />
+    <Property Name="EmplymntCt" Type="nvarchar" MaxLength="2" />
+    <Property Name="ExcptnlEvt" Type="char" MaxLength="1" />
+    <Property Name="ExpnPrfFnd" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="EdrsFromBP" Type="char" MaxLength="1" />
+    <Property Name="EdrsToBP" Type="char" MaxLength="1" />
+    <Property Name="CreateTS" Type="int" />
+    <Property Name="UpdateTS" Type="int" />
+    <Property Name="EDocGenTyp" Type="char" MaxLength="1" />
+    <Property Name="eStreet" Type="nvarchar" MaxLength="38" />
+    <Property Name="eStreetNum" Type="nvarchar" MaxLength="4" />
+    <Property Name="eBuildnNum" Type="int" />
+    <Property Name="eZipCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="eCityTown" Type="nvarchar" MaxLength="48" />
+    <Property Name="eCountry" Type="nvarchar" MaxLength="3" />
+    <Property Name="eDistrict" Type="nvarchar" MaxLength="3" />
+    <Property Name="RepFName" Type="nvarchar" MaxLength="20" />
+    <Property Name="RepSName" Type="nvarchar" MaxLength="36" />
+    <Property Name="RepCmpName" Type="nvarchar" MaxLength="36" />
+    <Property Name="RepFisCode" Type="nvarchar" MaxLength="16" />
+    <Property Name="RepAddID" Type="nvarchar" MaxLength="28" />
+    <Property Name="PECAddr" Type="nvarchar" MaxLength="254" />
+    <Property Name="IPACodePA" Type="nvarchar" MaxLength="32" />
+    <Property Name="MerchantID" Type="nvarchar" MaxLength="15" />
+    <Property Name="TxExMxVdTp" Type="char" MaxLength="1" />
+    <Property Name="U_CustType" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="OCST">
+    <Key>
+      <PropertyRef Name="Code" />
+      <PropertyRef Name="Country" />
+    </Key>
+    <Property Name="Code" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserSign" Type="smallint" />
+    <Property Name="eCode" Type="smallint" />
+    <Property Name="GNRECode" Type="nvarchar" MaxLength="4" />
+    <Property Name="GSTCode" Type="nvarchar" MaxLength="2" />
+    <Property Name="GSTIsUT" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="OITM">
+    <Key>
+      <PropertyRef Name="ItemCode" />
+    </Key>
+    <Property Name="ItemCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+    <Property Name="FrgnName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ItmsGrpCod" Type="smallint" />
+    <Property Name="CstGrpCode" Type="smallint" />
+    <Property Name="VatGourpSa" Type="nvarchar" MaxLength="8" />
+    <Property Name="CodeBars" Type="nvarchar" MaxLength="254" />
+    <Property Name="VATLiable" Type="char" MaxLength="1" />
+    <Property Name="PrchseItem" Type="char" MaxLength="1" />
+    <Property Name="SellItem" Type="char" MaxLength="1" />
+    <Property Name="InvntItem" Type="char" MaxLength="1" />
+    <Property Name="OnHand" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="IsCommited" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="OnOrder" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="IncomeAcct" Type="nvarchar" MaxLength="15" />
+    <Property Name="ExmptIncom" Type="nvarchar" MaxLength="15" />
+    <Property Name="MaxLevel" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DfltWH" Type="nvarchar" MaxLength="8" />
+    <Property Name="CardCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="SuppCatNum" Type="nvarchar" MaxLength="50" />
+    <Property Name="BuyUnitMsr" Type="nvarchar" MaxLength="100" />
+    <Property Name="NumInBuy" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ReorderQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="MinLevel" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LstEvlPric" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LstEvlDate" Type="datetime" />
+    <Property Name="CustomPer" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Canceled" Type="char" MaxLength="1" />
+    <Property Name="MnufctTime" Type="int" />
+    <Property Name="WholSlsTax" Type="char" MaxLength="1" />
+    <Property Name="RetilrTax" Type="char" MaxLength="1" />
+    <Property Name="SpcialDisc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DscountCod" Type="smallint" />
+    <Property Name="TrackSales" Type="char" MaxLength="1" />
+    <Property Name="SalUnitMsr" Type="nvarchar" MaxLength="100" />
+    <Property Name="NumInSale" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Consig" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="QueryGroup" Type="int" />
+    <Property Name="Counted" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="OpenBlnc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="EvalSystem" Type="char" MaxLength="1" />
+    <Property Name="UserSign" Type="smallint" />
+    <Property Name="FREE" Type="char" MaxLength="1" />
+    <Property Name="PicturName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Transfered" Type="char" MaxLength="1" />
+    <Property Name="BlncTrnsfr" Type="char" MaxLength="1" />
+    <Property Name="UserText" Type="ntext" />
+    <Property Name="SerialNum" Type="nvarchar" MaxLength="17" />
+    <Property Name="CommisPcnt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CommisSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CommisGrp" Type="smallint" />
+    <Property Name="TreeType" Type="char" MaxLength="1" />
+    <Property Name="TreeQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LastPurPrc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LastPurCur" Type="nvarchar" MaxLength="3" />
+    <Property Name="LastPurDat" Type="datetime" />
+    <Property Name="ExitCur" Type="nvarchar" MaxLength="3" />
+    <Property Name="ExitPrice" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ExitWH" Type="nvarchar" MaxLength="8" />
+    <Property Name="AssetItem" Type="char" MaxLength="1" />
+    <Property Name="WasCounted" Type="char" MaxLength="1" />
+    <Property Name="ManSerNum" Type="char" MaxLength="1" />
+    <Property Name="SHeight1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SHght1Unit" Type="smallint" />
+    <Property Name="SHeight2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SHght2Unit" Type="smallint" />
+    <Property Name="SWidth1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SWdth1Unit" Type="smallint" />
+    <Property Name="SWidth2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SWdth2Unit" Type="smallint" />
+    <Property Name="SLength1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SLen1Unit" Type="smallint" />
+    <Property Name="Slength2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SLen2Unit" Type="smallint" />
+    <Property Name="SVolume" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SVolUnit" Type="smallint" />
+    <Property Name="SWeight1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SWght1Unit" Type="smallint" />
+    <Property Name="SWeight2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SWght2Unit" Type="smallint" />
+    <Property Name="BHeight1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BHght1Unit" Type="smallint" />
+    <Property Name="BHeight2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BHght2Unit" Type="smallint" />
+    <Property Name="BWidth1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BWdth1Unit" Type="smallint" />
+    <Property Name="BWidth2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BWdth2Unit" Type="smallint" />
+    <Property Name="BLength1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BLen1Unit" Type="smallint" />
+    <Property Name="Blength2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BLen2Unit" Type="smallint" />
+    <Property Name="BVolume" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BVolUnit" Type="smallint" />
+    <Property Name="BWeight1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BWght1Unit" Type="smallint" />
+    <Property Name="BWeight2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BWght2Unit" Type="smallint" />
+    <Property Name="FixCurrCms" Type="nvarchar" MaxLength="3" />
+    <Property Name="FirmCode" Type="smallint" />
+    <Property Name="LstSalDate" Type="datetime" />
+    <Property Name="QryGroup1" Type="char" MaxLength="1" />
+    <Property Name="QryGroup2" Type="char" MaxLength="1" />
+    <Property Name="QryGroup3" Type="char" MaxLength="1" />
+    <Property Name="QryGroup4" Type="char" MaxLength="1" />
+    <Property Name="QryGroup5" Type="char" MaxLength="1" />
+    <Property Name="QryGroup6" Type="char" MaxLength="1" />
+    <Property Name="QryGroup7" Type="char" MaxLength="1" />
+    <Property Name="QryGroup8" Type="char" MaxLength="1" />
+    <Property Name="QryGroup9" Type="char" MaxLength="1" />
+    <Property Name="QryGroup10" Type="char" MaxLength="1" />
+    <Property Name="QryGroup11" Type="char" MaxLength="1" />
+    <Property Name="QryGroup12" Type="char" MaxLength="1" />
+    <Property Name="QryGroup13" Type="char" MaxLength="1" />
+    <Property Name="QryGroup14" Type="char" MaxLength="1" />
+    <Property Name="QryGroup15" Type="char" MaxLength="1" />
+    <Property Name="QryGroup16" Type="char" MaxLength="1" />
+    <Property Name="QryGroup17" Type="char" MaxLength="1" />
+    <Property Name="QryGroup18" Type="char" MaxLength="1" />
+    <Property Name="QryGroup19" Type="char" MaxLength="1" />
+    <Property Name="QryGroup20" Type="char" MaxLength="1" />
+    <Property Name="QryGroup21" Type="char" MaxLength="1" />
+    <Property Name="QryGroup22" Type="char" MaxLength="1" />
+    <Property Name="QryGroup23" Type="char" MaxLength="1" />
+    <Property Name="QryGroup24" Type="char" MaxLength="1" />
+    <Property Name="QryGroup25" Type="char" MaxLength="1" />
+    <Property Name="QryGroup26" Type="char" MaxLength="1" />
+    <Property Name="QryGroup27" Type="char" MaxLength="1" />
+    <Property Name="QryGroup28" Type="char" MaxLength="1" />
+    <Property Name="QryGroup29" Type="char" MaxLength="1" />
+    <Property Name="QryGroup30" Type="char" MaxLength="1" />
+    <Property Name="QryGroup31" Type="char" MaxLength="1" />
+    <Property Name="QryGroup32" Type="char" MaxLength="1" />
+    <Property Name="QryGroup33" Type="char" MaxLength="1" />
+    <Property Name="QryGroup34" Type="char" MaxLength="1" />
+    <Property Name="QryGroup35" Type="char" MaxLength="1" />
+    <Property Name="QryGroup36" Type="char" MaxLength="1" />
+    <Property Name="QryGroup37" Type="char" MaxLength="1" />
+    <Property Name="QryGroup38" Type="char" MaxLength="1" />
+    <Property Name="QryGroup39" Type="char" MaxLength="1" />
+    <Property Name="QryGroup40" Type="char" MaxLength="1" />
+    <Property Name="QryGroup41" Type="char" MaxLength="1" />
+    <Property Name="QryGroup42" Type="char" MaxLength="1" />
+    <Property Name="QryGroup43" Type="char" MaxLength="1" />
+    <Property Name="QryGroup44" Type="char" MaxLength="1" />
+    <Property Name="QryGroup45" Type="char" MaxLength="1" />
+    <Property Name="QryGroup46" Type="char" MaxLength="1" />
+    <Property Name="QryGroup47" Type="char" MaxLength="1" />
+    <Property Name="QryGroup48" Type="char" MaxLength="1" />
+    <Property Name="QryGroup49" Type="char" MaxLength="1" />
+    <Property Name="QryGroup50" Type="char" MaxLength="1" />
+    <Property Name="QryGroup51" Type="char" MaxLength="1" />
+    <Property Name="QryGroup52" Type="char" MaxLength="1" />
+    <Property Name="QryGroup53" Type="char" MaxLength="1" />
+    <Property Name="QryGroup54" Type="char" MaxLength="1" />
+    <Property Name="QryGroup55" Type="char" MaxLength="1" />
+    <Property Name="QryGroup56" Type="char" MaxLength="1" />
+    <Property Name="QryGroup57" Type="char" MaxLength="1" />
+    <Property Name="QryGroup58" Type="char" MaxLength="1" />
+    <Property Name="QryGroup59" Type="char" MaxLength="1" />
+    <Property Name="QryGroup60" Type="char" MaxLength="1" />
+    <Property Name="QryGroup61" Type="char" MaxLength="1" />
+    <Property Name="QryGroup62" Type="char" MaxLength="1" />
+    <Property Name="QryGroup63" Type="char" MaxLength="1" />
+    <Property Name="QryGroup64" Type="char" MaxLength="1" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="ExportCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="SalFactor1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SalFactor2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SalFactor3" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SalFactor4" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PurFactor1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PurFactor2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PurFactor3" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PurFactor4" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SalFormula" Type="nvarchar" MaxLength="40" />
+    <Property Name="PurFormula" Type="nvarchar" MaxLength="40" />
+    <Property Name="VatGroupPu" Type="nvarchar" MaxLength="8" />
+    <Property Name="AvgPrice" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PurPackMsr" Type="nvarchar" MaxLength="30" />
+    <Property Name="PurPackUn" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SalPackMsr" Type="nvarchar" MaxLength="30" />
+    <Property Name="SalPackUn" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SCNCounter" Type="smallint" />
+    <Property Name="ManBtchNum" Type="char" MaxLength="1" />
+    <Property Name="ManOutOnly" Type="char" MaxLength="1" />
+    <Property Name="DataSource" Type="char" MaxLength="1" />
+    <Property Name="validFor" Type="char" MaxLength="1" />
+    <Property Name="validFrom" Type="datetime" />
+    <Property Name="validTo" Type="datetime" />
+    <Property Name="frozenFor" Type="char" MaxLength="1" />
+    <Property Name="frozenFrom" Type="datetime" />
+    <Property Name="frozenTo" Type="datetime" />
+    <Property Name="BlockOut" Type="char" MaxLength="1" />
+    <Property Name="ValidComm" Type="nvarchar" MaxLength="30" />
+    <Property Name="FrozenComm" Type="nvarchar" MaxLength="30" />
+    <Property Name="LogInstanc" Type="int" />
+    <Property Name="ObjType" Type="nvarchar" MaxLength="20" />
+    <Property Name="SWW" Type="nvarchar" MaxLength="16" />
+    <Property Name="Deleted" Type="char" MaxLength="1" />
+    <Property Name="DocEntry" Type="int" />
+    <Property Name="ExpensAcct" Type="nvarchar" MaxLength="15" />
+    <Property Name="FrgnInAcct" Type="nvarchar" MaxLength="15" />
+    <Property Name="ShipType" Type="smallint" />
+    <Property Name="GLMethod" Type="char" MaxLength="1" />
+    <Property Name="ECInAcct" Type="nvarchar" MaxLength="15" />
+    <Property Name="FrgnExpAcc" Type="nvarchar" MaxLength="15" />
+    <Property Name="ECExpAcc" Type="nvarchar" MaxLength="15" />
+    <Property Name="TaxType" Type="char" MaxLength="1" />
+    <Property Name="ByWh" Type="char" MaxLength="1" />
+    <Property Name="WTLiable" Type="char" MaxLength="1" />
+    <Property Name="ItemType" Type="char" MaxLength="1" />
+    <Property Name="WarrntTmpl" Type="nvarchar" MaxLength="20" />
+    <Property Name="BaseUnit" Type="nvarchar" MaxLength="20" />
+    <Property Name="CountryOrg" Type="nvarchar" MaxLength="3" />
+    <Property Name="StockValue" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Phantom" Type="char" MaxLength="1" />
+    <Property Name="IssueMthd" Type="char" MaxLength="1" />
+    <Property Name="FREE1" Type="char" MaxLength="1" />
+    <Property Name="PricingPrc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="MngMethod" Type="char" MaxLength="1" />
+    <Property Name="ReorderPnt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="InvntryUom" Type="nvarchar" MaxLength="100" />
+    <Property Name="PlaningSys" Type="char" MaxLength="1" />
+    <Property Name="PrcrmntMtd" Type="char" MaxLength="1" />
+    <Property Name="OrdrIntrvl" Type="smallint" />
+    <Property Name="OrdrMulti" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="MinOrdrQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LeadTime" Type="int" />
+    <Property Name="IndirctTax" Type="char" MaxLength="1" />
+    <Property Name="TaxCodeAR" Type="nvarchar" MaxLength="8" />
+    <Property Name="TaxCodeAP" Type="nvarchar" MaxLength="8" />
+    <Property Name="OSvcCode" Type="int" />
+    <Property Name="ISvcCode" Type="int" />
+    <Property Name="ServiceGrp" Type="int" />
+    <Property Name="NCMCode" Type="int" />
+    <Property Name="MatType" Type="nvarchar" MaxLength="3" />
+    <Property Name="MatGrp" Type="int" />
+    <Property Name="ProductSrc" Type="nvarchar" MaxLength="2" />
+    <Property Name="ServiceCtg" Type="int" />
+    <Property Name="ItemClass" Type="char" MaxLength="1" />
+    <Property Name="Excisable" Type="char" MaxLength="1" />
+    <Property Name="ChapterID" Type="int" />
+    <Property Name="NotifyASN" Type="nvarchar" MaxLength="40" />
+    <Property Name="ProAssNum" Type="nvarchar" MaxLength="20" />
+    <Property Name="AssblValue" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DNFEntry" Type="int" />
+    <Property Name="UserSign2" Type="smallint" />
+    <Property Name="Spec" Type="nvarchar" MaxLength="30" />
+    <Property Name="TaxCtg" Type="nvarchar" MaxLength="4" />
+    <Property Name="Series" Type="smallint" />
+    <Property Name="Number" Type="int" />
+    <Property Name="FuelCode" Type="int" />
+    <Property Name="BeverTblC" Type="nvarchar" MaxLength="2" />
+    <Property Name="BeverGrpC" Type="nvarchar" MaxLength="2" />
+    <Property Name="BeverTM" Type="int" />
+    <Property Name="Attachment" Type="ntext" />
+    <Property Name="AtcEntry" Type="int" />
+    <Property Name="ToleranDay" Type="int" />
+    <Property Name="UgpEntry" Type="int" />
+    <Property Name="PUoMEntry" Type="int" />
+    <Property Name="SUoMEntry" Type="int" />
+    <Property Name="IUoMEntry" Type="int" />
+    <Property Name="IssuePriBy" Type="smallint" />
+    <Property Name="AssetClass" Type="nvarchar" MaxLength="20" />
+    <Property Name="AssetGroup" Type="nvarchar" MaxLength="15" />
+    <Property Name="InventryNo" Type="nvarchar" MaxLength="12" />
+    <Property Name="Technician" Type="int" />
+    <Property Name="Employee" Type="int" />
+    <Property Name="Location" Type="int" />
+    <Property Name="StatAsset" Type="char" MaxLength="1" />
+    <Property Name="Cession" Type="char" MaxLength="1" />
+    <Property Name="DeacAftUL" Type="char" MaxLength="1" />
+    <Property Name="AsstStatus" Type="char" MaxLength="1" />
+    <Property Name="CapDate" Type="datetime" />
+    <Property Name="AcqDate" Type="datetime" />
+    <Property Name="RetDate" Type="datetime" />
+    <Property Name="GLPickMeth" Type="char" MaxLength="1" />
+    <Property Name="NoDiscount" Type="char" MaxLength="1" />
+    <Property Name="MgrByQty" Type="char" MaxLength="1" />
+    <Property Name="AssetRmk1" Type="nvarchar" MaxLength="100" />
+    <Property Name="AssetRmk2" Type="nvarchar" MaxLength="100" />
+    <Property Name="AssetAmnt1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="AssetAmnt2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DeprGroup" Type="nvarchar" MaxLength="15" />
+    <Property Name="AssetSerNo" Type="nvarchar" MaxLength="32" />
+    <Property Name="CntUnitMsr" Type="nvarchar" MaxLength="100" />
+    <Property Name="NumInCnt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="INUoMEntry" Type="int" />
+    <Property Name="OneBOneRec" Type="char" MaxLength="1" />
+    <Property Name="RuleCode" Type="nvarchar" MaxLength="2" />
+    <Property Name="ScsCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="SpProdType" Type="nvarchar" MaxLength="2" />
+    <Property Name="IWeight1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="IWght1Unit" Type="smallint" />
+    <Property Name="IWeight2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="IWght2Unit" Type="smallint" />
+    <Property Name="CompoWH" Type="char" MaxLength="1" />
+    <Property Name="CreateTS" Type="int" />
+    <Property Name="UpdateTS" Type="int" />
+    <Property Name="VirtAstItm" Type="char" MaxLength="1" />
+    <Property Name="SouVirAsst" Type="nvarchar" MaxLength="50" />
+    <Property Name="InCostRoll" Type="char" MaxLength="1" />
+    <Property Name="PrdStdCst" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="EnAstSeri" Type="char" MaxLength="1" />
+    <Property Name="LinkRsc" Type="nvarchar" MaxLength="50" />
+    <Property Name="OnHldPert" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="onHldLimt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="GSTRelevnt" Type="char" MaxLength="1" />
+    <Property Name="SACEntry" Type="int" />
+    <Property Name="GstTaxCtg" Type="char" MaxLength="1" />
+    <Property Name="U_SubGrp" Type="nvarchar" MaxLength="25" />
+    <Property Name="U_AddUoM" Type="nvarchar" MaxLength="10" />
+    <Property Name="U_Project" Type="nvarchar" MaxLength="10" />
+    <Property Name="U_Taxcode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ORDR">
+    <Key>
+      <PropertyRef Name="DocEntry" />
+    </Key>
+    <Property Name="DocEntry" Type="int" Nullable="false" />
+    <Property Name="DocNum" Type="int" Nullable="false" />
+    <Property Name="DocType" Type="char" MaxLength="1" />
+    <Property Name="CANCELED" Type="char" MaxLength="1" />
+    <Property Name="Handwrtten" Type="char" MaxLength="1" />
+    <Property Name="Printed" Type="char" MaxLength="1" />
+    <Property Name="DocStatus" Type="char" MaxLength="1" />
+    <Property Name="InvntSttus" Type="char" MaxLength="1" />
+    <Property Name="Transfered" Type="char" MaxLength="1" />
+    <Property Name="ObjType" Type="nvarchar" MaxLength="20" />
+    <Property Name="DocDate" Type="datetime" />
+    <Property Name="DocDueDate" Type="datetime" />
+    <Property Name="CardCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="CardName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address" Type="nvarchar" MaxLength="254" />
+    <Property Name="NumAtCard" Type="nvarchar" MaxLength="100" />
+    <Property Name="VatPercent" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatSumFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DiscPrcnt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DiscSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DiscSumFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DocCur" Type="nvarchar" MaxLength="3" />
+    <Property Name="DocRate" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DocTotal" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DocTotalFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PaidToDate" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PaidFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="GrosProfit" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="GrosProfFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Ref1" Type="nvarchar" MaxLength="11" />
+    <Property Name="Ref2" Type="nvarchar" MaxLength="11" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="254" />
+    <Property Name="JrnlMemo" Type="nvarchar" MaxLength="50" />
+    <Property Name="TransId" Type="int" />
+    <Property Name="ReceiptNum" Type="int" />
+    <Property Name="GroupNum" Type="smallint" />
+    <Property Name="DocTime" Type="smallint" />
+    <Property Name="SlpCode" Type="int" />
+    <Property Name="TrnspCode" Type="smallint" />
+    <Property Name="PartSupply" Type="char" MaxLength="1" />
+    <Property Name="Confirmed" Type="char" MaxLength="1" />
+    <Property Name="GrossBase" Type="smallint" />
+    <Property Name="ImportEnt" Type="int" />
+    <Property Name="CreateTran" Type="char" MaxLength="1" />
+    <Property Name="SummryType" Type="char" MaxLength="1" />
+    <Property Name="UpdInvnt" Type="char" MaxLength="1" />
+    <Property Name="UpdCardBal" Type="char" MaxLength="1" />
+    <Property Name="Instance" Type="smallint" Nullable="false" />
+    <Property Name="Flags" Type="int" />
+    <Property Name="InvntDirec" Type="char" MaxLength="1" />
+    <Property Name="CntctCode" Type="int" />
+    <Property Name="ShowSCN" Type="char" MaxLength="1" />
+    <Property Name="FatherCard" Type="nvarchar" MaxLength="15" />
+    <Property Name="SysRate" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CurSource" Type="char" MaxLength="1" />
+    <Property Name="VatSumSy" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DiscSumSy" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DocTotalSy" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PaidSys" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="FatherType" Type="char" MaxLength="1" />
+    <Property Name="GrosProfSy" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="IsICT" Type="char" MaxLength="1" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Volume" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VolUnit" Type="smallint" />
+    <Property Name="Weight" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="WeightUnit" Type="smallint" />
+    <Property Name="Series" Type="smallint" />
+    <Property Name="TaxDate" Type="datetime" />
+    <Property Name="Filler" Type="nvarchar" MaxLength="8" />
+    <Property Name="DataSource" Type="char" MaxLength="1" />
+    <Property Name="StampNum" Type="nvarchar" MaxLength="16" />
+    <Property Name="isCrin" Type="char" MaxLength="1" />
+    <Property Name="FinncPriod" Type="int" />
+    <Property Name="UserSign" Type="smallint" />
+    <Property Name="selfInv" Type="char" MaxLength="1" />
+    <Property Name="VatPaid" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatPaidFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatPaidSys" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="UserSign2" Type="smallint" />
+    <Property Name="WddStatus" Type="char" MaxLength="1" />
+    <Property Name="draftKey" Type="int" />
+    <Property Name="TotalExpns" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TotalExpFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TotalExpSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DunnLevel" Type="int" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="254" />
+    <Property Name="LogInstanc" Type="int" />
+    <Property Name="Exported" Type="char" MaxLength="1" />
+    <Property Name="StationID" Type="int" />
+    <Property Name="Indicator" Type="nvarchar" MaxLength="2" />
+    <Property Name="NetProc" Type="char" MaxLength="1" />
+    <Property Name="AqcsTax" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="AqcsTaxFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="AqcsTaxSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CashDiscPr" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CashDiscnt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CashDiscFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CashDiscSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ShipToCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="LicTradNum" Type="nvarchar" MaxLength="32" />
+    <Property Name="PaymentRef" Type="nvarchar" MaxLength="27" />
+    <Property Name="WTSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="WTSumFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="WTSumSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="RoundDif" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="RoundDifFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="RoundDifSy" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CheckDigit" Type="char" MaxLength="1" />
+    <Property Name="Form1099" Type="int" />
+    <Property Name="Box1099" Type="nvarchar" MaxLength="20" />
+    <Property Name="submitted" Type="char" MaxLength="1" />
+    <Property Name="PoPrss" Type="char" MaxLength="1" />
+    <Property Name="Rounding" Type="char" MaxLength="1" />
+    <Property Name="RevisionPo" Type="char" MaxLength="1" />
+    <Property Name="Segment" Type="smallint" Nullable="false" />
+    <Property Name="ReqDate" Type="datetime" />
+    <Property Name="CancelDate" Type="datetime" />
+    <Property Name="PickStatus" Type="char" MaxLength="1" />
+    <Property Name="Pick" Type="char" MaxLength="1" />
+    <Property Name="BlockDunn" Type="char" MaxLength="1" />
+    <Property Name="PeyMethod" Type="nvarchar" MaxLength="15" />
+    <Property Name="PayBlock" Type="char" MaxLength="1" />
+    <Property Name="PayBlckRef" Type="int" />
+    <Property Name="MaxDscn" Type="char" MaxLength="1" />
+    <Property Name="Reserve" Type="char" MaxLength="1" />
+    <Property Name="Max1099" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CntrlBnk" Type="nvarchar" MaxLength="15" />
+    <Property Name="PickRmrk" Type="nvarchar" MaxLength="254" />
+    <Property Name="ISRCodLine" Type="nvarchar" MaxLength="53" />
+    <Property Name="ExpAppl" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ExpApplFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ExpApplSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Project" Type="nvarchar" MaxLength="20" />
+    <Property Name="DeferrTax" Type="char" MaxLength="1" />
+    <Property Name="LetterNum" Type="nvarchar" MaxLength="20" />
+    <Property Name="FromDate" Type="datetime" />
+    <Property Name="ToDate" Type="datetime" />
+    <Property Name="WTApplied" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="WTAppliedF" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BoeReserev" Type="char" MaxLength="1" />
+    <Property Name="AgentCode" Type="nvarchar" MaxLength="32" />
+    <Property Name="WTAppliedS" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="EquVatSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="EquVatSumF" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="EquVatSumS" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Installmnt" Type="smallint" />
+    <Property Name="VATFirst" Type="char" MaxLength="1" />
+    <Property Name="NnSbAmnt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="NnSbAmntSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="NbSbAmntFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ExepAmnt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ExepAmntSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ExepAmntFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatDate" Type="datetime" />
+    <Property Name="CorrExt" Type="nvarchar" MaxLength="25" />
+    <Property Name="CorrInv" Type="int" />
+    <Property Name="NCorrInv" Type="int" />
+    <Property Name="CEECFlag" Type="char" MaxLength="1" />
+    <Property Name="BaseAmnt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BaseAmntSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BaseAmntFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CtlAccount" Type="nvarchar" MaxLength="15" />
+    <Property Name="BPLId" Type="int" />
+    <Property Name="BPLName" Type="nvarchar" MaxLength="100" />
+    <Property Name="VATRegNum" Type="nvarchar" MaxLength="32" />
+    <Property Name="TxInvRptNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="TxInvRptDt" Type="datetime" />
+    <Property Name="KVVATCode" Type="ntext" />
+    <Property Name="WTDetails" Type="nvarchar" MaxLength="100" />
+    <Property Name="SumAbsId" Type="int" />
+    <Property Name="SumRptDate" Type="datetime" />
+    <Property Name="PIndicator" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ManualNum" Type="nvarchar" MaxLength="20" />
+    <Property Name="UseShpdGd" Type="char" MaxLength="1" />
+    <Property Name="BaseVtAt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BaseVtAtSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BaseVtAtFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="NnSbVAt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="NnSbVAtSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="NbSbVAtFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ExptVAt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ExptVAtSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ExptVAtFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LYPmtAt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LYPmtAtSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LYPmtAtFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ExpAnSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ExpAnSys" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ExpAnFrgn" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DocSubType" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="DpmStatus" Type="char" MaxLength="1" />
+    <Property Name="DpmAmnt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DpmAmntSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DpmAmntFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DpmDrawn" Type="char" MaxLength="1" />
+    <Property Name="DpmPrcnt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PaidSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PaidSumFc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PaidSumSc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="FolioPref" Type="nvarchar" MaxLength="4" />
+    <Property Name="FolioNum" Type="int" />
+    <Property Name="DpmAppl" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DpmApplFc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DpmApplSc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LPgFolioN" Type="int" />
+    <Property Name="Header" Type="ntext" />
+    <Property Name="Footer" Type="ntext" />
+    <Property Name="Posted" Type="char" MaxLength="1" />
+    <Property Name="OwnerCode" Type="int" />
+    <Property Name="BPChCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="BPChCntc" Type="int" />
+    <Property Name="PayToCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsPaytoBnk" Type="char" MaxLength="1" />
+    <Property Name="BnkCntry" Type="nvarchar" MaxLength="3" />
+    <Property Name="BankCode" Type="nvarchar" MaxLength="30" />
+    <Property Name="BnkAccount" Type="nvarchar" MaxLength="50" />
+    <Property Name="BnkBranch" Type="nvarchar" MaxLength="50" />
+    <Property Name="isIns" Type="char" MaxLength="1" />
+    <Property Name="TrackNo" Type="nvarchar" MaxLength="30" />
+    <Property Name="VersionNum" Type="nvarchar" MaxLength="11" />
+    <Property Name="LangCode" Type="int" />
+    <Property Name="BPNameOW" Type="char" MaxLength="1" />
+    <Property Name="BillToOW" Type="char" MaxLength="1" />
+    <Property Name="ShipToOW" Type="char" MaxLength="1" />
+    <Property Name="RetInvoice" Type="char" MaxLength="1" />
+    <Property Name="ClsDate" Type="datetime" />
+    <Property Name="MInvNum" Type="int" />
+    <Property Name="MInvDate" Type="datetime" />
+    <Property Name="SeqCode" Type="smallint" />
+    <Property Name="Serial" Type="int" />
+    <Property Name="SeriesStr" Type="nvarchar" MaxLength="3" />
+    <Property Name="SubStr" Type="nvarchar" MaxLength="3" />
+    <Property Name="Model" Type="nvarchar" MaxLength="6" />
+    <Property Name="TaxOnExp" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TaxOnExpFc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TaxOnExpSc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TaxOnExAp" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TaxOnExApF" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TaxOnExApS" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LastPmnTyp" Type="char" MaxLength="1" />
+    <Property Name="LndCstNum" Type="int" />
+    <Property Name="UseCorrVat" Type="char" MaxLength="1" />
+    <Property Name="BlkCredMmo" Type="char" MaxLength="1" />
+    <Property Name="OpenForLaC" Type="char" MaxLength="1" />
+    <Property Name="Excised" Type="char" MaxLength="1" />
+    <Property Name="ExcRefDate" Type="datetime" />
+    <Property Name="ExcRmvTime" Type="nvarchar" MaxLength="8" />
+    <Property Name="SrvGpPrcnt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DepositNum" Type="int" />
+    <Property Name="CertNum" Type="nvarchar" MaxLength="31" />
+    <Property Name="DutyStatus" Type="char" MaxLength="1" />
+    <Property Name="AutoCrtFlw" Type="char" MaxLength="1" />
+    <Property Name="FlwRefDate" Type="datetime" />
+    <Property Name="FlwRefNum" Type="nvarchar" MaxLength="100" />
+    <Property Name="VatJENum" Type="int" />
+    <Property Name="DpmVat" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DpmVatFc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DpmVatSc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DpmAppVat" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DpmAppVatF" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DpmAppVatS" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="InsurOp347" Type="char" MaxLength="1" />
+    <Property Name="IgnRelDoc" Type="char" MaxLength="1" />
+    <Property Name="BuildDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="ResidenNum" Type="char" MaxLength="1" />
+    <Property Name="Checker" Type="int" />
+    <Property Name="Payee" Type="int" />
+    <Property Name="CopyNumber" Type="int" />
+    <Property Name="SSIExmpt" Type="char" MaxLength="1" />
+    <Property Name="PQTGrpSer" Type="smallint" />
+    <Property Name="PQTGrpNum" Type="int" />
+    <Property Name="PQTGrpHW" Type="char" MaxLength="1" />
+    <Property Name="ReopOriDoc" Type="char" MaxLength="1" />
+    <Property Name="ReopManCls" Type="char" MaxLength="1" />
+    <Property Name="DocManClsd" Type="char" MaxLength="1" />
+    <Property Name="ClosingOpt" Type="smallint" />
+    <Property Name="SpecDate" Type="datetime" />
+    <Property Name="Ordered" Type="char" MaxLength="1" />
+    <Property Name="NTSApprov" Type="char" MaxLength="1" />
+    <Property Name="NTSWebSite" Type="smallint" />
+    <Property Name="NTSeTaxNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="NTSApprNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="PayDuMonth" Type="char" MaxLength="1" />
+    <Property Name="ExtraMonth" Type="smallint" />
+    <Property Name="ExtraDays" Type="smallint" />
+    <Property Name="CdcOffset" Type="smallint" />
+    <Property Name="SignMsg" Type="ntext" />
+    <Property Name="SignDigest" Type="ntext" />
+    <Property Name="CertifNum" Type="nvarchar" MaxLength="50" />
+    <Property Name="KeyVersion" Type="int" />
+    <Property Name="EDocGenTyp" Type="char" MaxLength="1" />
+    <Property Name="ESeries" Type="smallint" />
+    <Property Name="EDocNum" Type="nvarchar" MaxLength="50" />
+    <Property Name="EDocExpFrm" Type="int" />
+    <Property Name="OnlineQuo" Type="char" MaxLength="1" />
+    <Property Name="POSEqNum" Type="nvarchar" MaxLength="20" />
+    <Property Name="POSManufSN" Type="nvarchar" MaxLength="20" />
+    <Property Name="POSCashN" Type="int" />
+    <Property Name="EDocStatus" Type="char" MaxLength="1" />
+    <Property Name="EDocCntnt" Type="ntext" />
+    <Property Name="EDocProces" Type="char" MaxLength="1" />
+    <Property Name="EDocErrCod" Type="nvarchar" MaxLength="50" />
+    <Property Name="EDocErrMsg" Type="ntext" />
+    <Property Name="EDocCancel" Type="char" MaxLength="1" />
+    <Property Name="EDocTest" Type="char" MaxLength="1" />
+    <Property Name="EDocPrefix" Type="nvarchar" MaxLength="10" />
+    <Property Name="CUP" Type="int" />
+    <Property Name="CIG" Type="int" />
+    <Property Name="DpmAsDscnt" Type="char" MaxLength="1" />
+    <Property Name="Attachment" Type="ntext" />
+    <Property Name="AtcEntry" Type="int" />
+    <Property Name="SupplCode" Type="nvarchar" MaxLength="254" />
+    <Property Name="GTSRlvnt" Type="char" MaxLength="1" />
+    <Property Name="BaseDisc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BaseDiscSc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BaseDiscFc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BaseDiscPr" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CreateTS" Type="int" />
+    <Property Name="UpdateTS" Type="int" />
+    <Property Name="SrvTaxRule" Type="char" MaxLength="1" />
+    <Property Name="AnnInvDecR" Type="int" />
+    <Property Name="Supplier" Type="nvarchar" MaxLength="15" />
+    <Property Name="Releaser" Type="int" />
+    <Property Name="Receiver" Type="int" />
+    <Property Name="ToWhsCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="AssetDate" Type="datetime" />
+    <Property Name="Requester" Type="nvarchar" MaxLength="25" />
+    <Property Name="ReqName" Type="nvarchar" MaxLength="155" />
+    <Property Name="Branch" Type="smallint" />
+    <Property Name="Department" Type="smallint" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Notify" Type="char" MaxLength="1" />
+    <Property Name="ReqType" Type="int" />
+    <Property Name="OriginType" Type="char" MaxLength="1" />
+    <Property Name="IsReuseNum" Type="char" MaxLength="1" />
+    <Property Name="IsReuseNFN" Type="char" MaxLength="1" />
+    <Property Name="DocDlvry" Type="char" MaxLength="1" />
+    <Property Name="PaidDpm" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PaidDpmF" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PaidDpmS" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="EnvTypeNFe" Type="int" />
+    <Property Name="AgrNo" Type="int" />
+    <Property Name="IsAlt" Type="char" MaxLength="1" />
+    <Property Name="AltBaseTyp" Type="int" />
+    <Property Name="AltBaseEnt" Type="int" />
+    <Property Name="AuthCode" Type="nvarchar" MaxLength="250" />
+    <Property Name="StDlvDate" Type="datetime" />
+    <Property Name="StDlvTime" Type="int" />
+    <Property Name="EndDlvDate" Type="datetime" />
+    <Property Name="EndDlvTime" Type="int" />
+    <Property Name="VclPlate" Type="nvarchar" MaxLength="20" />
+    <Property Name="ElCoStatus" Type="nvarchar" MaxLength="10" />
+    <Property Name="AtDocType" Type="nvarchar" MaxLength="2" />
+    <Property Name="ElCoMsg" Type="nvarchar" MaxLength="254" />
+    <Property Name="PrintSEPA" Type="char" MaxLength="1" />
+    <Property Name="FreeChrg" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="FreeChrgFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="FreeChrgSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="NfeValue" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="FiscDocNum" Type="nvarchar" MaxLength="100" />
+    <Property Name="RelatedTyp" Type="int" />
+    <Property Name="RelatedEnt" Type="int" />
+    <Property Name="CCDEntry" Type="int" />
+    <Property Name="NfePrntFo" Type="int" />
+    <Property Name="ZrdAbs" Type="int" />
+    <Property Name="POSRcptNo" Type="int" />
+    <Property Name="FoCTax" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="FoCTaxFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="FoCTaxSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TpCusPres" Type="int" />
+    <Property Name="ExcDocDate" Type="datetime" />
+    <Property Name="FoCFrght" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="FoCFrghtFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="FoCFrghtSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="InterimTyp" Type="smallint" />
+    <Property Name="PTICode" Type="nvarchar" MaxLength="5" />
+    <Property Name="Letter" Type="char" MaxLength="1" />
+    <Property Name="FolNumFrom" Type="int" />
+    <Property Name="FolNumTo" Type="int" />
+    <Property Name="FolSeries" Type="int" />
+    <Property Name="SplitTax" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SplitTaxFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SplitTaxSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ToBinCode" Type="nvarchar" MaxLength="228" />
+    <Property Name="PermitNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="MYFtype" Type="nvarchar" MaxLength="2" />
+    <Property Name="PoDropPrss" Type="char" MaxLength="1" />
+    <Property Name="DocTaxID" Type="nvarchar" MaxLength="32" />
+    <Property Name="DateReport" Type="datetime" />
+    <Property Name="RepSection" Type="nvarchar" MaxLength="3" />
+    <Property Name="ExclTaxRep" Type="char" MaxLength="1" />
+    <Property Name="PosCashReg" Type="int" />
+    <Property Name="DmpTransID" Type="nvarchar" MaxLength="20" />
+    <Property Name="ECommerBP" Type="nvarchar" MaxLength="15" />
+    <Property Name="EComerGSTN" Type="nvarchar" MaxLength="15" />
+    <Property Name="Revision" Type="char" MaxLength="1" />
+    <Property Name="RevRefNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="RevRefDate" Type="datetime" />
+    <Property Name="RevCreRefN" Type="nvarchar" MaxLength="100" />
+    <Property Name="RevCreRefD" Type="datetime" />
+    <Property Name="TaxInvNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="FrmBpDate" Type="datetime" />
+    <Property Name="GSTTranTyp" Type="nvarchar" MaxLength="2" />
+    <Property Name="BaseType" Type="int" />
+    <Property Name="BaseEntry" Type="int" />
+    <Property Name="U_INSURANCE" Type="int" />
+    <Property Name="U_DC_or_INV_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="U_PAYMENTCONDITIONS" Type="nvarchar" MaxLength="254" />
+    <Property Name="U_KoM_Date" Type="datetime" />
+    <Property Name="U_Business_Verticle" Type="nvarchar" MaxLength="75" />
+    <Property Name="U_PoI" Type="nvarchar" MaxLength="75" />
+    <Property Name="U_PackandForwarding_Charges" Type="int" />
+    <Property Name="U_Vendor" Type="nvarchar" MaxLength="30" />
+    <Property Name="U_GateEntry_No" Type="nvarchar" MaxLength="10" />
+    <Property Name="U_Vehicle_No" Type="nvarchar" MaxLength="12" />
+    <Property Name="U_RequestedBy" Type="nvarchar" MaxLength="25" />
+    <Property Name="U_Advance" Type="int" />
+    <Property Name="U_DAP" Type="int" />
+    <Property Name="U_MRS" Type="nvarchar" MaxLength="10" />
+    <Property Name="U_IC" Type="int" />
+    <Property Name="U_POtype" Type="nvarchar" MaxLength="15" />
+    <Property Name="U_DOS" Type="nvarchar" MaxLength="10" />
+    <Property Name="U_H_Over" Type="nvarchar" MaxLength="10" />
+    <Property Name="U_PRTYPE" Type="nvarchar" MaxLength="10" />
+    <Property Name="U_QutDate" Type="datetime" />
+    <Property Name="U_DAPDT" Type="datetime" />
+    <Property Name="U_ABGDT" Type="datetime" />
+    <Property Name="U_FATDT" Type="datetime" />
+    <Property Name="U_DOSDT" Type="datetime" />
+    <Property Name="U_ICDT" Type="datetime" />
+    <Property Name="U_HODT" Type="datetime" />
+    <Property Name="U_ABG" Type="int" />
+    <Property Name="U_PBG" Type="int" />
+    <Property Name="U_DraftNo" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="RDR1">
+    <Key>
+      <PropertyRef Name="DocEntry" />
+      <PropertyRef Name="LineNum" />
+    </Key>
+    <Property Name="DocEntry" Type="int" Nullable="false" />
+    <Property Name="LineNum" Type="int" Nullable="false" />
+    <Property Name="TargetType" Type="int" />
+    <Property Name="TrgetEntry" Type="int" />
+    <Property Name="BaseRef" Type="nvarchar" MaxLength="16" />
+    <Property Name="BaseType" Type="int" />
+    <Property Name="BaseEntry" Type="int" />
+    <Property Name="BaseLine" Type="int" />
+    <Property Name="LineStatus" Type="char" MaxLength="1" />
+    <Property Name="ItemCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dscription" Type="nvarchar" MaxLength="100" />
+    <Property Name="Quantity" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ShipDate" Type="datetime" />
+    <Property Name="OpenQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Price" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Currency" Type="nvarchar" MaxLength="3" />
+    <Property Name="Rate" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DiscPrcnt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LineTotal" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TotalFrgn" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="OpenSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="OpenSumFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VendorNum" Type="nvarchar" MaxLength="50" />
+    <Property Name="SerialNum" Type="nvarchar" MaxLength="17" />
+    <Property Name="WhsCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="SlpCode" Type="int" />
+    <Property Name="Commission" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TreeType" Type="char" MaxLength="1" />
+    <Property Name="AcctCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="TaxStatus" Type="char" MaxLength="1" />
+    <Property Name="GrossBuyPr" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PriceBefDi" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DocDate" Type="datetime" />
+    <Property Name="Flags" Type="int" />
+    <Property Name="OpenCreQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="UseBaseUn" Type="char" MaxLength="1" />
+    <Property Name="SubCatNum" Type="nvarchar" MaxLength="50" />
+    <Property Name="BaseCard" Type="nvarchar" MaxLength="15" />
+    <Property Name="TotalSumSy" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="OpenSumSys" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="InvntSttus" Type="char" MaxLength="1" />
+    <Property Name="OcrCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="Project" Type="nvarchar" MaxLength="20" />
+    <Property Name="CodeBars" Type="nvarchar" MaxLength="254" />
+    <Property Name="VatPrcnt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatGroup" Type="nvarchar" MaxLength="8" />
+    <Property Name="PriceAfVAT" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Height1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Hght1Unit" Type="smallint" />
+    <Property Name="Height2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Hght2Unit" Type="smallint" />
+    <Property Name="Width1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Wdth1Unit" Type="smallint" />
+    <Property Name="Width2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Wdth2Unit" Type="smallint" />
+    <Property Name="Length1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Len1Unit" Type="smallint" />
+    <Property Name="length2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Len2Unit" Type="smallint" />
+    <Property Name="Volume" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VolUnit" Type="smallint" />
+    <Property Name="Weight1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Wght1Unit" Type="smallint" />
+    <Property Name="Weight2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Wght2Unit" Type="smallint" />
+    <Property Name="Factor1" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Factor2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Factor3" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Factor4" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PackQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="UpdInvntry" Type="char" MaxLength="1" />
+    <Property Name="BaseDocNum" Type="int" />
+    <Property Name="BaseAtCard" Type="nvarchar" MaxLength="100" />
+    <Property Name="SWW" Type="nvarchar" MaxLength="16" />
+    <Property Name="VatSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatSumFrgn" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatSumSy" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="FinncPriod" Type="int" />
+    <Property Name="ObjType" Type="nvarchar" MaxLength="20" />
+    <Property Name="LogInstanc" Type="int" />
+    <Property Name="BlockNum" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImportLog" Type="nvarchar" MaxLength="20" />
+    <Property Name="DedVatSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DedVatSumF" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DedVatSumS" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="IsAqcuistn" Type="char" MaxLength="1" />
+    <Property Name="DistribSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DstrbSumFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DstrbSumSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="GrssProfit" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="GrssProfSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="GrssProfFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VisOrder" Type="int" />
+    <Property Name="INMPrice" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PoTrgNum" Type="int" />
+    <Property Name="PoTrgEntry" Type="nvarchar" MaxLength="11" />
+    <Property Name="DropShip" Type="char" MaxLength="1" />
+    <Property Name="PoLineNum" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="254" />
+    <Property Name="TaxCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="TaxType" Type="char" MaxLength="1" />
+    <Property Name="OrigItem" Type="nvarchar" MaxLength="50" />
+    <Property Name="BackOrdr" Type="char" MaxLength="1" />
+    <Property Name="FreeTxt" Type="nvarchar" MaxLength="100" />
+    <Property Name="PickStatus" Type="char" MaxLength="1" />
+    <Property Name="PickOty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PickIdNo" Type="int" />
+    <Property Name="TrnsCode" Type="smallint" />
+    <Property Name="VatAppld" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatAppldFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatAppldSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BaseQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BaseOpnQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatDscntPr" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="WtLiable" Type="char" MaxLength="1" />
+    <Property Name="DeferrTax" Type="char" MaxLength="1" />
+    <Property Name="EquVatPer" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="EquVatSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="EquVatSumF" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="EquVatSumS" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LineVat" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LineVatlF" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LineVatS" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="unitMsr" Type="nvarchar" MaxLength="100" />
+    <Property Name="NumPerMsr" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CEECFlag" Type="char" MaxLength="1" />
+    <Property Name="ToStock" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ToDiff" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ExciseAmt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TaxPerUnit" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TotInclTax" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CountryOrg" Type="nvarchar" MaxLength="3" />
+    <Property Name="StckDstSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ReleasQtty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LineType" Type="char" MaxLength="1" />
+    <Property Name="TranType" Type="char" MaxLength="1" />
+    <Property Name="Text" Type="ntext" />
+    <Property Name="OwnerCode" Type="int" />
+    <Property Name="StockPrice" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ConsumeFCT" Type="char" MaxLength="1" />
+    <Property Name="LstByDsSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="StckINMPr" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LstBINMPr" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="StckDstFc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="StckDstSc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LstByDsFc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LstByDsSc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="StockSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="StockSumFc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="StockSumSc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="StckSumApp" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="StckAppFc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="StckAppSc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ShipToCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShipToDesc" Type="nvarchar" MaxLength="254" />
+    <Property Name="StckAppD" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="StckAppDFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="StckAppDSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BasePrice" Type="char" MaxLength="1" />
+    <Property Name="GTotal" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="GTotalFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="GTotalSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DistribExp" Type="char" MaxLength="1" />
+    <Property Name="DescOW" Type="char" MaxLength="1" />
+    <Property Name="DetailsOW" Type="char" MaxLength="1" />
+    <Property Name="GrossBase" Type="smallint" />
+    <Property Name="VatWoDpm" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatWoDpmFc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatWoDpmSc" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CFOPCode" Type="nvarchar" MaxLength="6" />
+    <Property Name="CSTCode" Type="nvarchar" MaxLength="6" />
+    <Property Name="Usage" Type="int" />
+    <Property Name="TaxOnly" Type="char" MaxLength="1" />
+    <Property Name="WtCalced" Type="char" MaxLength="1" />
+    <Property Name="QtyToShip" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DelivrdQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="OrderedQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="CogsOcrCod" Type="nvarchar" MaxLength="8" />
+    <Property Name="CiOppLineN" Type="int" />
+    <Property Name="CogsAcct" Type="nvarchar" MaxLength="15" />
+    <Property Name="ChgAsmBoMW" Type="char" MaxLength="1" />
+    <Property Name="ActDelDate" Type="datetime" />
+    <Property Name="OcrCode2" Type="nvarchar" MaxLength="8" />
+    <Property Name="OcrCode3" Type="nvarchar" MaxLength="8" />
+    <Property Name="OcrCode4" Type="nvarchar" MaxLength="8" />
+    <Property Name="OcrCode5" Type="nvarchar" MaxLength="8" />
+    <Property Name="TaxDistSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TaxDistSFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TaxDistSSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PostTax" Type="char" MaxLength="1" />
+    <Property Name="Excisable" Type="char" MaxLength="1" />
+    <Property Name="AssblValue" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="RG23APart1" Type="int" />
+    <Property Name="RG23APart2" Type="int" />
+    <Property Name="RG23CPart1" Type="int" />
+    <Property Name="RG23CPart2" Type="int" />
+    <Property Name="CogsOcrCo2" Type="nvarchar" MaxLength="8" />
+    <Property Name="CogsOcrCo3" Type="nvarchar" MaxLength="8" />
+    <Property Name="CogsOcrCo4" Type="nvarchar" MaxLength="8" />
+    <Property Name="CogsOcrCo5" Type="nvarchar" MaxLength="8" />
+    <Property Name="LnExcised" Type="char" MaxLength="1" />
+    <Property Name="LocCode" Type="int" />
+    <Property Name="StockValue" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="GPTtlBasPr" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="unitMsr2" Type="nvarchar" MaxLength="100" />
+    <Property Name="NumPerMsr2" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="SpecPrice" Type="char" MaxLength="1" />
+    <Property Name="CSTfIPI" Type="nvarchar" MaxLength="2" />
+    <Property Name="CSTfPIS" Type="nvarchar" MaxLength="2" />
+    <Property Name="CSTfCOFINS" Type="nvarchar" MaxLength="2" />
+    <Property Name="ExLineNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="isSrvCall" Type="char" MaxLength="1" />
+    <Property Name="PQTReqQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PQTReqDate" Type="datetime" />
+    <Property Name="PcDocType" Type="int" />
+    <Property Name="PcQuantity" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LinManClsd" Type="char" MaxLength="1" />
+    <Property Name="VatGrpSrc" Type="char" MaxLength="1" />
+    <Property Name="NoInvtryMv" Type="char" MaxLength="1" />
+    <Property Name="ActBaseEnt" Type="int" />
+    <Property Name="ActBaseLn" Type="int" />
+    <Property Name="ActBaseNum" Type="int" />
+    <Property Name="OpenRtnQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="AgrNo" Type="int" />
+    <Property Name="AgrLnNum" Type="int" />
+    <Property Name="CredOrigin" Type="char" MaxLength="1" />
+    <Property Name="Surpluses" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DefBreak" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Shortages" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="UomEntry" Type="int" />
+    <Property Name="UomEntry2" Type="int" />
+    <Property Name="UomCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="UomCode2" Type="nvarchar" MaxLength="20" />
+    <Property Name="FromWhsCod" Type="nvarchar" MaxLength="8" />
+    <Property Name="NeedQty" Type="char" MaxLength="1" />
+    <Property Name="PartRetire" Type="char" MaxLength="1" />
+    <Property Name="RetireQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="RetireAPC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="RetirAPCFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="RetirAPCSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="InvQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="OpenInvQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="EnSetCost" Type="char" MaxLength="1" />
+    <Property Name="RetCost" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Incoterms" Type="int" />
+    <Property Name="TransMod" Type="int" />
+    <Property Name="LineVendor" Type="nvarchar" MaxLength="15" />
+    <Property Name="DistribIS" Type="char" MaxLength="1" />
+    <Property Name="ISDistrb" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ISDistrbFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="ISDistrbSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="IsByPrdct" Type="char" MaxLength="1" />
+    <Property Name="ItemType" Type="int" />
+    <Property Name="PriceEdit" Type="char" MaxLength="1" />
+    <Property Name="PrntLnNum" Type="int" />
+    <Property Name="LinePoPrss" Type="char" MaxLength="1" />
+    <Property Name="FreeChrgBP" Type="char" MaxLength="1" />
+    <Property Name="TaxRelev" Type="char" MaxLength="1" />
+    <Property Name="LegalText" Type="nvarchar" MaxLength="254" />
+    <Property Name="ThirdParty" Type="char" MaxLength="1" />
+    <Property Name="LicTradNum" Type="nvarchar" MaxLength="32" />
+    <Property Name="InvQtyOnly" Type="char" MaxLength="1" />
+    <Property Name="UnencReasn" Type="int" />
+    <Property Name="ShipFromCo" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShipFromDe" Type="nvarchar" MaxLength="254" />
+    <Property Name="FisrtBin" Type="nvarchar" MaxLength="228" />
+    <Property Name="AllocBinC" Type="nvarchar" MaxLength="11" />
+    <Property Name="ExpType" Type="nvarchar" MaxLength="4" />
+    <Property Name="ExpUUID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpOpType" Type="char" MaxLength="1" />
+    <Property Name="DIOTNat" Type="nvarchar" MaxLength="3" />
+    <Property Name="MYFtype" Type="nvarchar" MaxLength="2" />
+    <Property Name="ItmTaxType" Type="nvarchar" MaxLength="2" />
+    <Property Name="SacEntry" Type="int" />
+    <Property Name="NCMCode" Type="int" />
+  </EntityType>
+  <EntityType Name="RDR3">
+    <Key>
+      <PropertyRef Name="DocEntry" />
+      <PropertyRef Name="LineNum" />
+    </Key>
+    <Property Name="DocEntry" Type="int" Nullable="false" />
+    <Property Name="ExpnsCode" Type="int" />
+    <Property Name="LineTotal" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TotalFrgn" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="TotalSumSy" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PaidToDate" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PaidFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="PaidSys" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="100" />
+    <Property Name="ObjType" Type="nvarchar" MaxLength="20" />
+    <Property Name="LogInstanc" Type="int" />
+    <Property Name="DistrbMthd" Type="char" MaxLength="1" />
+    <Property Name="TaxStatus" Type="char" MaxLength="1" />
+    <Property Name="VatGroup" Type="nvarchar" MaxLength="8" />
+    <Property Name="VatPrcnt" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatSumFrgn" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatSumSy" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DedVatSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DedVatSumF" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DedVatSumS" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="IsAcquistn" Type="char" MaxLength="1" />
+    <Property Name="TaxCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="TaxType" Type="char" MaxLength="1" />
+    <Property Name="WTLiable" Type="char" MaxLength="1" />
+    <Property Name="VatApplied" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatAppldFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="VatAppldSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="EquVatPer" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="EquVatSum" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="EquVatSumF" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="EquVatSumS" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LineVat" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LineVatF" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LineVatS" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BaseMethod" Type="char" MaxLength="1" />
+    <Property Name="Stock" Type="char" MaxLength="1" />
+    <Property Name="LstPchPrce" Type="char" MaxLength="1" />
+    <Property Name="AnalysRpt" Type="char" MaxLength="1" />
+    <Property Name="BaseAbsEnt" Type="int" />
+    <Property Name="BaseType" Type="int" />
+    <Property Name="BaseRef" Type="int" />
+    <Property Name="BaseLnNum" Type="int" />
+    <Property Name="LineNum" Type="int" Nullable="false" />
+    <Property Name="Status" Type="char" MaxLength="1" />
+    <Property Name="TrgType" Type="int" />
+    <Property Name="TrgAbsEnt" Type="int" />
+    <Property Name="StDstr" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="StDstrSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="StDstrFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="FixCurr" Type="nvarchar" MaxLength="3" />
+    <Property Name="VatDscntPr" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="OcrCode" Type="nvarchar" MaxLength="8" />
+    <Property Name="TaxDistMtd" Type="char" MaxLength="1" />
+    <Property Name="OcrCode2" Type="nvarchar" MaxLength="8" />
+    <Property Name="OcrCode3" Type="nvarchar" MaxLength="8" />
+    <Property Name="OcrCode4" Type="nvarchar" MaxLength="8" />
+    <Property Name="OcrCode5" Type="nvarchar" MaxLength="8" />
+    <Property Name="Project" Type="nvarchar" MaxLength="20" />
+    <Property Name="VatGrpSrc" Type="char" MaxLength="1" />
+    <Property Name="DrawnTotal" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DrawnFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="DrawnSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="GrsAmount" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="GrsFC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="GrsSC" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="BaseTotal" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DARZANTEST.dbo.Tbl_Usermaster' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_Usermaster">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Roles" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="DARZANTESTModelStoreContainer">
+    <EntitySet Name="@ITEMADDONS" EntityType="Self.@ITEMADDONS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="@ITEMADDONS1" EntityType="Self.@ITEMADDONS1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="@ITEMMESURMENT" EntityType="Self.@ITEMMESURMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="@ITEMMESURMENTDET1" EntityType="Self.@ITEMMESURMENTDET1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="@MEASUREMENTS" EntityType="Self.@MEASUREMENTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CRD1" EntityType="Self.CRD1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OCRD" EntityType="Self.OCRD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OCST" EntityType="Self.OCST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OITM" EntityType="Self.OITM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDR" EntityType="Self.ORDR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RDR1" EntityType="Self.RDR1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RDR3" EntityType="Self.RDR3" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Usermaster" EntityType="Self.Tbl_Usermaster" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Tbl_Usermaster].[UserId] AS [UserId], 
+    [Tbl_Usermaster].[UserName] AS [UserName], 
+    [Tbl_Usermaster].[Password] AS [Password], 
+    [Tbl_Usermaster].[Roles] AS [Roles], 
+    [Tbl_Usermaster].[Email] AS [Email]
+    FROM [dbo].[Tbl_Usermaster] AS [Tbl_Usermaster]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

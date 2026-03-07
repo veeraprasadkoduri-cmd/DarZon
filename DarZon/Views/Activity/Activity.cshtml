@@ -1,0 +1,289 @@
+﻿@model DarZon.Models.Activity
+@{
+    ViewBag.Title = "Activity";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Activity", "Activity", FormMethod.Post))
+{
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 ml-auto overflow-hidden">
+                    <div class="row">
+                        <div class="col mt-2">
+                            <div class="card">
+                                <h5 class="card-header">Activity    &nbsp;<button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#divActivtyList">Find Activity Details</button></h5>
+
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Customer Code</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @*<input type="text" class="form-control form-control-sm" placeholder="Customer Code">*@
+                                                        @Html.TextBoxFor(item => item.Customercode, new { @class = "form-control form-control-sm", @id = "custno", @placeholder = "Customer Code", data_toggle = "modal", data_target = "#ActivityCustomerList", @readonly = "readonly", required = "required" })
+                                                        @Html.ValidationMessageFor(item => item.Customercode)
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Customer Name</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @*<input type="text" class="form-control form-control-sm" placeholder="Customer Name">*@
+                                                        @Html.TextBoxFor(item => item.Customername, new { @class = "form-control form-control-sm",
+                                                       @placeholder = "Customer Name",
+                                                       @readonly = true
+                                                   })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Mobile No.</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @*<input type="text" class="form-control form-control-sm" placeholder="Mobile No.">*@
+                                                        @Html.TextBoxFor(item => item.mobileno, new
+                                                   {
+                                                       @class = "form-control form-control-sm",
+                                                       @readonly = true,
+                                                       @placeholder = "PhoneNumber"
+                                                   })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Activity No.</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @*<input type="text" class="form-control form-control-sm" placeholder="Activity No.">*@
+                                                        @Html.TextBoxFor(item => item.Actvityno, new { @class = "form-control form-control-sm",
+                                                       @readonly = true,
+                                                       @placeholder = "Activity No."
+                                                   })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Sale Order No.</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @*<input type="text" class="form-control form-control-sm" placeholder="Sale Order No.">*@
+
+
+
+                                                        @Html.TextBoxFor(item => item.saleorder, new { @class = "form-control form-control-sm", @id = "SaleOrderNo", @placeholder = "SaleOrder No.", @readonly = "readonly", data_toggle = "modal", data_target = "#OrderList", @onmousedown = "Avctivitysaleorder()" })
+@Html.HiddenFor(item => item.websaleorder,new { id = "hdnsaleorder" })
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Status</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @if (Model.status == null)
+                                                        {
+                                                            @Html.DropDownListFor(item => item.status, new SelectList(ViewBag.status, "Value", "Text"), new { @id = "ddlactivitytype", @class = "form-control form-control-sm" })
+
+                                                        }
+                                                        else
+                                                        {
+                                                            @Html.TextBoxFor(item => item.status, new
+                                                {
+                                                    @readonly = true,
+                                                    @class = "form-control form-control-sm",
+
+                                                })
+                                                        }
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Assigned By</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextBoxFor(item => item.Assignby, new { @readonly =true, @class = "form-control form-control-sm",
+                                                       @placeholder = "Assigned By"
+                                                   })
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row my-3">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Activity Type</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                        @if (Model.Activitytype==null)
+                                                        {
+                                                            @Html.DropDownListFor(item => item.Activitytype, new SelectList(ViewBag.activitytype, "Value", "Text"), "Please select", new { @id = "ddlactivitytype", @class = "form-control form-control-sm", required = "required" })
+
+                                                        }
+                                                        else
+                                                        {
+                                                            @Html.TextBoxFor(item => item.Activitytype, new { @readonly = true,@class = "form-control form-control-sm"})
+                                                        }
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Assigned To</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @if (Model.Assignempid != null)
+                                                        {
+                                                            @Html.DropDownListFor(item => item.Assignempid, new SelectList(ViewBag.userid, "Value", "Text"), Model.Assignempid, new { @id = "ddlFristitem", @class = "form-control form-control-sm" })
+
+                                                        }
+                                                        else
+                                                        {
+                                                            @Html.DropDownListFor(item => item.Assignempid, new SelectList(ViewBag.userid, "Value", "Text"), Model.Assignempid, new { @id = "ddlFristitem", @class = "form-control form-control-sm", required = "required" })
+
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Start&nbsp;Date</label>
+                                                    <div class="jquery-datepicker col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextBoxFor(item => item.Startdate, new { @class = "form-control form-control-sm", @placeholder = "Start Date", required = "required", @onmousedown = "datepicker(this)" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">End&nbsp;Date</label>
+                                                    <div class="jquery-datepicker col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextBoxFor(item => item.enddate, new { @class = "form-control form-control-sm", @placeholder = "End Date", required = "required", @onmousedown = "datepicker(this)" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Start&nbsp;Time</label>
+
+                                                    <div class="jquery.timepicker col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextBoxFor(item => item.starttimeto, new { @id = "starttime", @class = "jquery.timepicker__input form-control form-control-sm", @placeholder = "Strat Time", required = "required" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">End&nbsp;Time</label>
+                                                    <div class="jquery.timepicker col-lg-8 col-md-12 col-sm-12">
+
+
+                                                        @Html.TextBoxFor(item => item.Endtime, new { @class = "jquery.timepicker__input form-control form-control-sm", @placeholder = "End Time", required = "required" })
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row mt-3">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12 col-form-label">Customer Comments</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextAreaFor(item => item.custcomments, new { @class = "form-control form-control-sm",
+
+                                            })
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row mt-3">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12 col-form-label">Operator Comments</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @*<textarea rows="2" cols="50" class="form-control">
+                                                            </textarea>*@
+                                                        @Html.TextAreaFor(item => item.operatorcomments, new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="mx-auto">
+                                            <input type="submit" name="Save" id="Save" value="Save" class="btn btn-secondary btn-sm" onclick="return CheckValidation()"  />
+                                            @*<button type="button" class="btn btn-secondary btn-sm float-left">Save</button>*@
+                                            &nbsp;&nbsp;
+                                            <button type="button" id="pageclose" class="btn btn-secondary btn-sm float-right"  onclick="activityclose()">Clear</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+}
+<div class="modal fade" id="divActivtyList" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Activity</h5>
+                <div class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="text" id="ItemInput" onkeyup="filtertable(this, 'ActivityList')" class="form-control form-control-sm" placeholder="Search here">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                @{Html.RenderAction("actlistpop", "Activity"); }
+            </div>
+            <div class="modal-footer">  <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal" aria-label="Close">Close</button></div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="ActivityCustomerList" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="col">
+
+                @{Html.RenderAction("customerlist", "CustomeDetailsr"); }
+            </div>
+            <div class="modal-footer">&nbsp;</div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="OrderList" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Order List</h5>
+                <div class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="text" id="ItemInput" onkeyup="filtertable(this, 'tblorderlist')" class="form-control form-control-sm" placeholder="Search here">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col" id="fillsaleordr">
+                @*@{Html.RenderAction("Orderlist", "Delivery"); }*@
+            </div>
+            <div class="modal-footer">&nbsp; <button type="button" id="close" class="btn btn-secondary btn-sm" data-dismiss="modal" aria-label="Close" >Close</button></div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/Activity.js"></script>

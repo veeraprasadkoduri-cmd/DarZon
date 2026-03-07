@@ -1,0 +1,75 @@
+﻿
+@model  ICollection<DarZon.Models.Tailorchilddata>
+@{
+    Layout = null;
+}
+
+
+<div class="table-responsive tableFixHead">
+    <table class="table table-bordered table-sm table-hover list-table">
+        <thead class="thead-light">
+            <tr>
+                <th>view</th>
+                <th scope="col">Sale&nbsp;Order&nbsp;No.</th>
+                <th scope="col">Line No.</th>
+                <th scope="col">Item Code</th>
+                <th scope="col">Description</th>
+                <th scope="col">Saleorder&nbsp;Date</th>
+                <th scope="col">Master Tailor</th>
+                <th scope="col">Production Designer</th>
+                <th scope="col">Internal&nbsp;Delivery&nbsp;Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">TrailStatus</th>
+            </tr>
+        </thead>
+        <tbody>
+            @using (Html.BeginCollectionItem("objinvlist"))
+            {
+                for (int i = 0; i < Model.Count(); i++)
+                {
+            <tr>
+                <td><a href="../Measurmentdetails/viewmeasurement?parentId=@Model.ElementAt(i).MPI">View</a></td>
+                <td>
+                    @Html.TextBoxFor(item => Model.ElementAt(i).saleorder, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+
+                </td>
+                <td>@Html.TextBoxFor(item => Model.ElementAt(i).lineno, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+
+
+
+                <td>@Html.TextBoxFor(item => Model.ElementAt(i).itemcode, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+                <td>
+                    @Html.TextBoxFor(item => Model.ElementAt(i).Description, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(item => Model.ElementAt(i).schedulefordelivey, new { @class = "Form-control form-control-sm item-sel", @readonly = "readonly" })
+
+                </td>
+                @Html.TextBoxFor(item => Model.ElementAt(i).mastertailor, new { @class = "Form-control form-control-sm item-sel", @readonly = "readonly" })
+                </td>
+                <td>
+                    @Html.TextBoxFor(item => Model.ElementAt(i).prdesigner, new { @class = "Form-control form-control-sm item-sel", @readonly = "readonly" })
+                </td>
+                <td>
+                    @Html.TextBoxFor(a => Model.ElementAt(i).internaldeliveydate, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+                </td>
+                <td>
+                    @Html.TextBoxFor(a => Model.ElementAt(i).status, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+                </td>
+                @*<td>@Html.DropDownListFor(a => Model.ElementAt(i).status, new SelectList(ViewBag.userlist, "Value", "Text"), "Please select", new { @id = "ddlactivitytype", @class = "form-control form control-sm" })</td>*@
+                <td></td>
+
+            </tr>
+                }
+
+            }
+
+
+        </tbody>
+    </table>
+</div>
+
+
+

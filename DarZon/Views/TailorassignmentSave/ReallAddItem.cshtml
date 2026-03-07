@@ -1,0 +1,70 @@
+﻿
+@model  ICollection<DarZon.Models.Tailorchilddata>
+@{
+    Layout = null;
+}
+<div class="table-responsive tableFixHead">
+    <table class="table table-bordered table-sm table-hover list-table">
+        <thead class="thead-light">
+            <tr>
+                <th>S.No</th>
+                <th scope="col">Sale&nbsp;Order&nbsp;No.</th>
+                <th scope="col">Line No.</th>
+                <th scope="col">Item Code</th>
+                <th scope="col">Description</th>
+                <th scope="col">Schedule&nbsp;Delivery&nbsp;Date</th>
+
+                <th scope="col">Production Designer</th>
+                <th scope="col">Master Tailor</th>
+                <th scope="col">Internal&nbsp;Delivery&nbsp;Date</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < Model.Count(); i++)
+            {
+                using (Html.BeginCollectionItem("objchilddata"))
+                {
+
+                    <tr>
+                        <td></td>
+
+                        <td>
+                            @Model.ElementAt(i).saleorder
+
+                        </td>
+                        <td>@Model.ElementAt(i).lineno</td>
+
+
+                        <td>
+                            @Model.ElementAt(i).itemcode
+                        </td>
+                        <td>
+                            @Model.ElementAt(i).Description
+
+                        </td>
+
+                        <td>
+                            @Model.ElementAt(i).schedulefordelivey
+
+                        </td>
+
+                        <td>@Html.DropDownListFor(a => @Model.ElementAt(i).prdesigner, new SelectList(ViewBag.userlist, "Value", "Text"), "Please select", new { @id = "ddlprdesign", @class = "custom-select my-1 mr-sm-2 item-drop", @onchange = "GetSelectedmaster(this)" })</td>
+                        <td>@Html.DropDownListFor(a => Model.ElementAt(i).mastertailor, new SelectList("", "Value", "Text"), "Please select", new { @id = "mastertailor", @class = "master custom-select my-1 mr-sm-2 item-drop", @onchange = "GetSelectedTextValue(this)" })</td>
+                        <td>@Model.ElementAt(i).internaldeliveydate</td>
+                        <td>@Model.ElementAt(i).status</td>
+                        @Html.HiddenFor(a => Model.ElementAt(i).custname);
+
+                        @*<td>@Html.DropDownListFor(a => Model.ElementAt(i).status, new SelectList(ViewBag.userlist, "Value", "Text"), "Please select", new { @id = "ddlactivitytype", @class = "form-control form control-sm" })</td>*@
+                        <td></td>
+
+                    </tr>
+                    @Html.HiddenFor(a => Model.ElementAt(i).Docentry, new { @id = "hdnStatus" })
+                }
+            }
+
+        </tbody>
+    </table>
+</div>
+

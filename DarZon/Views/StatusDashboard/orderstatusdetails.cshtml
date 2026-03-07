@@ -1,0 +1,59 @@
+﻿@model ICollection<DarZon.Models.StatusDashboard>
+@{
+    Layout = null;
+}
+<div class="table-responsive tableFixHead">
+    <table class="table table-bordered table-sm table-hover list-table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Doc No.</th>
+                <th scope="col">SaleorderNo.</th>
+                <th scope="col">Line No.</th>
+                <th scope="col">Material Description</th>
+                <th scope="col">Trail Status</th>
+                <th scope="col">Trans Status</th>
+                <th scope="col">Tailor Status</th>
+
+                <th scope="col">Internal Delivery Date</th>
+                <th scope="col">Customer Delivery Date</th>
+                <th scope="col">Deviation Days</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < Model.Count(); i++)
+            {
+
+
+            <tr>
+                <td></td>
+                <td>
+                    @Html.TextBoxFor(item => Model.ElementAt(i).saleorderNo, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+
+                </td>
+                <td>
+                    @Html.TextBoxFor(item => Model.ElementAt(i).websaleorder, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+
+                </td>
+                <td>@Html.TextBoxFor(item => Model.ElementAt(i).LineNo, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+                <td>@Html.TextBoxFor(item => Model.ElementAt(i).MaterialDescription, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+                <td>
+                    @Html.TextBoxFor(item => Model.ElementAt(i).TrailStatus, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+                   
+                <td>@Html.TextBoxFor(item => Model.ElementAt(i).Tstatus, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })</td>
+                    
+                    <td>@Html.TextBoxFor(item => Model.ElementAt(i).tailorstatus, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+            <td>@Html.TextBoxFor(item => Model.ElementAt(i).CustomerDeliveryDate, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+
+            
+                <td>@Html.TextBoxFor(item => Model.ElementAt(i).CustomerDeliveryDate, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })</td>
+            <td>@Html.TextBoxFor(item => Model.ElementAt(i).DeviationDays, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+
+            </tr>
+
+            }
+                </tbody>
+    </table>
+    </div>
+

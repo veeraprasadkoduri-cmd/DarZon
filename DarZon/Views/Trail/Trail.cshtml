@@ -1,0 +1,144 @@
+﻿@model DarZon.Models.Tailorassignment
+@{
+    ViewBag.Title = "Trail";
+}
+
+@using (Html.BeginForm("Trail", "Trail", FormMethod.Post))
+{
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 ml-auto overflow-hidden">
+                    <div class="row">
+                        <div class="col mt-2">
+                            <div class="card">
+                                <h5 class="card-header">Ready For Trial</h5>
+                                <div class="card-body">
+                                    
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">From&nbsp;Date</label>
+                                                    <div class="jquery-datepicker col-lg-8 col-md-12 col-sm-12">
+                                                       
+                                                        @Html.TextBoxFor(a => a.Objdate.fromdate, new { @id = "RDTFromdate", @class="jquery-datepicker__input form-control form-control-sm", @placeholder="From Date", onmousedown="datepicker(this)", @readonly=true })
+                                                     
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">To&nbsp;Date</label>
+                                                    <div class="jquery-datepicker col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextBoxFor(a => a.Objdate.todate, new { @id = "RDTTodate", @class = "jquery-datepicker__input form-control form-control-sm", @placeholder = "To Date", onmousedown = "datepicker(this)", @readonly = true })
+                                                       
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-lg-4 col-md-12 col-sm-12">
+
+                                                        <button type="button" id="Allocation" value="Allocation" class="btn btn-secondary btn-sm view-btn m-1" onclick="SelectTrailRecord()" >Get Details</button>
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                       
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label for="UserID" class="col-lg-4 col-md-12 col-sm-12">User ID</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        <div class="col-lg-8 col-md-12 col-sm-12">
+                                                            @*<input type="text" class="form-control form-control-sm" id="UserID" placeholder="User ID">*@
+
+                                                            @Html.TextBoxFor(a=>a.Objdate.username, new { @class = "form-control form-control-sm", @readonly = true })
+
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>                   
+                                     
+                                    <div class="row mt-2">
+                                        <div class="col" id="traildiv">
+                                        @if (ViewBag.trailslist != null)
+                                        {
+                                            Html.RenderPartial("Trailadditem",(List<DarZon.Models.Tailorchilddata>) ViewBag.trailslist);
+                                        }
+                                        else
+                                        {
+                                            <div class="table-responsive tableFixHead">
+                                                <table class="table table-bordered table-sm table-hover list-table">
+                                                    <thead class="thead-light">
+                                                        <tr>
+                                                            <th>S.No</th>
+                                                            <th scope="col">Line&nbsp;No.</th>
+                                                            <th scope="col">Item&nbsp;Code</th>
+                                                            <th scope="col">Description</th>
+                                                            @*<th scope="col">Schedule&nbsp;Delivery&nbsp;Date</th>*@
+                                                            @*<th scope="col">Master&nbsp;Tailor</th>
+                                                            <th scope="col">Production&nbsp;Designer</th>*@
+                                                            <th scope="col">Internal&nbsp;Delivery&nbsp;Date</th>
+                                                            <th scope="col">Ready&nbsp;for&nbsp;Trial</th>
+                                                            @*<th scope="col">Trail&nbsp;Status</th>*@
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        }
+
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <hr>
+                                    <div class="row ">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class="my-form">
+                                                <!--d-none d-md-none d-lg-block-->
+                                                <div class="form-group row">
+                                                    <label for="MeasurementsDetails" class="col-lg-4 col-md-12 col-sm-12 col-form-label">Remarks</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        <textarea rows="2" cols="50" class="form-control" id="MeasurementsDetails">
+                              </textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12"> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="mx-auto">
+                                            <input type="submit" name="Save" id="Save" value="Save" class="btn btn-secondary btn-sm"  />
+                                            &nbsp;&nbsp;
+                                            <button type="button" id="close" class="btn btn-secondary btn-sm float-right">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      
+    </section>
+
+
+
+}
+    <script src="~/js/Trail.js"></script>

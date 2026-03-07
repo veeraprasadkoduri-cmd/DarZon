@@ -1,0 +1,24 @@
+﻿@model DarZon.Models.Orderlistmaster
+@{
+   
+}
+
+@using (Html.BeginForm("Index", "Transportation", FormMethod.Post))
+{<div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="for">
+                <div style="padding-left:50%">
+                    @Html.TextBoxFor(a => a.objsaleorderHeader.Tno, Model.objsaleorderHeader.UserID.ToString(), new { @id = "UserID" @*@ViewBag.usercode*@,
+@class = "form-control form-control-sm",
+@placeholder = "UserID"
+})
+                </div>
+            </div>
+            <div class="row">
+                <div style="padding-left:50%">
+                    <input type="submit" name="Save" id="btnsave" value="Save" class="btn btn-secondary btn-sm float-left" />
+                </div>
+            </div>
+        </div>
+    </div>
+}

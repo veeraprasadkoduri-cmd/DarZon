@@ -1,0 +1,330 @@
+﻿@model DarZon.Models.Orderlistmaster
+@{
+    ViewBag.Title = "Logistics";
+}
+
+@using (Html.BeginForm("Index", "Transportation", FormMethod.Post))
+{
+
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 ml-auto overflow-hidden">
+                    <div class="row">
+                        <div class="col mt-2">
+                            <div class="card">
+                                <h5 class="card-header">Logistics&nbsp;&nbsp;&nbsp; <button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#TransList">Find Existing Logistics</button></h5>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">User ID</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        <input type="hidden" id="PhoneNo" />
+
+                                                        @Html.TextBoxFor(a => a.objsaleorderHeader.UserID, Model.objsaleorderHeader.UserID.ToString(), new { @class = "form-control form-control-sm", @Readonly = true, @placeholder = "User ID" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Transport No.</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextBoxFor(a => a.objsaleorderHeader.Tno, Model.objsaleorderHeader.Tno.ToString(), new { @class = "form-control form-control-sm", @Readonly = true, @placeholder = "Transport No." })
+                                                                                                     </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="Transportationdt"
+                                                           class="col-lg-4 col-md-12 col-sm-11">Transportation&nbsp;Date</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @if (Model.objsaleorderHeader.Tdate != null)
+                                                        {
+                                                            @Html.TextBoxFor(a => a.objsaleorderHeader.Tdate, Model.objsaleorderHeader.Tdate.ToString(), new { @class = "form-control form-control-sm", @placeholder = "Transportation Date", onmousedown = "datepicker(this)" })
+                                                        }
+                                                        else
+                                                        {
+                                                            @Html.TextBoxFor(a => a.objsaleorderHeader.Tdate, Model.objsaleorderHeader.Tdate.ToString(), new { @class = "form-control form-control-sm", @placeholder = "Transportation Date", required = "required", onmousedown = "datepicker(this)" })
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <input id="vryopt" type="hidden" value=@ViewBag.optverify />
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Pickup User</label>
+
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.DropDownListFor(a => a.objsaleorderHeader.pickupuser, new SelectList(ViewBag.userid, "Value", "Text"), "Please select", new { @id = "ddlFristitem", @class = "form-control form-control-sm", required = "required" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Outlet From</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                      
+
+                                                        @Html.TextBoxFor(a => a.objsaleorderHeader.Outletfrom, new { @class = "form-control form-control-sm", @Readonly = true })
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Outlet To</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @if (Model.objsaleorderHeader.outletto != null)
+                                                        {
+
+
+
+                                                            @Html.TextBoxFor(a => a.objsaleorderHeader.outletto,  new { @id = "Outletto", @class = "form-control form-control-sm", @Readonly = true })
+
+
+
+                                                        }
+                                                        else
+                                                        {
+                                                            
+                                                            @Html.DropDownListFor(a => a.objsaleorderHeader.outletto, new SelectList(ViewBag.whsto, "Value", "Text"), "Please select", new { @id = "Outletto", @class = "form-control form-control-sm", required = "required", onchange = "outletselectindex()" })
+                                                            
+                                                            
+                                                        }
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Transportation Status</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @if (Model.objsaleorderHeader.Tstatus == "Open-1")
+                                                        {
+                                                            Model.objsaleorderHeader.Tstatus = "Open";
+
+                                                            @Html.TextBoxFor(a => a.objsaleorderHeader.Tstatus, new { @class = "form-control form-control-sm", @Readonly = true })
+                                                        }
+                                                        else
+                                                        {
+                                                            @Html.DropDownListFor(a => a.objsaleorderHeader.Tstatus, new SelectList(ViewBag.status, "Value", "Text"), new { @readonly = true, @id = "tstatus", @class = "form-control form- control-sm" })
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <div class="table-responsive tableFixHead">
+                                                <table class="table table-bordered table-sm table-hover list-table" id="SaleordLineItems">
+                                                    <thead class="thead-light">
+                                                        <tr>
+                                                            <th scope="col">Doc&nbsp;No.</th>
+                                                           <th>SaleorderNo</th>
+                                                            <th scope="col">Qty</th>
+                                                            <th scope="col">No Of Fabrics</th>
+                                                            <th scope="col">Remarks</th>
+                                                            <th>#</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @if (Model.objchild != null)
+                                                        {
+                                                            if (Model.objchild.Count() > 0)
+                                                            {
+
+                                                                foreach (var item in Model.objchild)
+                                                                {
+
+                                                                    Html.RenderPartial("AddItem", item);
+                                                                }
+
+
+
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            <tr>
+
+
+                                                                <td></td>
+
+                                                                <td style="width:120px">
+                                                                    <input type="text" class="form-control form-control-sm item-sel"
+                                                                           data-toggle="modal" data-target="#priceTable" id="fistorder">
+                                                                </td>
+                                                                <td class="text-right"></td>
+                                                                <td class="text-right">
+
+
+                                                                <td>
+                                                                    <a href="" class="btn btn-sm btn-outline-danger del-btn">
+                                                                        <i class="fa fa-trash"
+                                                                           aria-hidden="true"></i>
+                                                                    </a>
+                                                                </td>
+                                                                <td></td>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <hr>
+                                    <div class="row ">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class="my-form">
+                                                <!--d-none d-md-none d-lg-block-->
+                                                <div class="form-group row">
+                                                    <label for="MeasurementsDetails"
+                                                           class="col-lg-4 col-md-12 col-sm-12 col-form-label">Transportation Remarks</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextAreaFor(a => a.objsaleorderHeader.MeasurmentDeatails, new { @class = "form-control", @rows = "2" })
+                                                        @*<textarea rows="2" cols="50" class="form-control" id="MeasurementsDetails">
+                                                            </textarea>*@
+
+                                                        @*@Html.TextAreaFor(a => a.objsaleorderHeader.Tstatus, Model.objsaleorderHeader.Tstatus.ToString(), new { @class = "form-control form-control-sm", @placeholder = "Transport No."})*@
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12"> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="mx-auto">
+                                            @Html.HiddenFor(a => a.objsaleorderHeader.orderno, new { @id = "printvisible", @visible = true })
+
+                                            @if ( Model.objsaleorderHeader.Tstatus == "Open")
+                                            {
+                                                <input type="submit" name="Print"  value="Print" class="btn btn-secondary btn-sm" formtarget="_blank" onclick="return sendotp()"  />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" name="Save"  value="Save" />
+                                            }
+                                                @*<button type="button" class="btn btn-secondary btn-sm float-left">Save</button>*@
+                                                &nbsp; &nbsp;
+                                                <button type="button" class="btn btn-secondary btn-sm float-right">Close</button>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="modal fade" id="Savedetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Save</h5>
+
+                </div>
+                <div id="closeid" class="modal-body"> Do You Want to Save </div>
+                <div class="modal-content" id="trnsOTP">
+                   
+
+                </div>
+                
+                
+                <div class="modal-footer">
+                    @if ( Model.objsaleorderHeader.Tstatus == "Open")
+                    {
+                        <input type="submit" name="Save"  value="Save" class="btn btn-danger"  style="background-color: #4c111c; border-color: #4c111c;" onclick="return checkOTP()"/>
+                        <button type="button" id="stay" class="btn btn-danger" data-dismiss="modal" style="background-color: #4c111c; border-color: #4c111c;">No</button>
+                    }
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+}
+
+<!-- Modal-popup -->
+<div class="modal fade" id="TransList" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sale Order Details</h5>
+                <div class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="text" id="ItemInput" onkeyup="filtertable(this, 'SaleorderList')" class="form-control form-control-sm" placeholder="Search here">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <table class="table table-bordered table-sm table-hover" id="SaleorderList">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Trans No</th>
+                            <th>Date</th>
+                            <th>Pickup User</th>
+                            <th>Status</th>
+                          
+                            <th>#</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (ViewBag.transhead != null)
+                        {
+                            foreach (var salordr in (List<DarZon.Models.Transportaionhead>)ViewBag.transhead)
+                            {
+                                <tr>
+                                    <td>
+                                        <span class="custcode">@salordr.Tno</span>
+                                    </td>
+                                    <td><span class="custcode">@((salordr.Tdate ?? DateTime.Now).ToString("dd/MM/yy"))</span> </td>
+                                    <td><span class="custcode">@salordr.Pickupuser</span></td>
+                                    <td><span class="custcode">@salordr.Tstatus</span></td>
+                                 
+                                    <td>@Html.ActionLink("select", "findtransportation", new { id = salordr.Tno }, new { @class = "btn btn-secondary btn-sm add-btn" })</td>
+
+                                </tr>
+
+                            }
+                        }
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="modal-footer"><button type="button" class="btn btn-dark btn-sm" data-dismiss="modal" aria-label="Close">Close</button></div>
+        </div>
+
+    </div>
+
+</div>
+<div class="modal fade" id="priceTable" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Sale Order</h5>
+                <div class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="text" id="ItemInput" onkeyup="filtertable(this, 'tblSaleorderlist')" class="form-control form-control-sm" placeholder="Search here">
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="divorderlist">
+                @{Html.RenderAction("Orederlist", "OrderDetails"); }
+                @*@{Html.RenderAction("customerlist", "CustomeDetailsr"); }*@
+            </div>
+            <div class="modal-footer">&nbsp; <button type="button" class="btn btn-dark btn-sm" data-dismiss="modal" aria-label="Close">Close</button></div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="~/js/Index.js"></script>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d31798e90c3343c597c3c0fda2a7b816" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.C_DAYS_TARIFF" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.C_ITEMMESURMENT" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.C_ITEMMESURMENTDET1" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.C_MEASUREMENTS" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.C_USER_MASTER" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.CRD1" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.DLN1" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.INV1" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.ITM1" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.OCLG" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.OCRD" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.OCST" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.ODLN" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.OHEM" Width="1.5" PointX="4.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.OHP" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.OINV" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.OITB" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.OITM" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.ORCT" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.ORDR" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.OSTC" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.OWH" Width="1.5" PointX="24.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.RDR1" Width="1.5" PointX="26.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.SaleOrderDetail" Width="1.5" PointX="6.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.SaleOrderHeader" Width="1.5" PointX="28.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.Transportaionchild" Width="1.5" PointX="28.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.Transportaionhead" Width="1.5" PointX="28.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.Tbl_NumberSeries" Width="1.5" PointX="29.375" PointY="15.75" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.Mesurement" Width="1.5" PointX="29.375" PointY="18.75" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.C_ADDONGROUP" Width="1.5" PointX="29.375" PointY="21.75" />
+        <EntityTypeShape EntityType="DARZAN_LIVEModel.LabelDetail" Width="1.5" PointX="29.375" PointY="26.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,54 @@
+﻿
+@model DarZon.Models.SaleOrderDetail
+
+<tr>
+
+    @using (Html.BeginCollectionItem("addonlist"))
+    {
+
+    <td style="display:none">
+        @Html.CheckBoxFor(a => a.IsCustomermeterial, new { @class = "checkbox", @onclick = "calucation(this)" })
+        @{ Model.MeterialCost = Math.Round(Model.MeterialCost ?? 0, 0);
+            Model.ServiceCost = Math.Round(Model.ServiceCost ?? 0, 0);
+            Model.TotalAmount = Math.Round(Model.TotalAmount ?? 0, 0);
+
+            }@Model.ItemCode
+    </td>
+
+        <td style="vertical-align:middle">
+            @Html.DisplayFor(a => a.COGSCostingCode)
+            @Html.HiddenFor(a => a.COGSCostingCode)
+        </td>
+        <td style="vertical-align:middle">
+            @Html.DisplayFor(a => a.ItemDescription)
+            @Html.HiddenFor(a => a.taxCode)
+            @Html.HiddenFor(a =>a.TaxAmount)
+            @Html.HiddenFor(a => a.ItemCode)
+            @Html.HiddenFor(a =>a.ItemDescription)
+            @Html.HiddenFor(a =>a.Id)
+            @Html.HiddenFor(a => a.maxQty, new { @class = "maxQty" })
+            @Html.HiddenFor(a => a.minQty, new { @class = "minQty" })
+        </td>
+        <td>@Html.TextBoxFor(a => a.quantity, new { @class = "Quantity form-control form-control-sm", @onchange = "calucation(this);", @type = "number",  onkeypress = "return isNumber(event)" , @min = "1" })</td>
+      
+        <td>@Html.TextBoxFor(a =>a.MeterialCost, new { @onchange = "calucation(this);", @class = "MeterialCost form-control form-control-sm", @readonly = true })</td>
+
+        <td>@Html.TextBoxFor(a => Model.ServiceCost, new { @onchange = "calucation(this);", @class = "ServiceCost form-control form-control-sm" , @readonly = true })</td>
+
+        <td>
+            @Html.TextBoxFor(a => a.TotalAmount, new { @class = "AddonTotalAmount form-control form-control-sm", @readonly = true })
+            @Html.HiddenFor(a =>a.Id)
+            @Html.HiddenFor(a => a.parentId)
+         </td>
+        <td>
+            
+            <button type="button" class="btn btn-sm btn-outline-danger del-btn" onmousedown="deleterow(this)">
+                <i class="delete fa fa-trash"
+                   aria-hidden="true"></i>
+            </button>
+
+        </td>
+    
+}
+    </tr>
+

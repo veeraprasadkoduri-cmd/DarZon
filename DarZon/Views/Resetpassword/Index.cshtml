@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Darzan Tailor</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="icon" type="../image/png" sizes="32x32" href="../img/favicon.png">
+
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <!-- Login -->
+    <section class="login-sec">
+        <div class="container h-100">
+            <div class="d-flex justify-content-center h-100">
+                <div class="user_container user_rp animated fadeInLeft">
+                    <div class="d-flex justify-content-center">
+                        <div class="logo-brand-container">
+                            <img src="../img/logo_login.jpg" class="img-fluid" alt="Logo">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center form_container">
+                        <form>
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input placeholder="New Password" type="password" id="Password" maxlength="20" class="form-control input_pass" />
+                                <p id="PasswordPara" style="color:red">
+                            </div>
+                            <div class="input-group mb-2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                </div>
+                                <input placeholder="Confirm New Password" type="password" id="ConfiremPWd" maxlength="20" onchange="return CheckConfiremPWD()" class="form-control input_pass" />
+                                <p id="ConfirePWDPara" style="color:red">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex justify-content-center my-4 login_container">
+                        <button type="button" name="button" class="btn login_btn" id="btnLogin" onclick="clickreset(this)" >Reset Password</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Login -->
+    <!-- End of Login -->
+    
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="../js/Login.js"></script>
+    <script src="../js/Validation.js"></script>
+    <script src="../js/custom.js"></script>
+    <script src="~/js/Reset.js"></script>
+</body>
+
+</html>

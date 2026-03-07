@@ -1,0 +1,322 @@
+﻿@model DarZon.Models.CustomerMaster
+@{
+    ViewBag.Title = "CustomerMaster";
+}
+@using (Html.BeginForm("CustomerMaster", "CustomeDetailsr", FormMethod.Post))
+{
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 ml-auto overflow-hidden">
+                    <div class="row">
+                        <div class="col mt-2">
+                            <div class="card">
+                                <h5 class="card-header">
+                                    Customer Details&nbsp;&nbsp;
+                                    <button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#customerdetails">Find Existing Customer</button>
+                                </h5>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label for="customerName" class="col-lg-4 col-md-12 col-sm-12">Customer Name <span style="color:red">*</span></label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.CustomerName, new { @class = "form-control form-control-sm",
+                                                       @placeholder = "Customer Name",
+                                                       @Id = "CustomerName"
+                                                   })
+
+                                                        <span id="CustomerNamepara" style="color:red"></span>
+                                                        @Html.HiddenFor(a => a.customercode, new { id = "customercode" })
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label for="PhoneNo" class="col-lg-4 col-md-12 col-sm-12">Phone No.<span style="color:red">*</span></label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.PhoneNumber, new
+
+                                                   {
+                                                       @id = "PhoneNo",
+                                                       @class = "form-control form-control-sm",
+                                                       @onchange = "Mobile('PhoneNo')",
+                                                       @type = "number",
+                                                       @placeholder="PhoneNumber"
+
+
+                                                   } )
+                                                        <span id="PhoneNoMobilePara" style="color:red"></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+
+                                                <div class="form-group row">
+                                                    <label for="DNo" class="col-lg-4 col-md-12 col-sm-12">Door No.</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.DoorNo, new
+                                                   {
+                                                       @class = "form-control form-control-sm",
+                                                       @placeholder = "Door No"
+                                                   })
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label for="email" class="col-lg-4 col-md-12 col-sm-12">Alt Phone No.&nbsp; </label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.AltrphoneNo, new
+                                                   {
+                                                       @id = "APhoneNo",
+                                                       @class = "form-control form-control-sm",
+                                                       @placeholder = "Alternate Phone No.",
+                                                       @onchange = "Mobile('APhoneNo')",
+                                                       @type = "number"
+
+                                                   })
+
+                                                        <span id="PhoneNoMobilePara" style="color:red"></span>
+
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+
+                                                <div class="form-group row">
+                                                    <label for="street" class="col-lg-4 col-md-12 col-sm-12">Street</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.Street, new
+                                                   {
+                                                       @class = "form-control form-control-sm",
+                                                       @placeholder = "Street"
+                                                   })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+
+                                                <div class="form-group row">
+                                                    <label for="Block" class="col-lg-4 col-md-12 col-sm-12">EmailId &nbsp; </label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.Emailid, new
+                                                   {
+                                                       @class = "form-control form-control-sm",
+                                                       @placeholder = "EmailId",
+                                                          @onchange = "checkEmail1('Emailid')"
+                                                   })
+                                                        <span id="EmailPara" style="color:red"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+
+                                                <div class="form-group row">
+                                                    <label for="street" class="col-lg-4 col-md-12 col-sm-12">Block</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.Block, new
+                                                   {
+                                                       @class = "form-control form-control-sm",
+                                                       @placeholder = "Block"
+                                                   })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+
+                                                <div class="form-group row">
+                                                    <label for="street" class="col-lg-4 col-md-12 col-sm-12">Date of Anniversery</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.Anniversery, new
+                                                   {
+                                                       @class = "form-control form-control-sm",
+                                                       @placeholder = "Date Of Aniversery",
+                                                       @onmousedown = "custdatepicker(this)"
+
+                                                   })
+                                                        <span id="AniEra" style="color:red"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                    <div class="row">
+
+
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+
+                                                <div class="form-group row">
+                                                    <label for="street" class="col-lg-4 col-md-12 col-sm-12">Area</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.Area, new
+                                                   {
+                                                       @class = "form-control form-control-sm",
+                                                       @placeholder = "Area",
+
+                                                   })
+                                                        <span id="EmailPara" style="color:red"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+
+                                                <div class="form-group row">
+                                                    <label for="street" class="col-lg-4 col-md-12 col-sm-12">Date Of Birth</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.DBO, new
+                                                   {
+                                                       @class = "form-control form-control-sm",
+                                                       @placeholder = "Date Of Birth",
+                                                       @onmousedown = "custdatepicker(this)"
+                                                   })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                    <div class="row mt-2">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+
+                                                <div class="form-group row">
+                                                    <label for="street" class="col-lg-4 col-md-12 col-sm-12">Land Mark</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.Landmark, new
+                                                   {
+                                                       @class = "form-control form-control-sm",
+                                                       @placeholder = "Land Mark"
+                                                   })
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">City</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.city, new
+                                                   {
+                                                       @class = "form-control form-control-sm",
+                                                       @placeholder = "City"
+                                                   })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="pincode" class="col-lg-4 col-md-12 col-sm-12">Pin Code</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.Pincode, new
+                                                   {
+                                                       @id="Pincode",
+                                                       @class = "form-control form-control-sm",
+                                                       @placeholder = "Pincode",
+                                                       @type = "number",
+                                                       @onchange = "Pincode('Pincode')",
+                                                        @maxlength="6"
+
+
+                                                   })
+                                                        <span id="PhoneNoMobilePara" style="color:red"></span>
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="state" class="col-lg-4 col-md-12 col-sm-12">State</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.DropDownListFor(a => a.State, new SelectList(ViewBag.state, "Value", "Text"), new { @id = "ddlactivitytype", @class = "form-control form-control-sm" })
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12"> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="mx-auto">
+                                            <div id="Savediv">
+                                                <input type="submit" class="btn btn-secondary btn-sm float-left" name="Save" value="Save" onclick=" return CheckValidation()" />
+                                                @*<button type="submit" class="btn btn-secondary btn-sm float-left">Save</button>*@
+                                                &nbsp;&nbsp;
+                                                <button type="button" id="close" class="btn btn-secondary btn-sm float-right" onclick="refreshpage()">Clear</button>
+
+                                            </div>
+                                            <div id="Updatediv" style="visibility:hidden">
+                                                <input type="submit" class="btn btn-secondary btn-sm float-left" name="Update" value="Update" />
+                                                @*<button type="submit" class="btn btn-secondary btn-sm float-left">Save</button>*@
+                                                &nbsp;&nbsp;
+                                                <button type="button" id="close" class="btn btn-secondary btn-sm float-right" onclick="refreshpage()">Clear</button>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<div class="modal fade" id="customerdetails" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+        @{Html.RenderAction("customerlist", "CustomeDetailsr"); }
+    </div>
+</div>
+<script src="~/js/CustomerMaster.js"></script>
+
+
+

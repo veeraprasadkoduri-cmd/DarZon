@@ -1,0 +1,66 @@
+﻿@model  ICollection<DarZon.Models.Invoicechild>
+    @{
+    Layout = null;
+    }
+
+
+    <div class="table-responsive tableFixHead">
+        <table class="table list-table table-bordered table-sm table-hover" id="TblInvList">
+            <thead class="thead-light">
+                <tr>
+                   <th>SNO.</th>
+                    <th>SaleOrderNo</th>
+                    <th scope="col">Item&nbsp;Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Tax</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                using (Html.BeginCollectionItem("objinvlist"))
+                {
+                <tr>
+                    <td>
+
+                    </td>
+                    
+                    <td>
+                        @Html.TextBoxFor(item => Model.ElementAt(i).websaleorder, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+                    </td>
+
+                    <td>
+                        @Html.TextBoxFor(item => Model.ElementAt(i).ItemCode, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(item => Model.ElementAt(i).description, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(item => Model.ElementAt(i).qty, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(item => Model.ElementAt(i).Rate, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(item => Model.ElementAt(i).Tax, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(item => Model.ElementAt(i).Total, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(item => Model.ElementAt(i).Remarks, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+                    </td>
+                </tr>
+                }
+
+                }
+
+
+            </tbody>
+        </table>
+    </div>

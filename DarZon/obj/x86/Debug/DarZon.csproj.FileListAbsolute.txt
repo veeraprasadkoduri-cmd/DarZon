@@ -1,0 +1,190 @@
+D:\Shankar\DarZon\DarZon\bin\DarZon.dll.config
+D:\Shankar\DarZon\DarZon\bin\DarZon.dll
+D:\Shankar\DarZon\DarZon\bin\DarZon.pdb
+D:\Shankar\DarZon\DarZon\bin\roslyn\csc.exe
+D:\Shankar\DarZon\DarZon\bin\roslyn\csc.exe.config
+D:\Shankar\DarZon\DarZon\bin\roslyn\csc.rsp
+D:\Shankar\DarZon\DarZon\bin\roslyn\csi.exe
+D:\Shankar\DarZon\DarZon\bin\roslyn\csi.exe.config
+D:\Shankar\DarZon\DarZon\bin\roslyn\csi.rsp
+D:\Shankar\DarZon\DarZon\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Shankar\DarZon\DarZon\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Shankar\DarZon\DarZon\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.AppContext.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Collections.Immutable.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Console.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.IO.Compression.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.IO.FileSystem.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.IO.Pipes.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Reflection.Metadata.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Security.AccessControl.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Security.Claims.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.ValueTuple.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Xml.XPath.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Shankar\DarZon\DarZon\bin\roslyn\vbc.exe
+D:\Shankar\DarZon\DarZon\bin\roslyn\vbc.exe.config
+D:\Shankar\DarZon\DarZon\bin\roslyn\vbc.rsp
+D:\Shankar\DarZon\DarZon\bin\roslyn\VBCSCompiler.exe
+D:\Shankar\DarZon\DarZon\bin\roslyn\VBCSCompiler.exe.config
+D:\Shankar\DarZon\DarZon\bin\BeginCollectionItem.dll
+D:\Shankar\DarZon\DarZon\bin\EntityFramework.dll
+D:\Shankar\DarZon\DarZon\bin\EntityFramework.SqlServer.dll
+D:\Shankar\DarZon\DarZon\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Shankar\DarZon\DarZon\bin\Microsoft.Web.Infrastructure.dll
+D:\Shankar\DarZon\DarZon\bin\System.Web.Helpers.dll
+D:\Shankar\DarZon\DarZon\bin\System.Web.Mvc.dll
+D:\Shankar\DarZon\DarZon\bin\System.Web.Razor.dll
+D:\Shankar\DarZon\DarZon\bin\System.Web.Webpages.Deployment.dll
+D:\Shankar\DarZon\DarZon\bin\System.Web.Webpages.dll
+D:\Shankar\DarZon\DarZon\bin\System.Web.Webpages.Razor.dll
+D:\Shankar\DarZon\DarZon\bin\EntityFramework.xml
+D:\Shankar\DarZon\DarZon\bin\EntityFramework.SqlServer.xml
+D:\Shankar\DarZon\DarZon\bin\System.Web.Razor.xml
+D:\Shankar\DarZon\DarZon\bin\System.Web.Webpages.xml
+D:\Shankar\DarZon\DarZon\bin\System.Web.Webpages.Deployment.xml
+D:\Shankar\DarZon\DarZon\bin\System.Web.Webpages.Razor.xml
+D:\Shankar\DarZon\DarZon\bin\System.Web.Helpers.xml
+D:\Shankar\DarZon\DarZon\bin\System.Web.Mvc.xml
+D:\Shankar\DarZon\DarZon\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Shankar\DarZon\DarZon\obj\x86\Debug\Interop.SAPbobsCOM.dll
+D:\Shankar\DarZon\DarZon\obj\x86\Debug\Interop.SAPbouiCOM.dll
+D:\Shankar\DarZon\DarZon\obj\x86\Debug\DarZon.csproj.ResolveComReference.cache
+D:\Shankar\DarZon\DarZon\obj\x86\Debug\DarZon.csproj.CoreCompileInputs.cache
+D:\Shankar\DarZon\DarZon\obj\x86\Debug\DarZon.csproj.CopyComplete
+D:\Shankar\DarZon\DarZon\obj\x86\Debug\DarZon.dll
+D:\Shankar\DarZon\DarZon\obj\x86\Debug\DarZon.pdb
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\DarZon.dll.config
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\DarZon.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\DarZon.pdb
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\csc.exe
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\csc.exe.config
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\csc.rsp
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\csi.exe
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\csi.exe.config
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\csi.rsp
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.AppContext.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Collections.Immutable.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Console.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.IO.Compression.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.IO.FileSystem.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.IO.Pipes.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Reflection.Metadata.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Security.AccessControl.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Security.Claims.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.ValueTuple.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Xml.XPath.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\vbc.exe
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\vbc.exe.config
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\vbc.rsp
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\VBCSCompiler.exe
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\VBCSCompiler.exe.config
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\BeginCollectionItem.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\EntityFramework.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\EntityFramework.SqlServer.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\Microsoft.Web.Infrastructure.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Helpers.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Mvc.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Razor.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Webpages.Deployment.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Webpages.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Webpages.Razor.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\EntityFramework.xml
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\EntityFramework.SqlServer.xml
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Razor.xml
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Webpages.xml
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Webpages.Deployment.xml
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Webpages.Razor.xml
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Helpers.xml
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Mvc.xml
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\obj\x86\Debug\DarZon.csprojAssemblyReference.cache
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\obj\x86\Debug\Interop.SAPbobsCOM.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\obj\x86\Debug\Interop.SAPbouiCOM.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\obj\x86\Debug\DarZon.csproj.ResolveComReference.cache
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\obj\x86\Debug\DarZon.csproj.CoreCompileInputs.cache
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\obj\x86\Debug\DarZon.csproj.CopyComplete
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\obj\x86\Debug\DarZon.dll
+D:\Anil\Darzan Live 09042019\DarZon\DarZon\obj\x86\Debug\DarZon.pdb
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Collections.Immutable.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\System.Reflection.Metadata.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\roslyn\VBCSCompiler.exe
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\DarZon.dll.config
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\DarZon.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\DarZon.pdb
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\BeginCollectionItem.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\EntityFramework.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\EntityFramework.SqlServer.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\Microsoft.Web.Infrastructure.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Helpers.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Mvc.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Razor.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Webpages.Deployment.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Webpages.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Webpages.Razor.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\EntityFramework.xml
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\EntityFramework.SqlServer.xml
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Razor.xml
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Webpages.xml
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Webpages.Deployment.xml
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Webpages.Razor.xml
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Helpers.xml
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\System.Web.Mvc.xml
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\obj\x86\Debug\Interop.SAPbobsCOM.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\obj\x86\Debug\Interop.SAPbouiCOM.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\obj\x86\Debug\DarZon.csproj.ResolveComReference.cache
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\obj\x86\Debug\DarZon.csproj.CoreCompileInputs.cache
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\obj\x86\Debug\DarZon.csproj.CopyComplete
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\obj\x86\Debug\DarZon.dll
+D:\Vijay\Darzan Live 09042019\DarZon\DarZon\obj\x86\Debug\DarZon.pdb

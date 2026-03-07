@@ -1,0 +1,68 @@
+﻿@model  IEnumerable<DarZon.Models.SaleorderwithMeasurement>
+@{
+    ViewBag.Title = "Itemlist";
+    Layout = null;
+}
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalCenterTitle">Item List</h5>
+
+    <div class="form-inline">
+        <center>
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" id="CustInput" class="form-control form-control-sm" onkeyup="filtertable(this, 'popupitemList')" placeholder="Search here">
+            </div>
+        </center>
+    </div>
+
+    
+</div>
+<div class="col">
+    <div class="table-responsive tableFixHead">
+        <table class="table table-bordered table-sm table-hover tblsrial list-table" id="popupitemList">
+            <thead class="thead-light">
+                <tr>
+                    <th>S.No</th>
+                    <th>Item Code</th>
+                    <th>Itemname</th>
+                    <th>Rate</th>
+                 
+
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Count() > 0)
+                {
+
+                    foreach (var Item in Model)
+                    {
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="Itemcode">@Item.ItemCode</span> <button type="button" class="btn btn-secondary btn-sm add-btn" data-dismiss="modal"
+                                                                             aria-label="Select" id="btnaddItem" onclick="@("additemfromlist('"+Item.ItemCode+"','"+Item.ItemDescription+"','"+Item.UnitPrice.ToString() +"','"+Item.noofdays.ToString()+"')")">
+                            @*"(@Item.ItemCode,@Item.ItemDescription,@Item.UnitPrice)">*@
+                            Select
+                        </button>
+                    </td>
+
+                    <td class="Itemname">@Item.ItemDescription</td>
+                    <td class="Unitprice">@Math.Round(Item.UnitPrice??0,0)
+                    <span class="noofdays" style="display:none">@Item.noofdays</span>
+                    </td>
+
+                  
+
+                </tr>
+
+                    }
+
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal-footer"><button type="button" class="btn btn-dark btn-sm" data-dismiss="modal" aria-label="Close">Close</button></div>
+
+

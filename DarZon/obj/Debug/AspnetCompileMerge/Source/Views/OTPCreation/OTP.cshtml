@@ -1,0 +1,14 @@
+﻿@model DarZon.Models.OTPEntity
+<div class="row">
+    <div class="mx-auto py-3" style="width: 300px;">
+        <span style="color:#4c111c">Enter OTP</span>&nbsp;&nbsp;&nbsp;
+        <input id="txtOTP" max="9999"  onkeydown="stopCarret()" onkeyup="stopCarret()" style="font-size:30px;width:100px"  onkeypress = "return isNumber(event)" type="number"  />
+        @Html.HiddenFor(a => a.saleorderno, new { @id = "OTPSaleorderNo" })
+        &nbsp;&nbsp;<span style="color:#4c111c" id="spnopt"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="mx-auto py-1" style="width: 300px;">
+            <button type="button" onclick="resedotp()" class="btn btn-link" style="color:#4c111c;font:700">Resend OTP</button>
+        </div>
+    </div>

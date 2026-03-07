@@ -1,0 +1,493 @@
+﻿@model DarZon.Models.saleorder
+@{
+    ViewBag.Title = "SaleOrder";
+}
+@using (Html.BeginForm("SaleOrder", "SaleOrder", FormMethod.Post, new { onkeydown = "return event.keyCode!=13" }))
+{
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 ml-auto overflow-hidden">
+                    <div class="row">
+                        <div class="col mt-2">
+                            <div class="card">
+                                <h5 class="card-header">Sale Order&nbsp;&nbsp;  <button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#salorderdetails">Find Existing SaleOrder</button></h5>
+                                <div class="card-body">
+
+                                    <div class="row" id="divsalhed">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">
+                                                        Sale Order
+                                                        No.
+                                                    </label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.objsaleorderHeader.DocEntry, Model.objsaleorderHeader.DocEntry, new { @class = "form-control form-control-sm", @placeholder = "Sale Order No", @readonly = true })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="SaleOrderDate" class=" col-lg-4 col-md-12 col-sm-12 col-form-label">
+                                                        Sale Order Date
+                                                    </label>
+                                                    <div class="jquery-datepicker col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.objsaleorderHeader.DocDate, Model.objsaleorderHeader.DocDate, new { @class = "jquery-datepicker__input form-control form-control-sm", @onmousedown = "datepicker(this)", @id = "saledate" })
+                                                        @*<input type="date" class="form-control form-control-sm" id="SaleOrderDate"
+                                                            placeholder="Sale Order Date">*@
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row" style="visibility:hidden">
+                                                    <label for="pickupuser" class=" col-lg-4 col-md-12 col-sm-12 col-form-label">
+                                                        Pickup User
+
+                                                    </label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.DropDownListFor(a => a.objsaleorderHeader.Pickupuser, new SelectList(ViewBag.pickuserlist, "Value", "Text"), Model.objsaleorderHeader.UserName, new { @id = "ddlpickuser", @class = "form-control form-control-sm" })
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">User ID</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextBoxFor(a => a.objsaleorderHeader.UserName, Model.objsaleorderHeader.UserName, new { @class = "form-control form-control-sm", @placeholder = "User Name", @readonly = true })
+                                                        @Html.HiddenFor(a => a.objsaleorderHeader.Id)
+                                                        @Html.HiddenFor(a => a.objsaleorderHeader.OTP, new { @id = "saleOTP" })
+                                                        <div style="display:none">
+                                                            @Html.TextBoxFor(a => a.custPhoneNo, new { @id = "PhoneNo" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="CustomerNo" class="col-lg-4 col-md-12 col-sm-12">Customer No.</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextBoxFor(a => a.objsaleorderHeader.CardCode, new { @id = "CustomerNo", @data_toggle = "modal", @data_target = "#customerdetails", @class = "form-control form-control-sm", @placeholder = "Customer No.", @readonly = true })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="CustomerName" class="col-lg-4 col-md-12 col-sm-12">Customer Name</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(a => a.objsaleorderHeader.CustomerName, new { @id = "CustomerName", @class = "form-control form-control-sm", @placeholder = "Customer No.", @readonly = true })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2" id="divsaldet">
+                                        <div class="col">
+                                            <!-- <a href="" class="btn btn-sm btn-outline-success del-btn"><i class="fa fa-plus" aria-hidden="true"></i>Add</a> -->
+                                            <div class="table-responsive tableFixHead" id="divitemlist">
+                                                <table class="table table-bordered table-sm table-hover list-table" id="SaleordLineItems">
+                                                    <thead class="thead-light">
+                                                        <tr>
+                                                            <th>S.No</th>
+                                                            <th>Item&nbsp;Category</th>
+                                                            <th>Description</th>
+                                                            <th>Fabrics</th>
+                                                            <th>Rate</th>
+                                                            
+                                                            <th>Total</th>
+                                                            <th>Del&nbsp;Date</th>
+                                                            <th>Remarks</th>
+
+                                                            <th>#</th>
+                                                            <th>#</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @if (Model.objlistsalDetails != null && Model.objlistsalDetails.Count > 0)
+                                                        {
+                                                            int i = 1;
+                                                            foreach (var saledetails in Model.objlistsalDetails)
+                                                            {
+
+                                                                if (Model.objsaleorderHeader.status == "C")
+                                                                {
+                                                                    saledetails.curstatus = "C";
+
+                                                                }
+                                                                saledetails.serialno = i;
+                                                                Html.RenderPartial("AddItem", saledetails);
+                                                                i = i + 1;
+                                                            }
+                                                        }
+                                                        @if (Model.objsaleorderHeader.status != "C")
+                                                        {
+
+                                                            <tr>
+                                                                <td></td>
+                                                                <td class="px-0">
+
+                                                                    @Html.DropDownList("Value", new SelectList(ViewBag.Itemcategory, "Value", "Text"), "Please select", new { @id = "ddlFristitem", @class = "custom-select my-1 mr-sm-2 item-drop" })
+
+                                                                </td>
+                                                                <td style="width:120px">
+                                                                    <input type="button" class="btn btn-secondary btn-sm" value="Add Item"
+                                                                           id="txtfirstItem" onclick="AddNewItem()">
+                                                                </td>
+                                                                <td></td>
+                                                                <td class="text-right"></td>
+                                                                <td class="text-right"></td>
+                                                                <td class="text-right" style="padding: 0; width:120px"></td>
+
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <hr>
+
+                                    </div>
+                                    <hr>
+                                    <div class="row" id="divrpoceed">
+                                        @if (Model.objsaleorderHeader.status != "C")
+                                        {
+                                            <div class="mx-auto">
+
+
+                                                <input type="button" name="Proceed to pay
+" id="btnprcepay" value="Proceed to pay" class="btn btn-secondary btn-sm" onclick="proceed()" />
+                                                &nbsp;&nbsp;
+                                                <input type="button" name="Modify Order
+" id="btnMdfOrder" value="Modify Order" class="btn btn-secondary btn-sm" onclick="ModifyOrder()" />
+
+                                                &nbsp;&nbsp;
+                                                <input type="submit" name="ClearItems" value="ClearItems" class="btn btn-secondary btn-sm" id="btnClaerItems" />
+                                            </div>
+                                        }
+                                    </div>
+
+                                    <div class="row flex-column-reverse flex-lg-row" id="paymentdetails">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class="my-form">
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Cash</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                                @if (Model.objsaleorderHeader.cash == 0)
+                                                                {
+                                                                    Model.objsaleorderHeader.cash = null;
+                                                                }
+                                                                @Html.TextBoxFor(model => model.objsaleorderHeader.cash, new { @class = "form-control form-control-sm", @id = "CashAmount", @onkeyup = "sumofadvance(event)", @type = "number", @step = ".01", @min = "1", onkeydown = "return isNumber(event)" })
+
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Card</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                @if (Model.objsaleorderHeader.card == 0)
+                                                                {
+                                                                    Model.objsaleorderHeader.card = null;
+                                                                }
+                                                              
+
+                                                                @Html.TextBoxFor(model => model.objsaleorderHeader.card, new { @class = "form-control form-control-sm", @id = "CardAmount", @onkeyup = "sumofadvance()", @type = "number", @step = ".01", @min = "1", onkeypress = "return isNumber(event)" })
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                @Html.TextBoxFor(model => model.objsaleorderHeader.carddetails, new { @class = "form-control form-control-sm", @id = "CardDetails" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Other Payment</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                @if (Model.objsaleorderHeader.OtherPayments == 0)
+                                                                {
+                                                                    Model.objsaleorderHeader.OtherPayments = null;
+                                                                }
+
+                                                                @Html.TextBoxFor(model => model.objsaleorderHeader.OtherPayments, new { @class = "form-control form-control-sm", @id = "OtherPaymentAmount", @onkeyup = "sumofadvance()", @type = "number", @step = ".01", @min = "1", onkeypress = "return isNumber(event)" })
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                @Html.TextBoxFor(model => model.objsaleorderHeader.OthpayDetails, new { @class = "form-control form-control-sm", @id = "OtherPaymentDetails" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row mt-3">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12 col-form-label">Remarks</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextAreaFor(model => model.objsaleorderHeader.Remarks, new { @rows = "2", @cols = "50", @class = "form-control", @id = "Remarks" })
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class="row float-md-right">
+                                                <div class="col">
+                                                    <div class="my-form">
+                                                        <table class="table table-sm border">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                        <label class="col-form-label">Total Amount(Before Discount)</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.TextBoxFor(model => model.objsaleorderHeader.totalBeorerDiscount, new { @rows = "2", @cols = "50", @class = "form-control form-control-sm font-weight-bold text-right", @id = "TxtTotalBefDis", @readonly = true })
+
+
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                                <tr>
+                                                                    <th>
+                                                                        <label class="col-form-label">Discount(In %)&nbsp;</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @if (Model.objsaleorderHeader.Discount == 0)
+                                                                        {
+                                                                            Model.objsaleorderHeader.Discount = null;
+                                                                        }
+                                                                        @Html.TextBoxFor(model => model.objsaleorderHeader.Discount, new { @rows = "2", @cols = "50", @class = "form-control form-control-sm font-weight-bold text-right", @onchange = "checkdiscount()", @id = "Txtdiscount", @type = "number", @step = ".01", @min = "0" })
+
+
+                                                                    </th>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <th class="bg-light">
+                                                                        <label class="col-form-label">Total AfterDiscount</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.TextBoxFor(model => model.objsaleorderHeader.totalAfterDiscount, new { @rows = "2", @cols = "50", @class = "form-control form-control-sm font-weight-bold text-right", @id = "Txtamount", @readonly = true })
+                                                                    </th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>
+                                                                        <label class="col-form-label">Advance</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @if (Model.objsaleorderHeader.Advance == 0)
+                                                                        {
+                                                                            Model.objsaleorderHeader.Advance = null;
+                                                                        }
+
+                                                                        @Html.TextBoxFor(model => model.objsaleorderHeader.Advance, new { @rows = "2", @cols = "50", @class = "form-control form-control-sm font-weight-bold text-right", @id = "TxtAdvance", @readonly = true })
+                                                                    </th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>
+                                                                        <label class="col-form-label">Balance</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.TextBoxFor(model => model.objsaleorderHeader.BalanceAmount, new { @rows = "2", @cols = "50", @class = "form-control form-control-sm font-weight-bold text-right", @id = "TxtBalance" })
+                                                                        @Html.HiddenFor(model => model.objsaleorderHeader.totaltax, new { @id = "TxtTaxamount" })
+                                                                    </th>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="row" id="divsave">
+                                        <div class="mx-auto">
+                                            @Html.HiddenFor(model => model.objsaleorderHeader.status, new { @id = "hdnStatus" })
+
+                                            @if (Model.objsaleorderHeader.status == "C")
+                                            {
+                                                <input type="submit" name="Print" id="Print" value="Print" class="btn btn-secondary btn-sm" formtarget="_blank" />
+
+                                                <input type="submit" name="FSendMail" class="btn btn-secondary btn-sm" id="FMail" value="SendMail" > 
+
+                                                <input type="submit" name="Close" id="clsAftprt" value="Close" class="btn btn-secondary btn-sm" />
+
+
+
+                                            }
+                                            else
+                                            {
+                                                <input type="button" value="Save" onclick="return CheckValidation()" class="btn btn-secondary btn-sm" />
+
+                                            }
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="Savedetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title" id="exampleModalCenterTitle" style="font-size: 14px">Do You Want To Proceed With Defined Delivery Dates? Enter OTP</p>
+                </div>
+                <div id="closeid" class="modal-body">
+                    <div class="row ">
+                        <div class="mx-auto py-1" style="width: 300px;">
+                            @{
+                                Html.RenderAction("OTP", "OTPCreation", new { salorder = @Model.objsaleorderHeader.DocEntry });
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="mx-auto" style="width: 300px;">
+                            <input type="submit" name="Save" class="btn btn-secondary btn-sm" id="Save" value="Save" onclick="return checkOTP()" style="background-color: #4c111c; border-color: #4c111c;"> &nbsp;
+                            <button type="button" id="stay" class="btn btn-secondary btn-sm" data-dismiss="modal" style="background-color: #4c111c; border-color: #4c111c;">No</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="PrintSendMAil" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title" id="exampleModalCenterTitle" style="font-size: 14px"></p>
+                </div>
+                <div id="closeid" class="modal-body">
+                    <div class="row ">
+                        <div class="mx-auto" style="width: 300px;">
+                            <input type="submit" name="popupPrint" class="btn btn-secondary btn-sm" id="popupPrint" value="Print" style="background-color: #4c111c; border-color: #4c111c;" formtarget="_blank" > &nbsp;
+                            <input type="submit" name="SendMail" class="btn btn-secondary btn-sm" id="Mail" value="SendMail" style="background-color: #4c111c; border-color: #4c111c;"> &nbsp;
+
+
+                            <input type="button" name="Clear" class="btn btn-secondary btn-sm" id="popupclose" value="Close" onclick="refreshpage()" style="background-color: #4c111c; border-color: #4c111c;"> &nbsp;
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+<div class="modal fade" id="priceTable" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="mdlitemlist">
+
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="customerdetails" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+
+
+        @{
+            Html.RenderAction("customerlist", "CustomeDetailsr");
+        }
+
+
+    </div>
+</div>
+
+<div class="modal fade" id="salorderdetails" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">SaleOrder List</h5>
+                <div class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="text" id="ItemInput" onkeyup="filtertable(this, 'SaleorderList')" class="form-control form-control-sm" placeholder="Search here">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col">
+
+                <div class="table-responsive tableFixHead">
+                    <table class="table table-bordered table-sm table-hover" id="SaleorderList">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Sale Order No</th>
+                                <th>Date</th>
+                                <th>Customer Name</th>
+                                <th>#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (ViewBag.Saleordlist != null)
+                            {
+                                foreach (var salordr in (List<DarZon.Models.SaleOrderHeader>)ViewBag.Saleordlist)
+                                {
+                                    <tr>
+                                        <td>
+                                            <span class="custcode">@salordr.DocEntry</span>
+                                        </td>
+                                        <td><span class="custcode">@salordr.DocDate</span> </td>
+                                        <td><span class="custcode">@salordr.CustomerName</span></td>
+
+                                        <td>@Html.ActionLink("select", "saleorderfind", new { id = salordr.Id }, new { @class = "btn btn-secondary btn-sm add-btn" })</td>
+
+                                    </tr>
+
+
+                                }
+                            }
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="modal-footer">&nbsp; <button type="button" class="btn btn-dark btn-sm" data-dismiss="modal" aria-label="Close">Close</button></div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<script src="~/js/saleorder.js"></script>
+

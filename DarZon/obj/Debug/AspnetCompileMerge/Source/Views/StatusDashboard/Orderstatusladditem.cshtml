@@ -1,0 +1,65 @@
+﻿
+@model  ICollection<DarZon.Models.StatusDashboard>
+@{
+    Layout = null;
+}
+<div class="table-responsive tableFixHead">
+    <table class="table table-bordered table-sm table-hover tblsrial" id="TailorAssignement">
+        <thead class="thead-light">
+            <tr>
+                <th>S.No</th>
+
+                <th scope="col">Doc No.</th>
+                <th scope="col">SaleorderNo.</th>
+                <th scope="col">Line&nbsp;No.</th>
+                <th scope="col">Material&nbsp;Description</th>
+                <th scope="col">Trail&nbsp;Status</th>
+                <th scope="col">Trans&nbsp;Status</th>
+
+                <th scope="col">Internal&nbsp;Delivery&nbsp;Date</th>
+                <th scope="col">Customer&nbsp;Delivery&nbsp;Date</th>
+                <th scope="col">Deviation&nbsp;Days</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < Model.Count(); i++)
+            {
+                using (Html.BeginCollectionItem("objchilddata"))
+                {
+
+            <tr>
+               
+                <td></td>
+                <td>
+                    @Model.ElementAt(i).saleorderNo
+
+                </td>
+                <td>@Model.ElementAt(i).websaleorder</td>
+                <td>@Model.ElementAt(i).LineNo</td>
+                <td>@Model.ElementAt(i).MaterialDescription, new {@class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+                <td>
+                    @Model.ElementAt(i).TrailStatus, new {@class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+
+                <td>@Model.ElementAt(i).Tstatus, new {@class = "form-control form-control-sm item-sel", @readonly = "readonly" })</td>
+
+               
+                <td>@Model.ElementAt(i).CustomerDeliveryDate, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+
+
+                <td>@Model.ElementAt(i).CustomerDeliveryDate, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })</td>
+                <td>@Model.ElementAt(i).DeviationDays, new { @class = "form-control form-control-sm item-sel", @readonly = "readonly" })
+
+            </tr>
+                    @*@Html.HiddenFor(a => Model.ElementAt(i).Docentry, new { @id = "hdnStatus" })*@
+                }
+            }
+
+
+
+
+        </tbody>
+    </table>
+</div>
+
+

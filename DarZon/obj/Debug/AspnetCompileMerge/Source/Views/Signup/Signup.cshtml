@@ -1,0 +1,140 @@
+﻿@model DarZon.Models.Signup
+
+@{
+    ViewBag.Title = "Signup";
+    Layout = null;
+}
+
+
+
+<head>
+    <title>Signup | Darzan Tailors</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="../css/style.css" />
+
+
+
+</head>
+<body>
+    <!-- Login -->
+
+    <section class="login-sec">
+
+        <div class="container h-100">
+
+            <div class="d-flex justify-content-center h-100">
+
+                <div class="user_container user_signup animated fadeInDown">
+                    <div class="d-flex justify-content-center">
+
+                        <div class="logo-brand-container">
+                            <img src="../img/logo-circle.png" class="logo-brand" alt="Logo">
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center form_container">
+
+                        <form>
+
+                            <div class="input-group mb-2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" id="Name" class="form-control input_user" placeholder="Username">
+                                <p id="NamePara" style="color:red">
+                            </div>
+                            <div class="input-group mb-2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                </div>
+                                <input type="text" id="EmailId" class="form-control input_user" onchange="return checkEmail1(this.id)" placeholder="Email">
+                                <p id="EmailPara" style="color:red">
+
+
+                                    @*<input placeholder="Email Id" type="text" id="EmailId" maxlength="100" onchange="return checkEmail(this.id)" class="form-control input_user" />*@
+
+                            </div>
+                            <div class="input-group mb-2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+
+                                <input placeholder="Password" type="password" id="Password" maxlength="20" class="form-control input_pass" />
+                                @*<input type="password" id="Password" class="form-control input_pass" placeholder="Password">*@
+
+                                <p id="PasswordPara" style="color:red">
+                            </div>
+                            <div class="input-group mb-2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input placeholder="Confirm Password" type="password" id="ConfiremPWd" maxlength="20" onchange="return CheckConfiremPWD()" class="form-control input_pass" />
+                                @*<input type="password" id="ConfiremPWd" onchange="return CheckConfiremPWD()" class="form-control input_pass" placeholder="Confirm Password">*@
+                                <p id="ConfirePWDPara" style="color:red">
+                            </div>
+                            <div class="d-flex justify-content-center mt-3 login_container">
+                                @*<button type="button" name="button" class="btn login_btn">Sign Up</button>*@
+
+                                <input type="button" id="btnLogin" class="btn btn-success" value="SIGNUP">
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="d-flex justify-content-center pb-3 links text-white">
+                            Already have an account?<a href="../Login/Login" class="ml-2 text-white">Login</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- End of Login -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="../js/custom.js"></script>
+    <script src="../js/Validation.js"></script>
+    <script src="../Scripts/jquery-3.1.1.min.js"></script>
+    <script src="../Scripts/jquery-3.1.1.js"></script>
+    <link href="../https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="../js/Signup.js"></script>
+    <script>
+
+        function CheckValidation() {
+
+            if (Irequired('Name', 'NamePara', 'Enter Name') && Irequired('EmailId', 'EmailPara', 'Enter EmailID')
+                && Irequired('Password', 'PasswordPara', 'Enter Password')
+               && Irequired('ConformPWd', 'ConfirePWDPara', 'Enter Conforrm Password')) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+
+</body>
+
+

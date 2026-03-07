@@ -1,0 +1,50 @@
+﻿
+@model  IEnumerable<DarZon.Models.Tailorchilddata>
+@{
+
+    Layout = null;
+}
+
+<div class="col">
+    <div class="table-responsive tableFixHead">
+        <table class="table table-bordered table-sm table-hover list-table" id="priceTable">
+            <thead class="thead-light">
+                <tr>
+                    <th>S.No</th>
+                    <th>SaleOrder&nbsp;No</th>
+                    <th>Customer Name&nbsp;</th>
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Count() > 0)
+                {
+                    foreach (var items in Model)
+                    {
+                        <tr>
+                            <td></td>
+                            <td>
+                                <span class="custcode">@items.saleorder</span>
+                                <button type="button" class="btn btn-secondary btn-sm add-btn" data-dismiss="modal"
+                                        aria-label="Add" id="btnreloc" onclick="selectrow(this)">
+                                    Select
+                                </button>
+                            </td>
+                            <td class="custname">@items.custname</td>
+
+                        </tr>
+
+
+
+                    }
+
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+    <div class="modal-footer"> <button type="button" class="btn btn-dark btn-sm" data-dismiss="modal" aria-label="Close">Close</button></div>
+</div>

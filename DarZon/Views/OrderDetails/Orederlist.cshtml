@@ -1,0 +1,56 @@
+﻿@model  IEnumerable<DarZon.Models.Orderlistchild>
+@{
+
+    Layout = null;
+}
+<div class="table-responsive tableFixHead">
+    <table class=" item table table-bordered table-sm table-hover list-table" id="tblSaleorderlist" >
+        <thead class="thead-light">
+            <tr>
+                <th>S.No</th>
+                <th>Docnum</th>
+                <th>Order No.</th>
+                <th>Qty</th>
+                <th>NO Of Fabrics</th>
+
+                <th>DocDate</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() > 0)
+            {
+
+                foreach (var Item in Model)
+                {
+            <tr>
+                <td></td>
+                <td>
+                    <span class="Itemcode">@Item.Orderno</span>
+                    <button type="button" style="padding-left:-50px" class="btn btn-secondary btn-sm add-btn" data-dismiss="modal"
+                            aria-label="Add" id="btnaddItem" onclick="additemfromlist(this)">
+
+                        @*"(@Item.ItemCode,@Item.ItemDescription,@Item.UnitPrice)">*@
+                        Select
+                    </button>
+                </td>
+                <td><span class="websaleorder">@Item.websaleorder</span></td>
+                <td><span class="Mainqty">@Item.Qty</span></td>
+
+                <td><span class="AddonQty">@Item.Addonqty</span></td>
+                <td> <span class="deldate">@Item.Schedulefordelivery</span></td>
+
+
+            </tr>
+
+                }
+
+            }
+
+
+        </tbody>
+    </table>
+</div>
+
+

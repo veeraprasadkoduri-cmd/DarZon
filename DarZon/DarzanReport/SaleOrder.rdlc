@@ -1,0 +1,2750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix3">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>0.96181in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.92014in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.11458in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.29167in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox7">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Category</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox7</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox9">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Item Description</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox21">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Total Amount</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox21</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox23">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Deliverydate</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox23</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.29167in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="category">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!category.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>category</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="ItemDescription">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!ItemDescription.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>ItemDescription</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TotalAmount">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!TotalAmount.Value</Value>
+                              <Style>
+                                <Format>'₹'0.00;('₹'0.00)</Format>
+                                <rd:FormatSymbolCulture>en-IN</rd:FormatSymbolCulture>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TotalAmount</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Deliverydate">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Deliverydate.Value</Value>
+                              <Style>
+                                <Format>d MMM yyyy</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Deliverydate</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>Salechild</DataSetName>
+        <Top>1.2175in</Top>
+        <Left>0.4825in</Left>
+        <Height>0.58334in</Height>
+        <Width>4.99653in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Tablix Name="Tablix4">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>5.96875in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.93972in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="Rectangle3">
+                      <ReportItems>
+                        <Textbox Name="Textbox13">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>SaleOrder No.</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <Top>0.25222in</Top>
+                          <Left>0.17708in</Left>
+                          <Height>0.25in</Height>
+                          <Width>1.125in</Width>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="DocEntry">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!DocEntry.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>DocEntry</rd:DefaultName>
+                          <Top>0.25222in</Top>
+                          <Left>1.51042in</Left>
+                          <Height>0.25in</Height>
+                          <Width>1in</Width>
+                          <ZIndex>1</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox15">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>CustomerNo</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox15</rd:DefaultName>
+                          <Top>0.25222in</Top>
+                          <Left>2.88194in</Left>
+                          <Height>0.25in</Height>
+                          <Width>1.28472in</Width>
+                          <ZIndex>2</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="CardCode">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CardCode.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CardCode</rd:DefaultName>
+                          <Top>0.25222in</Top>
+                          <Left>4.28125in</Left>
+                          <Height>0.25in</Height>
+                          <Width>1.44792in</Width>
+                          <ZIndex>3</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox17">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>SaleOrder Date</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox17</rd:DefaultName>
+                          <Top>0.57167in</Top>
+                          <Left>0.17708in</Left>
+                          <Height>0.25in</Height>
+                          <Width>1.125in</Width>
+                          <ZIndex>4</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="DocDate">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!DocDate.Value</Value>
+                                  <Style>
+                                    <Format>d MMM yyyy</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>DocDate</rd:DefaultName>
+                          <Top>0.57167in</Top>
+                          <Left>1.51042in</Left>
+                          <Height>0.25in</Height>
+                          <Width>1in</Width>
+                          <ZIndex>5</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox19">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>CustomerName</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox19</rd:DefaultName>
+                          <Top>0.57167in</Top>
+                          <Left>2.88194in</Left>
+                          <Height>0.25in</Height>
+                          <Width>1.28472in</Width>
+                          <ZIndex>6</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox20">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=First(Fields!CardName.Value, "Ocrd")</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox20</rd:DefaultName>
+                          <Top>0.55778in</Top>
+                          <Left>4.28125in</Left>
+                          <Height>0.25in</Height>
+                          <Width>1.44792in</Width>
+                          <ZIndex>7</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </ReportItems>
+                      <KeepTogether>true</KeepTogether>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Details1" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>Salehead</DataSetName>
+        <Top>0.06944in</Top>
+        <Left>0.27417in</Left>
+        <Height>0.93972in</Height>
+        <Width>5.96875in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Textbox Name="Textbox25">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Total Amount(before Discount)                                                                                                  </Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox25</rd:DefaultName>
+        <Top>1.98833in</Top>
+        <Left>1.99292in</Left>
+        <Height>0.25in</Height>
+        <Width>2.3125in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox26">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Discount.Value, "Salehead")-First(Fields!Discount.Value, "Salehead")</Value>
+                <Style>
+                  <Format>'₹'0.00;('₹'0.00)</Format>
+                  <rd:FormatSymbolCulture>en-IN</rd:FormatSymbolCulture>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox26</rd:DefaultName>
+        <Top>1.98833in</Top>
+        <Left>4.6075in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox27">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Discount(%)</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox25</rd:DefaultName>
+        <Top>2.46354in</Top>
+        <Left>2.9825in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox28">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Discount.Value, "Salehead")</Value>
+                <Style>
+                  <Format>'₹'0.00;('₹'0.00)</Format>
+                  <rd:FormatSymbolCulture>en-IN</rd:FormatSymbolCulture>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox26</rd:DefaultName>
+        <Top>2.46354in</Top>
+        <Left>4.6075in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox29">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tax</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox25</rd:DefaultName>
+        <Top>2.88021in</Top>
+        <Left>2.9825in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox30">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!totaltax.Value, "Salehead")</Value>
+                <Style>
+                  <Format>'₹'0.00;('₹'0.00)</Format>
+                  <rd:FormatSymbolCulture>en-IN</rd:FormatSymbolCulture>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox26</rd:DefaultName>
+        <Top>2.88021in</Top>
+        <Left>4.6075in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox31">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Total</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox25</rd:DefaultName>
+        <Top>3.32292in</Top>
+        <Left>2.9825in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox32">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!doctotal.Value, "Salehead")</Value>
+                <Style>
+                  <Format>'₹'0.00;('₹'0.00)</Format>
+                  <rd:FormatSymbolCulture>en-IN</rd:FormatSymbolCulture>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox26</rd:DefaultName>
+        <Top>3.32292in</Top>
+        <Left>4.6075in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>3.65625in</Height>
+    <Style />
+  </Body>
+  <Width>6.5925in</Width>
+  <Page>
+    <PageHeader>
+      <Height>1in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Image Name="Image1">
+          <Source>Embedded</Source>
+          <Value>logo_login</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.21306in</Top>
+          <Left>2.26723in</Left>
+          <Height>0.7175in</Height>
+          <Width>2.09375in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Image Name="Image3">
+          <Source>Embedded</Source>
+          <Value>insta</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.35875in</Top>
+          <Left>0.27417in</Left>
+          <Height>0.5in</Height>
+          <Width>0.56944in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox70">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Darzan Official</Value>
+                  <Style>
+                    <Color>Brown</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox70</rd:DefaultName>
+          <Top>0.49417in</Top>
+          <Left>0.91305in</Left>
+          <Height>0.25in</Height>
+          <Width>1.30556in</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox71">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>www.Darzan.com</Value>
+                  <Style>
+                    <Color>Brown</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox71</rd:DefaultName>
+          <Top>0.49417in</Top>
+          <Left>4.43042in</Left>
+          <Height>0.25in</Height>
+          <Width>1.17708in</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>0.38727in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>2nd Floor,Above Pulp pressery,Rd No.1,Jublihills,Hyderabad,Telagana 500023</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.02778in</Top>
+          <Height>0.33704in</Height>
+          <Width>6.5925in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <BackgroundColor>Brown</BackgroundColor>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DarzanSaleorder">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>64a1fbd1-0e11-41e7-a8a1-4a3d4c498c98</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="Salehead">
+      <Query>
+        <DataSourceName>DarzanSaleorder</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DocEntry">
+          <DataField>DocEntry</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SapDocEntry">
+          <DataField>SapDocEntry</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CardCode">
+          <DataField>CardCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Series">
+          <DataField>Series</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DocDate">
+          <DataField>DocDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocDueDate">
+          <DataField>DocDueDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="doctotal">
+          <DataField>doctotal</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Discount">
+          <DataField>Discount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="totaltax">
+          <DataField>totaltax</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="totalAfterDiscount">
+          <DataField>totalAfterDiscount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="UserName">
+          <DataField>UserName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cash">
+          <DataField>cash</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="card">
+          <DataField>card</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="OtherPayments">
+          <DataField>OtherPayments</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="carddetails">
+          <DataField>carddetails</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OthpayDetails">
+          <DataField>OthpayDetails</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Remarks">
+          <DataField>Remarks</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="status">
+          <DataField>status</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Advance">
+          <DataField>Advance</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="totalBeorerDiscount">
+          <DataField>totalBeorerDiscount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DarzanSaleorder</rd:DataSetName>
+        <rd:SchemaPath>D:\Devserver anil\DarZan SaleOrder\DarZon\DarZon\DarzanSaleorder.xsd</rd:SchemaPath>
+        <rd:TableName>SaleOrderHeader</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>SaleOrderHeaderTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="Salechild">
+      <Query>
+        <DataSourceName>DarzanSaleorder</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ItemCode">
+          <DataField>ItemCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ItemDescription">
+          <DataField>ItemDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UnitPrice">
+          <DataField>UnitPrice</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="deldays">
+          <DataField>deldays</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="predelchar">
+          <DataField>predelchar</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="saleorderNo">
+          <DataField>saleorderNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="COGSCostingCode">
+          <DataField>COGSCostingCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TaxAmount">
+          <DataField>TaxAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Deliverydate">
+          <DataField>Deliverydate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Advance">
+          <DataField>Advance</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="balance">
+          <DataField>balance</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalAmount">
+          <DataField>TotalAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Remarks">
+          <DataField>Remarks</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ServiceCost">
+          <DataField>ServiceCost</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="MeterialCost">
+          <DataField>MeterialCost</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="quantity">
+          <DataField>quantity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cardcoe">
+          <DataField>cardcoe</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="curstatus">
+          <DataField>curstatus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="status">
+          <DataField>status</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="parentId">
+          <DataField>parentId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="taxCode">
+          <DataField>taxCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TaxRate">
+          <DataField>TaxRate</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="category">
+          <DataField>category</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DarzanSaleorder</rd:DataSetName>
+        <rd:SchemaPath>D:\Devserver anil\DarZan SaleOrder\DarZon\DarZon\DarzanSaleorder.xsd</rd:SchemaPath>
+        <rd:TableName>SaleOrderDetails</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>SaleOrderDetailsTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="Ocrd">
+      <Query>
+        <DataSourceName>DarzanSaleorder</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CardCode">
+          <DataField>CardCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CardName">
+          <DataField>CardName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CardType">
+          <DataField>CardType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="GroupCode">
+          <DataField>GroupCode</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="CmpPrivate">
+          <DataField>CmpPrivate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address">
+          <DataField>Address</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ZipCode">
+          <DataField>ZipCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MailAddres">
+          <DataField>MailAddres</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MailZipCod">
+          <DataField>MailZipCod</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Phone1">
+          <DataField>Phone1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Phone2">
+          <DataField>Phone2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fax">
+          <DataField>Fax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CntctPrsn">
+          <DataField>CntctPrsn</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Notes">
+          <DataField>Notes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Balance">
+          <DataField>Balance</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ChecksBal">
+          <DataField>ChecksBal</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="DNotesBal">
+          <DataField>DNotesBal</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="OrdersBal">
+          <DataField>OrdersBal</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="GroupNum">
+          <DataField>GroupNum</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="CreditLine">
+          <DataField>CreditLine</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="DebtLine">
+          <DataField>DebtLine</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Discount">
+          <DataField>Discount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="VatStatus">
+          <DataField>VatStatus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LicTradNum">
+          <DataField>LicTradNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DdctStatus">
+          <DataField>DdctStatus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DdctPrcnt">
+          <DataField>DdctPrcnt</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ValidUntil">
+          <DataField>ValidUntil</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Chrctrstcs">
+          <DataField>Chrctrstcs</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ExMatchNum">
+          <DataField>ExMatchNum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="InMatchNum">
+          <DataField>InMatchNum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ListNum">
+          <DataField>ListNum</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="DNoteBalFC">
+          <DataField>DNoteBalFC</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="OrderBalFC">
+          <DataField>OrderBalFC</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="DNoteBalSy">
+          <DataField>DNoteBalSy</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="OrderBalSy">
+          <DataField>OrderBalSy</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Transfered">
+          <DataField>Transfered</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BalTrnsfrd">
+          <DataField>BalTrnsfrd</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IntrstRate">
+          <DataField>IntrstRate</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Commission">
+          <DataField>Commission</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CommGrCode">
+          <DataField>CommGrCode</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="Free_Text">
+          <DataField>Free_Text</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SlpCode">
+          <DataField>SlpCode</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PrevYearAc">
+          <DataField>PrevYearAc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Currency">
+          <DataField>Currency</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RateDifAct">
+          <DataField>RateDifAct</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BalanceSys">
+          <DataField>BalanceSys</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="BalanceFC">
+          <DataField>BalanceFC</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Protected">
+          <DataField>Protected</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cellular">
+          <DataField>Cellular</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AvrageLate">
+          <DataField>AvrageLate</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="County">
+          <DataField>County</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Country">
+          <DataField>Country</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MailCity">
+          <DataField>MailCity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MailCounty">
+          <DataField>MailCounty</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MailCountr">
+          <DataField>MailCountr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="E_Mail">
+          <DataField>E_Mail</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Picture">
+          <DataField>Picture</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DflAccount">
+          <DataField>DflAccount</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DflBranch">
+          <DataField>DflBranch</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BankCode">
+          <DataField>BankCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AddID">
+          <DataField>AddID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Pager">
+          <DataField>Pager</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FatherCard">
+          <DataField>FatherCard</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CardFName">
+          <DataField>CardFName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FatherType">
+          <DataField>FatherType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup1">
+          <DataField>QryGroup1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup2">
+          <DataField>QryGroup2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup3">
+          <DataField>QryGroup3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup4">
+          <DataField>QryGroup4</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup5">
+          <DataField>QryGroup5</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup6">
+          <DataField>QryGroup6</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup7">
+          <DataField>QryGroup7</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup8">
+          <DataField>QryGroup8</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup9">
+          <DataField>QryGroup9</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup10">
+          <DataField>QryGroup10</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup11">
+          <DataField>QryGroup11</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup12">
+          <DataField>QryGroup12</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup13">
+          <DataField>QryGroup13</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup14">
+          <DataField>QryGroup14</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup15">
+          <DataField>QryGroup15</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup16">
+          <DataField>QryGroup16</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup17">
+          <DataField>QryGroup17</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup18">
+          <DataField>QryGroup18</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup19">
+          <DataField>QryGroup19</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup20">
+          <DataField>QryGroup20</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup21">
+          <DataField>QryGroup21</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup22">
+          <DataField>QryGroup22</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup23">
+          <DataField>QryGroup23</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup24">
+          <DataField>QryGroup24</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup25">
+          <DataField>QryGroup25</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup26">
+          <DataField>QryGroup26</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup27">
+          <DataField>QryGroup27</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup28">
+          <DataField>QryGroup28</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup29">
+          <DataField>QryGroup29</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup30">
+          <DataField>QryGroup30</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup31">
+          <DataField>QryGroup31</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup32">
+          <DataField>QryGroup32</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup33">
+          <DataField>QryGroup33</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup34">
+          <DataField>QryGroup34</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup35">
+          <DataField>QryGroup35</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup36">
+          <DataField>QryGroup36</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup37">
+          <DataField>QryGroup37</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup38">
+          <DataField>QryGroup38</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup39">
+          <DataField>QryGroup39</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup40">
+          <DataField>QryGroup40</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup41">
+          <DataField>QryGroup41</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup42">
+          <DataField>QryGroup42</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup43">
+          <DataField>QryGroup43</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup44">
+          <DataField>QryGroup44</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup45">
+          <DataField>QryGroup45</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup46">
+          <DataField>QryGroup46</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup47">
+          <DataField>QryGroup47</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup48">
+          <DataField>QryGroup48</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup49">
+          <DataField>QryGroup49</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup50">
+          <DataField>QryGroup50</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup51">
+          <DataField>QryGroup51</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup52">
+          <DataField>QryGroup52</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup53">
+          <DataField>QryGroup53</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup54">
+          <DataField>QryGroup54</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup55">
+          <DataField>QryGroup55</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup56">
+          <DataField>QryGroup56</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup57">
+          <DataField>QryGroup57</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup58">
+          <DataField>QryGroup58</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup59">
+          <DataField>QryGroup59</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup60">
+          <DataField>QryGroup60</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup61">
+          <DataField>QryGroup61</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup62">
+          <DataField>QryGroup62</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup63">
+          <DataField>QryGroup63</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QryGroup64">
+          <DataField>QryGroup64</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DdctOffice">
+          <DataField>DdctOffice</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CreateDate">
+          <DataField>CreateDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="UpdateDate">
+          <DataField>UpdateDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ExportCode">
+          <DataField>ExportCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DscntObjct">
+          <DataField>DscntObjct</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="DscntRel">
+          <DataField>DscntRel</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SPGCounter">
+          <DataField>SPGCounter</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="SPPCounter">
+          <DataField>SPPCounter</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DdctFileNo">
+          <DataField>DdctFileNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SCNCounter">
+          <DataField>SCNCounter</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="MinIntrst">
+          <DataField>MinIntrst</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="DataSource">
+          <DataField>DataSource</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OprCount">
+          <DataField>OprCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ExemptNo">
+          <DataField>ExemptNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Priority">
+          <DataField>Priority</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CreditCard">
+          <DataField>CreditCard</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="CrCardNum">
+          <DataField>CrCardNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CardValid">
+          <DataField>CardValid</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="UserSign">
+          <DataField>UserSign</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="LocMth">
+          <DataField>LocMth</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="validFor">
+          <DataField>validFor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="validFrom">
+          <DataField>validFrom</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="validTo">
+          <DataField>validTo</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="frozenFor">
+          <DataField>frozenFor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="frozenFrom">
+          <DataField>frozenFrom</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="frozenTo">
+          <DataField>frozenTo</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="sEmployed">
+          <DataField>sEmployed</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MTHCounter">
+          <DataField>MTHCounter</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="BNKCounter">
+          <DataField>BNKCounter</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DdgKey">
+          <DataField>DdgKey</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DdtKey">
+          <DataField>DdtKey</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ValidComm">
+          <DataField>ValidComm</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FrozenComm">
+          <DataField>FrozenComm</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="chainStore">
+          <DataField>chainStore</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DiscInRet">
+          <DataField>DiscInRet</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="State1">
+          <DataField>State1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="State2">
+          <DataField>State2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VatGroup">
+          <DataField>VatGroup</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LogInstanc">
+          <DataField>LogInstanc</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ObjType">
+          <DataField>ObjType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Indicator">
+          <DataField>Indicator</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipType">
+          <DataField>ShipType</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="DebPayAcct">
+          <DataField>DebPayAcct</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipToDef">
+          <DataField>ShipToDef</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Block">
+          <DataField>Block</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MailBlock">
+          <DataField>MailBlock</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Password">
+          <DataField>Password</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ECVatGroup">
+          <DataField>ECVatGroup</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Deleted">
+          <DataField>Deleted</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IBAN">
+          <DataField>IBAN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocEntry">
+          <DataField>DocEntry</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FormCode">
+          <DataField>FormCode</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Box1099">
+          <DataField>Box1099</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PymCode">
+          <DataField>PymCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BackOrder">
+          <DataField>BackOrder</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PartDelivr">
+          <DataField>PartDelivr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DunnLevel">
+          <DataField>DunnLevel</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DunnDate">
+          <DataField>DunnDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="BlockDunn">
+          <DataField>BlockDunn</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BankCountr">
+          <DataField>BankCountr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CollecAuth">
+          <DataField>CollecAuth</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DME">
+          <DataField>DME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InstrucKey">
+          <DataField>InstrucKey</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SinglePaym">
+          <DataField>SinglePaym</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ISRBillId">
+          <DataField>ISRBillId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PaymBlock">
+          <DataField>PaymBlock</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RefDetails">
+          <DataField>RefDetails</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HouseBank">
+          <DataField>HouseBank</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OwnerIdNum">
+          <DataField>OwnerIdNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PyBlckDesc">
+          <DataField>PyBlckDesc</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="HousBnkCry">
+          <DataField>HousBnkCry</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HousBnkAct">
+          <DataField>HousBnkAct</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HousBnkBrn">
+          <DataField>HousBnkBrn</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProjectCod">
+          <DataField>ProjectCod</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SysMatchNo">
+          <DataField>SysMatchNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="VatIdUnCmp">
+          <DataField>VatIdUnCmp</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AgentCode">
+          <DataField>AgentCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TolrncDays">
+          <DataField>TolrncDays</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="SelfInvoic">
+          <DataField>SelfInvoic</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeferrTax">
+          <DataField>DeferrTax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LetterNum">
+          <DataField>LetterNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaxAmount">
+          <DataField>MaxAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FromDate">
+          <DataField>FromDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ToDate">
+          <DataField>ToDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="WTLiable">
+          <DataField>WTLiable</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CrtfcateNO">
+          <DataField>CrtfcateNO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpireDate">
+          <DataField>ExpireDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="NINum">
+          <DataField>NINum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AccCritria">
+          <DataField>AccCritria</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WTCode">
+          <DataField>WTCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Equ">
+          <DataField>Equ</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HldCode">
+          <DataField>HldCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ConnBP">
+          <DataField>ConnBP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MltMthNum">
+          <DataField>MltMthNum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TypWTReprt">
+          <DataField>TypWTReprt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VATRegNum">
+          <DataField>VATRegNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RepName">
+          <DataField>RepName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Industry">
+          <DataField>Industry</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Business">
+          <DataField>Business</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WTTaxCat">
+          <DataField>WTTaxCat</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsDomestic">
+          <DataField>IsDomestic</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsResident">
+          <DataField>IsResident</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AutoCalBCG">
+          <DataField>AutoCalBCG</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OtrCtlAcct">
+          <DataField>OtrCtlAcct</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AliasName">
+          <DataField>AliasName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Building">
+          <DataField>Building</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MailBuildi">
+          <DataField>MailBuildi</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BoEPrsnt">
+          <DataField>BoEPrsnt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BoEDiscnt">
+          <DataField>BoEDiscnt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BoEOnClct">
+          <DataField>BoEOnClct</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UnpaidBoE">
+          <DataField>UnpaidBoE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ITWTCode">
+          <DataField>ITWTCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DunTerm">
+          <DataField>DunTerm</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ChannlBP">
+          <DataField>ChannlBP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DfTcnician">
+          <DataField>DfTcnician</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Territory">
+          <DataField>Territory</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="BillToDef">
+          <DataField>BillToDef</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DpmClear">
+          <DataField>DpmClear</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IntrntSite">
+          <DataField>IntrntSite</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LangCode">
+          <DataField>LangCode</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="HousActKey">
+          <DataField>HousActKey</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Profession">
+          <DataField>Profession</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CDPNum">
+          <DataField>CDPNum</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="DflBankKey">
+          <DataField>DflBankKey</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="BCACode">
+          <DataField>BCACode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UseShpdGd">
+          <DataField>UseShpdGd</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RegNum">
+          <DataField>RegNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VerifNum">
+          <DataField>VerifNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BankCtlKey">
+          <DataField>BankCtlKey</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HousCtlKey">
+          <DataField>HousCtlKey</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AddrType">
+          <DataField>AddrType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InsurOp347">
+          <DataField>InsurOp347</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MailAddrTy">
+          <DataField>MailAddrTy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StreetNo">
+          <DataField>StreetNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MailStrNo">
+          <DataField>MailStrNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TaxRndRule">
+          <DataField>TaxRndRule</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VendTID">
+          <DataField>VendTID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ThreshOver">
+          <DataField>ThreshOver</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SurOver">
+          <DataField>SurOver</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VendorOcup">
+          <DataField>VendorOcup</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OpCode347">
+          <DataField>OpCode347</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DpmIntAct">
+          <DataField>DpmIntAct</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ResidenNum">
+          <DataField>ResidenNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UserSign2">
+          <DataField>UserSign2</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="PlngGroup">
+          <DataField>PlngGroup</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VatIDNum">
+          <DataField>VatIDNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Affiliate">
+          <DataField>Affiliate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MivzExpSts">
+          <DataField>MivzExpSts</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HierchDdct">
+          <DataField>HierchDdct</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CertWHT">
+          <DataField>CertWHT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CertBKeep">
+          <DataField>CertBKeep</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WHShaamGrp">
+          <DataField>WHShaamGrp</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IndustryC">
+          <DataField>IndustryC</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DatevAcct">
+          <DataField>DatevAcct</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DatevFirst">
+          <DataField>DatevFirst</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="GTSRegNum">
+          <DataField>GTSRegNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="GTSBankAct">
+          <DataField>GTSBankAct</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="GTSBilAddr">
+          <DataField>GTSBilAddr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HsBnkSwift">
+          <DataField>HsBnkSwift</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HsBnkIBAN">
+          <DataField>HsBnkIBAN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DflSwift">
+          <DataField>DflSwift</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AutoPost">
+          <DataField>AutoPost</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IntrAcc">
+          <DataField>IntrAcc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FeeAcc">
+          <DataField>FeeAcc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CpnNo">
+          <DataField>CpnNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="NTSWebSite">
+          <DataField>NTSWebSite</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="DflIBAN">
+          <DataField>DflIBAN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Series">
+          <DataField>Series</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="Number">
+          <DataField>Number</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EDocExpFrm">
+          <DataField>EDocExpFrm</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TaxIdIdent">
+          <DataField>TaxIdIdent</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Attachment">
+          <DataField>Attachment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AtcEntry">
+          <DataField>AtcEntry</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DiscRel">
+          <DataField>DiscRel</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NoDiscount">
+          <DataField>NoDiscount</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SCAdjust">
+          <DataField>SCAdjust</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DflAgrmnt">
+          <DataField>DflAgrmnt</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="GlblLocNum">
+          <DataField>GlblLocNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SenderID">
+          <DataField>SenderID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RcpntID">
+          <DataField>RcpntID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MainUsage">
+          <DataField>MainUsage</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SefazCheck">
+          <DataField>SefazCheck</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="free312">
+          <DataField>free312</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="free313">
+          <DataField>free313</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DateFrom">
+          <DataField>DateFrom</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DateTill">
+          <DataField>DateTill</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="RelCode">
+          <DataField>RelCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OKATO">
+          <DataField>OKATO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OKTMO">
+          <DataField>OKTMO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="KBKCode">
+          <DataField>KBKCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TypeOfOp">
+          <DataField>TypeOfOp</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OwnerCode">
+          <DataField>OwnerCode</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MandateID">
+          <DataField>MandateID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SignDate">
+          <DataField>SignDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Remark1">
+          <DataField>Remark1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ConCerti">
+          <DataField>ConCerti</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TpCusPres">
+          <DataField>TpCusPres</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RoleTypCod">
+          <DataField>RoleTypCod</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BlockComm">
+          <DataField>BlockComm</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmplymntCt">
+          <DataField>EmplymntCt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExcptnlEvt">
+          <DataField>ExcptnlEvt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpnPrfFnd">
+          <DataField>ExpnPrfFnd</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="EdrsFromBP">
+          <DataField>EdrsFromBP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EdrsToBP">
+          <DataField>EdrsToBP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CreateTS">
+          <DataField>CreateTS</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="UpdateTS">
+          <DataField>UpdateTS</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EDocGenTyp">
+          <DataField>EDocGenTyp</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="eStreet">
+          <DataField>eStreet</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="eStreetNum">
+          <DataField>eStreetNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="eBuildnNum">
+          <DataField>eBuildnNum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="eZipCode">
+          <DataField>eZipCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="eCityTown">
+          <DataField>eCityTown</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="eCountry">
+          <DataField>eCountry</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="eDistrict">
+          <DataField>eDistrict</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RepFName">
+          <DataField>RepFName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RepSName">
+          <DataField>RepSName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RepCmpName">
+          <DataField>RepCmpName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RepFisCode">
+          <DataField>RepFisCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RepAddID">
+          <DataField>RepAddID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PECAddr">
+          <DataField>PECAddr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IPACodePA">
+          <DataField>IPACodePA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MerchantID">
+          <DataField>MerchantID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TxExMxVdTp">
+          <DataField>TxExMxVdTp</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="U_CustType">
+          <DataField>U_CustType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DarzanSaleorder</rd:DataSetName>
+        <rd:SchemaPath>D:\Devserver anil\DarZan SaleOrder\DarZon\DarZon\DarzanSaleorder.xsd</rd:SchemaPath>
+        <rd:TableName>OCRD</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>OCRDTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logo_login">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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
+ETxE8RPETxE8RPETxE8RPETxE8RPETxE8RPETxE8RPETxE8RPETxE8RPETxE8RPETxE8RPESwwa51ev2A5r61CWup5yvaeOIPR+jd651ev2CXMNxwBnhZXpMviAPoXoRvtga3DoeN3rnV64BuDcQ3yFXBUXyA6PCFPEZaYb2ZWMQGuA2jFHHngacKIKJrfbjd651euNvAg7l4+riguIkvXnR8f3wKE3FZcNa8DI01xYMBG+VAEAXBn24S4A41eN3rnV6428nTNHqZJF9u0v4avj+49n+YS7btyrU+YAFcZg+ZbbtKR40xG7qjt9vpyQ43eudXrjbyaJo4C1Z447eGj4/vh1KyolZ5lShDuo9uOkuNEMUxIF0fpHV43eudXrh+rETAYt2sEUTvqnRMSyIW7bgqq5Y2rEOtws+sHYrqVefxwGzlneTuILJS7tuKTbOmXgFHt9e71zq9c3xfNy+L5ebl/Vcv693rnV6463T/cteuu4lvmozb1DaIwvqOI8eI7UvjxFUO0vTxL/lcWryy1jzL0neLnpHHVRxMSxEdKIKgejCxY3LX87isvP17vXNIFT0npPSek9J6T0npPSek9J6T0npPSek9J6T0npPSek9J6T0npPSek9J6T0lolfZf//Z</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="insta">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAMgAAADIAQMAAACXljzdAAAABlBMVEX///8AAABVwtN+AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABNklEQVRYw+2XMZLDIAxF5XHh0kfIUbgZtm/GUTgCJUUG9n+RZJ1N6pUKaxLPwGtkWf8LRK644n+jM5Ksaaq3tnDR3JA7/msiFJCMVfRD1n5fE/nS9yVvPXsjcxGm7JKgok0r6ovo11bIin70gSUZKgFByvGLfizJq65UyRePsSS9BOF2YL4Lf7sbMoNIwLOjB9++tj3hNm0v9Cog8VxXa0IFE3Yl5za0J/A8bINjmgEf9ZW1Z4IVm6CESd/n+PVEezLTdJg1BslECTkidOrCTp3Ur9Gjuxsyiopxgjmn3p3FE1GYqB+RrZ58x5o85tzDr/P2phJjMs4HeDR16u3vWdmUPM98otu9SnRG2IxyO2h+WZyRedwx9Ega/ZBx/ym8YyBleLO4IU+VSNOsd/nQjx254gr7+AHqbNadczcBugAAAABJRU5ErkJggg==</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>aa64c1b1-5d34-41e5-a1c4-d68e1798ffd6</rd:ReportID>
+</Report>

@@ -1,0 +1,36 @@
+﻿
+@model DarZon.Models.Orderlistchild
+
+
+
+<tr>
+
+    @using (Html.BeginCollectionItem("objchild"))
+    {
+   
+        <td  >
+            @Html.TextBoxFor(a => a.Orderno, new { @id = "orderno", @class = "order form-control form-control-sm item-sel", @Readonly = true })
+        </td>
+        <td>@Html.TextBoxFor(a => a.websaleorder, new { @id = "WEBSalNo", @Readonly = true, @class = "form-control form-control-sm item-sel" }) </td>
+        <td>@Html.TextBoxFor(a => a.Qty, new { @id = "Qty", @Readonly = true, @class = "form-control form-control-sm item-sel" }) </td>
+        
+        <td>@Html.TextBoxFor(a => a.Addonqty, new { @id = "actncount", @Readonly = true, @class = "form-control form-control-sm item-sel" }) </td>
+        <td>@Html.TextBoxFor(a => a.Remarks, new { @id = "remarks", @class = "form-control form-control-sm item-sel"  })    
+       @Html.HiddenFor(a=>a.websaleorder, new { @class = "websaleorder" })
+</td>
+      
+        
+
+        <td>
+            <span class="btn btn-sm btn-outline-danger del-btn" onmousedown="deleterow(this)">
+                <i class="delete fa fa-trash"
+                   aria-hidden="true" ></i>
+            </span>
+        </td>
+    }
+</tr>
+
+
+
+
+

@@ -1,0 +1,35 @@
+﻿@model  IEnumerable<DarZon.Models.C_USER_MASTER>
+@{
+    ViewBag.Title = "Itemlist";
+    Layout = null;
+}
+@if (Model != null)
+{
+    if (Model.Count() > 0)
+    {
+        <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top scroll">
+
+            <a href="../Home/Home" class="navbar-brand text-white d-block mx-auto text-center mb-2 no-display"><img src="~/img/logo_w.svg" class="img-fluid" alt="logo" /></a>
+            <ul class="navbar-nav flex-column mt-2">
+
+                @foreach (var item in Model)
+                {
+                    <li class="nav-item">
+                        <a href="@item.U_TemPath" class="nav-link text-white mb-2 sidebar-link ">
+                            <i class="@item.U_Iconpath"></i>@item.U_Screens
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+
+
+
+
+
+    }
+
+
+
+}
+

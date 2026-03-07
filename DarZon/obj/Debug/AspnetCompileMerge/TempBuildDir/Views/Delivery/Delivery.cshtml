@@ -1,0 +1,292 @@
+﻿@model DarZon.Models.deliveryModel
+@{
+    /**/
+
+    ViewBag.Title = "Delivery";
+}
+@using (Html.BeginForm("Delivery", "Delivery", FormMethod.Post))
+{
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 ml-auto overflow-hidden">
+                    <div class="row">
+                        <div class="col mt-2">
+                            <div class="card">
+                                <h5 class="card-header">
+                                    Delivery &nbsp;&nbsp;
+                                    <button type="button" class="btn btn-outline-dark btn-sm" data-toggle="modal" data-target="#DeliveryList">Find Delivery Details</button>
+                                </h5>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label for="SaleOrderNo" class="col-lg-4 col-md-12 col-sm-12">Sale&nbsp;Order&nbsp;No.</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextBoxFor(item => item.delheqad.SaleOrderNo, new { @class = "form-control form-control-sm", @id = "DevSaleOrderNo", @placeholder = "SaleOrder No.", data_toggle = "modal", data_target = "#OrderListfordel", @readonly = "readonly" })
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="SaleOrderDate" class="col-lg-4 col-md-12 col-sm-12">SaleOrder&nbsp;Date</label>
+                                                    <div class="jquery-datepicker col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(item => item.delheqad.DelDate, new { @class = " form-control form-control-sm", @id = "AltDate", @placeholder = "Delivery Date." , @onmousedown = "datepicker(this)" })
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="SaleOrderDate" class="col-lg-4 col-md-12 col-sm-12">Delivery No.</label>
+                                                    <div class="jquery-datepicker col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(item => item.delheqad.delveryNo, new { @class = "form-control form-control-sm", @id = "AltDate", @readonly = true, @placeholder = "Delivery" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="pickupuser" class=" col-lg-4 col-md-12 col-sm-12 col-form-label">
+                                                        Delivery Employee
+
+                                                    </label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.DropDownListFor(item => item.delheqad.Pickupuser, new SelectList(ViewBag.pickuserlist, "Value", "Text"), "Please select", new { @id = "ddlprdesign", @class = "form-control form-control-sm", @onchange = "GetSelectedmaster(this)" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class=my-form>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">User ID</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(item => item.delheqad.UserId, new { @class = "form-control form-control-sm", @id = "UserId", @placeholder = "User Id .", @readonly = "readonly" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="CustomerNo" class="col-lg-4 col-md-12 col-sm-12">Customer No.</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(item => item.delheqad.CustomerNo, new { @class = "form-control form-control-sm", @id = "CustomerNo", @placeholder = "Customer No .", @readonly = "readonly" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12">Customer Name</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                                        @Html.TextBoxFor(item => item.delheqad.CustomerName, new { @class = "form-control form-control-sm", @id = "CustomerName", @placeholder = "Customer Name.", @readonly = "readonly" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col" id="divsaleorderdetails">
+                                            <div class="table-responsive tableFixHead">
+                                                <table class="table table-bordered table-sm table-hover" id="TblItemList">
+                                                    <thead class="thead-light">
+                                                        <tr>
+                                                            <th scope="col">Item&nbsp;Code</th>
+                                                            <th scope="col">Description</th>
+                                                            <th scope="col">Qty</th>
+                                                            <th scope="col">Rate</th>
+                                                            <th scope="col">Total</th>
+                                                            <th scope="col">Delivery</th>
+                                                            <th scope="col">Remarks</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @if (Model.objsaleorder.Count > 0)
+                                                        {
+                                                            foreach (var item in Model.objsaleorder)
+                                                            {
+                                                                <tr>
+                                                                    <td scope="col">@item.ItemCode</td>
+                                                                    <td scope="col">@item.ItemDescription</td>
+                                                                    <td scope="col">@item.quantity</td>
+                                                                    <td scope="col">@item.UnitPrice</td>
+                                                                    <td scope="col">@item.TotalAmount</td>
+                                                                    <td scope="col">@item.Deliverydate</td>
+                                                                    <td scope="col">@item.Remarks</td>
+                                                                </tr>
+                                                            }
+
+
+                                                        }
+
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <hr>
+                                    <div class="row flex-column-reverse flex-lg-row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            @*<div class="my-form">
+                                                <div class="form-group row mt-3">
+                                                    <label class="col-lg-4 col-md-12 col-sm-12 col-form-label">Remarks</label>
+                                                    <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                        @Html.TextAreaFor(item => item.delheqad.AltDetails, new { @class = "form-control", @id = "AltDetails" })
+
+                                                    </div>
+                                                </div>
+                                            </div>*@
+                                        </div>
+                                        @*<div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class="row float-md-right">
+                                                <div class="col">
+                                                    <div class="my-form">
+                                                        <table class="table table-sm border">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                        <label class="col-form-label">Total&nbsp;Before&nbsp;Discount</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.TextBoxFor(item => item.delheqad.TotalBefDis, new { @class = "form-control form-control-sm font-weight-bold text-right", @id = "TotalBefDis", @placeholder = "Total beor discount" })
+
+
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>
+                                                                        <label class="col-form-label">Discount</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.TextBoxFor(item => item.delheqad.DiscountP, new { @class = "form-control form-control-sm font-weight-bold text-right", @id = "DiscountP", @placeholder = "Total discount" })
+                                                                    </th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>
+                                                                        <label class="col-form-label">Tax</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.TextBoxFor(item => item.delheqad.Tax, new { @class = "form-control form-control-sm font-weight-bold text-right", @id = "TotalTax", @placeholder = "Total Tax" })
+                                                                    </th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="bg-light">
+                                                                        <label class="col-form-label">Total</label>
+                                                                    </th>
+                                                                    <th>
+                                                                        @Html.TextBoxFor(item => item.delheqad.DocTotal, new { @class = "form-control form-control-sm font-weight-bold text-right", @id = "DocTotal", @placeholder = "Doc Total" })
+                                                                    </th>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>*@
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="mx-auto">
+                                            @if (Model.delheqad.delveryNo == null || Model.delheqad.delveryNo.Length <= 0)
+                                            {
+                                                <input type="submit" name="Save" id="btnsave" value="Save" class="btn btn-secondary btn-sm" onclick="return checkvalidation()" />
+                                            }
+                                            &nbsp;&nbsp;&nbsp; <button type="button" id="close" class="btn btn-secondary btn-sm float-right">Close</button>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+}
+@*<div class="modal fade" id="OrderListfordel2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delivery</h5>
+                <button type="button" class="btn btn-dark btn-sm" data-dismiss="modal" aria-label="Close">Close</button>
+            </div>
+            <div class="col">
+                @{Html.RenderAction("Orderlist", "Delivery"); }
+            </div>
+            <div class="modal-footer"><button type="button" class="btn btn-dark btn-sm" data-dismiss="modal" aria-label="Close">Close</button></div>
+        </div>
+    </div>
+</div>*@
+
+<div class="modal fade" id="OrderListfordel" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Order List</h5>
+                <div class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="text" id="ItemInput" onkeyup="filtertable(this, 'orderlist')" class="form-control form-control-sm" placeholder="Search here">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="table-responsive tableFixHead">
+                    @{Html.RenderAction("Orderlist", "Delivery"); }
+                </div>
+               
+            </div>
+            <div class="modal-footer"><button type="button" class="btn btn-dark btn-sm" data-dismiss="modal" aria-label="Close">Close</button></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal-popup -->
+<div class="modal fade" id="DeliveryList" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sale OrderList</h5>
+                <div class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="text" id="ItemInput" onkeyup="filtertable(this, 'DelorderList')" class="form-control form-control-sm" placeholder="Search here">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="table-responsive tableFixHead">
+                    <table class="table table-bordered table-sm table-hover" id="DelorderList">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Sale&nbsp;Order&nbsp;No.</th>
+                                <th>Date</th>
+                                <th>Customer&nbsp;Name</th>
+                        <th>SaleorderNO</th>
+                                <th>#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (ViewBag.deliverylist != null)
+                            {
+                                foreach (var salordr in (List<DarZon.Models.deliverysearch>)ViewBag.deliverylist)
+                                {
+                                    <tr>
+                                        <td>
+                                            <span class="custcode">@salordr.DeliverNo</span>
+                                        </td>
+                                        <td><span class="custcode">@salordr.Delverydate</span> </td>
+                                        <td><span class="custcode">@salordr.Customer</span></td>
+                                       <td><span class="custcode">@salordr.websaleorderno</span></td>
+                                        <td>@Html.ActionLink("select", "Finddelivery", new { id = salordr.id }, new { @class = "btn btn-secondary btn-sm add-btn" })</td>
+
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer"><button type="button" class="btn btn-dark btn-sm" data-dismiss="modal" aria-label="Close">Close</button></div>
+        </div>
+    </div>
+</div>
+<!-- End of Modal-popup -->
+<script src="~/js/Delivery.js"></script>

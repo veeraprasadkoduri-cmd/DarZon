@@ -1,0 +1,425 @@
+﻿@model DarZon.Models.SaleorderwithMeasurement
+@{
+    /**/
+
+    ViewBag.Title = "SaleOrder";
+}
+@using (Html.BeginForm("Measurmentdetails", "Measurmentdetails", FormMethod.Post))
+{
+    <style>
+        .input-group-text {
+            background: #808080 !important;
+        }
+    </style>
+
+    <section>
+        <div class="container-fluid" id="mesdiv">
+            <div class="row">
+                <div class="col-xl-10 col-lg-9 col-md-8 ml-auto overflow-hidden">
+                    <div class="row">
+                        <div class="col mt-2">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    <div class="card">
+                                        <h5 class="card-header">Measurement Details</h5>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-12">
+                                                    <div class=my-form>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-4 col-md-12 col-sm-12">Item Category</label>
+                                                            <div class="col-lg-8 col-md-12 col-sm-12">
+                                                                @Html.HiddenFor(modelitem => modelitem.CusPhoneNo)
+                                                                @Html.HiddenFor(modelitem => modelitem.Id)
+                                                                @Html.HiddenFor(modelitem => modelitem.ItemCode)
+                                                                @Html.HiddenFor(modelitem => modelitem.saleorderNo)
+                                                                @Html.HiddenFor(modelitem => modelitem.status, new { @id = "itemstatus" })
+                                                                @Html.HiddenFor(modelitem => modelitem.noofdays, new { @id = "noofdays" })
+                                                                @Html.HiddenFor(modelitem => modelitem.Deliverydate, new { @id = "deldate" })
+                                                                @if (ViewBag.alter != null)
+                                                                {
+                                                                    <input type="hidden" id="Alteration" value="@ViewBag.alter" />
+                                                                   
+                                                                }
+                                                                @Html.HiddenFor(modelitem => modelitem.MeterialImage, new { @id = "MeterialImageurl" })
+
+                                                                @Html.HiddenFor(modelitem => modelitem.OtherImage, new { @id = "OtherImageurl" })
+                                                                @Html.HiddenFor(modelitem => modelitem.SampleImage, new { @id = "SampleImageurl" })
+                                                                @Html.HiddenFor(modelitem => modelitem.Intdeldate, new { @id = "Intdeldate" })
+
+                                                                @*@if (Model.status == "Add")
+        {
+            @Html.DropDownList("Value", new SelectList(ViewBag.ItemcategoryList, "Value", "Text"), "Please select", new { @id = "ddlFristitem", @class = "custom-select my-1 mr-sm-2 item-drop" })
+
+        }*@
+                                                                @*else
+        {*@
+                                                                @Html.HiddenFor(a => a.category)
+
+                                                                @Html.TextBoxFor(a => a.CategoryDetails, new { @value = ViewBag.Itemcategory, @class = "form-control form-control-sm", @readonly = true })
+
+
+                                                                @*}*@
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-4 col-md-12 col-sm-12">Item name</label>
+                                                            <div class="col-lg-8 col-md-12 col-sm-12">
+                                                                @if (Model.status == "Add")
+                                                                {
+                                                                    @Html.TextBoxFor(modelitem => modelitem.ItemDescription, new { @data_toggle = "modal", @data_target = "#priceTable", @class = "form-control form-control-sm", @readonly = true, @id = "Itemdiscription" })
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    @Html.TextBoxFor(modelitem => modelitem.ItemDescription, new { @class = "form-control form-control-sm", @readonly = true, @id = "Itemdiscription" })
+
+                                                                }
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="card-body">
+                                                            <div class="form-group row">
+                                                                <div class="card-group w-100">
+                                                                    <div class="card">
+                                                                        <div class="card-body p-1 text-center" >
+                                                                            <button type="button" class="btn btn-secondary btn-sm btn-file measure-thumb" data-toggle="modal" data-target="#webcame" onclick="readURL('MeterialImage')">
+                                                                                Material Image Upload
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="card measure-thumb">
+
+                                                                            @if (Model.MeterialImage != null)
+                                                                            {
+                                                                                <img src="@Model.MeterialImage" id="MeterialImage" alt="" class="img-fluid">
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <img id="MeterialImage" alt="" class="img-fluid">
+                                                                            }
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card">
+
+                                                                        <div class="card-body p-1 text-center">
+                                                                            <button type="button" class="btn btn-secondary btn-sm btn-file measure-thumb" onclick="readURL('OtherImage');" data-toggle="modal" data-target="#webcame">
+                                                                                Other image upload
+
+
+                                                                            </button>
+
+                                                                        </div>
+                                                                        <div class="card measure-thumb">
+                                                                            @if (Model.OtherImage != null)
+                                                                            {
+                                                                                <img src="@Model.OtherImage" id="MeterialImage" alt="" class="img-fluid">
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <img id="OtherImage" alt="" class="img-fluid">
+                                                                            }
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="card">
+                                                                        <div class="card-body p-1 text-center">
+                                                                            <button type="button" class="btn btn-secondary btn-sm btn-file measure-thumb" onclick="readURL('SampleImage');" data-toggle="modal" data-target="#webcame">
+                                                                                Sample image upload
+                                                                            </button>
+
+                                                                        </div>
+                                                                        <div class="card measure-thumb">
+
+                                                                            @if (Model.SampleImage != null)
+                                                                            {
+                                                                                <img src="@Model.SampleImage" id="MeterialImage" alt="" class="img-fluid">
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <img id="SampleImage" alt="" class="img-fluid">
+                                                                            }
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-12">
+                                                    <div class=my-form>
+                                                        <div class="form-group row">
+                                                            <label class="col-lg-4 col-md-12 col-sm-12">Item Amount</label>
+                                                            <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                                @Html.TextBoxFor(a => a.UnitPrice, new { @class = "form-control form-control-sm", @placeholder = "Item Amount", @id = "UnitPrice", @readonly = true })
+                                                                @*<input type="text" class="form-control form-control-sm" placeholder="Item Amount" >*@
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label for="Add-onAmount" class="col-lg-4 col-md-12 col-sm-12">Add-on Amount</label>
+                                                            <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                                <input type="text" class="form-control form-control-sm" id="AddonAmount"
+                                                                       placeholder="Add-onAmount" disabled="disabled">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label for="Total" class="col-lg-4 col-md-12 col-sm-12">Total</label>
+                                                            <div class="col-lg-8 col-md-12 col-sm-12">
+                                                                @Html.TextBoxFor(a => a.TotalAmount, new { @class = "form-control form-control-sm", @placeholder = "Item Amount", @id = "ItemPrice", @readonly = true })
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label for="FittingOptions" class="col-lg-4 col-md-12 col-sm-12">Fitting Options</label>
+                                                            <div class="col-lg-8 col-md-12 col-sm-12">
+                                                               
+                                                                @Html.TextBoxFor(a=>a.FitOpt,new {@class="form-control form-control-sm", @id="FittingOptions", @placeholder="Fitting Options" })
+                                                               
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group row">
+                                                            <label for="FittingOptions" class="col-lg-4 col-md-12 col-sm-12">Remarks</label>
+                                                            <div class="col-lg-8 col-md-12 col-sm-12">
+                                                                @Html.TextBoxFor(a => a.Remarks, new { @class = "form-control form-control-sm", @placeholder = "Remarks" })
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group row">
+                                                            <label for="FittingOptions" class="col-lg-4 col-md-12 col-sm-12">No of Fabrics</label>
+                                                            <div class="col-lg-8 col-md-12 col-sm-12">
+                                                                @Html.TextBoxFor(a => a.NoFabraic, new { @class = "form-control form-control-sm", @placeholder = "No of Fabrics",required = "required", @type = "number", onkeypress = "return isNumber(event)", @min = "0" })
+                                                            </div>
+                                                        </div>
+
+                                                        <input type="hidden" id="imageurl" />
+                                                        @Html.HiddenFor(a => a.curstatus, new {@id="mescurstatus" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col">
+                                                    <div class="table-responsive tableFixHead" id="divAddonDetls">
+                                                        <table class="table table-bordered table-sm table-hover list-table" id="myAddons">
+                                                            <thead class="thead-light">
+                                                                <tr>
+
+                                                                    <th style="display:none">Customer&nbsp;Material </th>
+                                                                    <th scope="col">AddOn Group</th>
+                                                                    <th scope="col">Item Description</th>
+                                                                    <th scope="col">Quantity</th>
+                                                                    <th scope="col">Material&nbsp;Price</th>
+                                                                    <th scope="col">Service&nbsp;Cost</th>
+                                                                    <th scope="col">Total&nbsp;Amount</th>
+                                                                    <th>#</th>
+
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                                @foreach (var addonitem in Model.addonlist)
+                                                                {
+
+                                                                    Html.RenderPartial("AddAddonItem", addonitem);
+
+                                                                }
+                                                                @if (ViewBag.ItemList != null)
+                                                                {
+                                                                    <tr>
+                                                                        <td style="display:none"></td>
+                                                                        <td style="vertical-align:middle">
+                                                                                                                                                       <select class="form-control form-control-sm" id="dlladdonroup" onchange="ValuesList();"></select>
+                                                                        </td>
+                                                                        <td>
+                                                                            <select class="form-control form-control-sm" id="dllsubgroup"></select>
+                                                                        </td>
+
+                                                                        <td style="vertical-align:middle; text-align: center">
+                                                                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal"
+                                                                                    aria-label="Select" onclick="AddAddon()">
+                                                                                Add
+                                                                            </button>
+                                                                        </td>
+
+                                                                    </tr>
+
+                                                                }
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                            </div>
+
+                                            <div class="row ">
+                                                <div class="col-xl-12 col-lg-12 col-md-12" id="divmeasurDetls">
+                                                    <div class="card">
+                                                        <h5 class="card-header"><small>Measurement Details</small></h5>
+                                                        <div class="card-body">
+                                                            <div class="row flex-column-reverse flex-lg-row">
+                                                                <div class="col-xl-6 col-lg-6 col-md-12">
+                                                                    <div class="my-form">
+                                                                        @for (int i = 0; i < Model.objmesurementlist.Count; i++)
+                                                                        {
+                                                                            <div class="form-group row">
+                                                                                <label class="col-lg-4 col-md-12 col-sm-12">
+                                                                                    @Html.DisplayFor(a => Model.objmesurementlist[i].MeasurmentName)
+                                                                                    @Html.HiddenFor(a => Model.objmesurementlist[i].MeasurmentName)
+                                                                                    @Html.HiddenFor(a => Model.objmesurementlist[i].imagepath, new { @id = i + "imagepath" })
+                                                                                </label>
+                                                                                <div class="col-lg-8 col-md-12 col-sm-12">
+
+                                                                                    <div class="input-group mb-3">
+                                                                                        <div class="input-group-prepend">
+                                                                                            <button type="button" class="input-group-text" onclick="readURL(@i.ToString()+'|imagepath')" data-toggle="modal" data-target="#webcame"><i class="fas fa-camera"></i> </button>
+                                                                                        </div>
+                                                                                        @Html.TextBoxFor(a => Model.objmesurementlist[i].mesurementDetails, new { @class = "form-control", @type = "number", @step = ".01" })
+
+                                                                                        <div class="input-group-append">
+                                                                                            <span class="btn btn-sm btn-outline-info" onclick="readURLfromid(@i.ToString()+'imagepath')"><i class="fas fa-eye"></i></span>
+                                                                                        </div>
+                                                                                        @Html.HiddenFor(a => Model.objmesurementlist[i].LineId)
+                                                                                        @Html.HiddenFor(a => Model.objmesurementlist[i].id)
+
+                                                                                        @Html.HiddenFor(a => Model.objmesurementlist[i].MeasurmentId)
+
+
+
+
+
+                                                                                        @*<div class="input-group mb-3">
+
+            @Html.TextBoxFor(a => Model.objmesurementlist[i].mesurementDetails, new { @class = "form-control form-control-sm" })
+
+
+            <div class="input-group-append">
+                <span class="input-group-textNew" onclick="readURLfromid(@i.ToString()+'imagepath')"><i class="far fa-eye"></i></span>
+            </div>
+
+
+
+
+            <div class="input-group-append">
+                <span class="input-group-textNew" onclick="readURL(@i.ToString()+'|imagepath')" data-toggle="modal" data-target="#webcame">
+                    <i class="fas fa-eye"></i> <i class="fas fa-camera"></i>
+
+                </span>
+            </div>
+
+        </div>*@
+
+
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        }
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-xl-6 col-lg-6 col-md-12">
+                                                                    <div class="card mb-3 measurement">
+                                                                        <img src="./" id="measure" class="img-fluid" alt="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="mx-auto">
+                                    <ul class="nav nav-pills m-3" id="pills-tab" role="tablist">
+                                        
+                                            <li class="nav-item">
+                                                <span class="nav-link btn btn-secondary btn-sm m-2 p-2" onclick="backtoprvpage()" >Back</span>
+                                            </li>
+                                      
+                                            @if (Model.status == "Add")
+                                            {
+
+                                                <li class="nav-item">
+                                                    <input type="submit" value="Save" name="Save" class="nav-link btn btn-secondary btn-sm m-2 p-2"  onclick="return Mescheckvalidation('Itemdiscription')"/>
+                                                </li>
+
+                                            }
+                                            else
+                                            {
+                                                <li class="nav-item">
+                                                    <input type="submit" value="Update" name="Update" class="nav-link btn btn-secondary btn-sm m-2 p-2" />
+                                                </li>
+
+                                            }
+                                      
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+<div class="modal fade" id="priceTable" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content" id="mdlitemlist">
+
+            @{Html.RenderAction("ItemList", "CustomeDetailsr", new { id = ViewBag.Itemcode }); }
+        </div>
+
+    </div>
+</div>
+
+
+<div class="modal fade" id="webcame" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+
+
+
+            <div style="float: left; border: 4px solid #ccc; padding: 5px">
+                <div id="Camera">
+
+                </div>
+                <br>
+                <input type="button" value="Capture" onclick="webcam.capture();" />
+                @*<input type="button" value="Capture" onclick="methodsave();" />*@
+            </div>
+            @*<div style="float: left; margin-left: 20px; border: 4px solid #ccc; padding: 5px">
+                <img id="show" style="width: 320px; height: 240px;" src="../../WebImages/person.jpg" />
+                <br>
+                <br>
+                <input id="Submit1" type="submit" onclick="Uploadsubmit();" value="submit" />
+            </div>
+        </div>*@
+
+        </div>
+
+
+
+    </div>
+
+    
+
+</div>
+
+
+
+
+
+
+
+<script src="~/js/Measurmentdetails.js"></script>

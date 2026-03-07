@@ -1,0 +1,43 @@
+﻿@model  IEnumerable<DarZon.Models.CustomerMaster>
+@{
+    ViewBag.Title = "customerlist";
+    Layout = null;
+}
+
+
+                <div class="table-responsive tableFixHead">
+                    <table class="table table-bordered table-sm table-hover" id="CustomerList">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Customer&nbsp;Code</th>
+                                <th>Customer Name</th>
+                                <th>MobileNo</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var customer in Model)
+                            {
+                                        <tr>
+
+                                  <td class="custcode">
+                                        @customer.customercode <button type="button" class="btn btn-secondary btn-sm add-btn" data-dismiss="modal"
+                                                                       aria-label="Add" id="btnaddCust" >
+                                            Add
+                                        </button>
+                                    </td>
+
+                                    <td class="custname">@customer.CustomerName</td>
+                                    <td class="custphone">@customer.PhoneNumber</td>
+                                </tr>
+
+                            }
+
+
+
+
+                        </tbody>
+                        </table>
+                </div>
+           
