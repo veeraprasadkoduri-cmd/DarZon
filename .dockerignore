@@ -1,8 +1,0 @@
-.git
-.gitignore
-.vs
-bin
-obj
-node_modules
-*.log
-packages
