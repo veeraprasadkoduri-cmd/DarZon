@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/veeraprasadkoduri-cmd/DarZon.git'
+                git branch: 'main', url: 'https://github.com/veeraprasadkoduri-cmd/DarZon.git'
             }
         }
         stage('Build Docker Image') {
