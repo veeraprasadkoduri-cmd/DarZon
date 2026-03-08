@@ -1,48 +1,26 @@
 pipeline {
     agent any
-
     environment {
-        DOCKER_HUB_REPO = 'veeradockerhub/darzon'
-        IMAGE_TAG = 'latest'
-        CONTAINER_NAME = 'darzon-app'
+        IMAGE_NAME = "veeradockerhub/darzon:latest"
+        PORT = "5000"
     }
-
     stages {
-
-        stage('Clone Code') {
+        stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/veeraprasadkoduri-cmd/DarZon.git'
+                git 'https://github.com/veeraprasadkoduri-cmd/DarZon.git'
             }
         }
-
         stage('Build Docker Image') {
             steps {
-                sh "docker build -t $DOCKER_HUB_REPO:$IMAGE_TAG ."
+                sh "docker build -t ${IMAGE_NAME} ."
             }
         }
-
-        stage('Push to Docker Hub') {
+        stage('Run Container') {
             steps {
-                withCredentials([usernamePassword(
-                    credentialsId: 'docker-hub-cred',
-                    usernameVariable: 'DOCKER_USER',
-                    passwordVariable: 'DOCKER_PASS'
-                )]) {
-                    sh '''
-                    echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
-                    docker push $DOCKER_HUB_REPO:$IMAGE_TAG
-                    '''
-                }
-            }
-        }
-
-        stage('Deploy Container') {
-            steps {
-                sh '''
-                docker stop $CONTAINER_NAME || true
-                docker rm $CONTAINER_NAME || true
-                docker run -d -p 5000:80 --name $CONTAINER_NAME $DOCKER_HUB_REPO:$IMAGE_TAG
-                '''
+                sh """
+                docker rm -f darzon || true
+                docker run -d -p ${PORT}:5000 --name darzon ${IMAGE_NAME}
+                """
             }
         }
     }
