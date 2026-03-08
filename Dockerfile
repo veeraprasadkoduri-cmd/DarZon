@@ -1,27 +1,13 @@
-# -------- Build Stage --------
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-
-# Copy project files
-COPY DarZon.sln .
 COPY DarZon/*.csproj ./DarZon/
-
-# Restore dependencies
-RUN dotnet restore
-
-# Copy all source code
+RUN dotnet restore DarZon/DarZon.csproj
 COPY . .
-
-# Publish application
 RUN dotnet publish DarZon/DarZon.csproj -c Release -o /app/publish
 
-
-# -------- Runtime Stage --------
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
 WORKDIR /app
-
-# Copy only published output
 COPY --from=build /app/publish .
-
-# Run application
+EXPOSE 5000
+ENV ASPNETCORE_URLS=http://+:5000
 ENTRYPOINT ["dotnet", "DarZon.dll"]
