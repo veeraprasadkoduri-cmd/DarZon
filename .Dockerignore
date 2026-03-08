@@ -1,5 +1,39 @@
 .git
-bin
-obj
-node_modules
-.vs
+.gitignore
+.dockerignore
+
+# Build folders
+bin/
+obj/
+
+# Visual Studio
+.vs/
+.vscode/
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# Jenkins
+Jenkinsfile
+
+# Test results
+TestResults/
+
+# Nuget packages
+*.nupkg
+packages/
+
+# Environment files
+.env
+.env.*
